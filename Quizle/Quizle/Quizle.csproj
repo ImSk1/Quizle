@@ -16,6 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Quizle.Core.Questions\Quizle.Core.Questions.csproj" />
     <ProjectReference Include="..\Quizle.DB\Quizle.DB.csproj" />
   </ItemGroup>
 

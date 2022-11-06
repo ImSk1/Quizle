@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Quizle.Core.Questions.Contracts;
+using Quizle.Core.Questions.Services;
 using Quizle.Data;
 using Quizle.DB;
 using Quizle.DB.Models;
@@ -19,7 +21,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/User/Login";
 });
-
+builder.Services.AddScoped<ITriviaDataService, TriviaDataService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -1,0 +1,34 @@
+﻿@model QuizViewModel
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10 col-lg-10">
+            <div class="border">
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                        <h4>MCQ Quiz</h4><span>(5 of 20)</span>
+                    </div>
+                </div>
+                <form id="quiz" method="post" asp-action="Quiz" asp-controller="Quiz">
+
+                    <div class="question bg-white p-3 border-bottom">
+                        <div class="d-flex flex-row align-items-center question-title">
+                            <h3 class="text-danger">@Model.Question</h3>                            
+                        </div>
+                        @foreach (var answer in Model.Answers)
+                        {
+                            <div class="ans ml-2">
+                                <label class="radio">
+                                    <input asp-for="@Model.SelectedAnswer" type="radio" value="@answer"> <span>@answer</span>
+                                </label>
+                            </div>
+                        }                                               
+                    </div>
+                    <input type="submit" value="Next" />
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
