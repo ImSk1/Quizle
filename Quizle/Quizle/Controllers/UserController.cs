@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Quizle.DB.Models;
-using Quizle.Models;
+using Quizle.Web.Models;
 
-namespace Quizle.Controllers
+namespace Quizle.Web.Controllers
 {
     [Authorize]
     public class UserController : Controller

@@ -1,7 +1,8 @@
-﻿@model QuizViewModel
+﻿@using Quizle.Web.Models
+@model QuizViewModel
 @{
     var model = Model;
-    var correctAnsw = model.Answers.Where(a => a.IsCorrect).First();
+    var correctAnsw = model.Answers.Where(a => a.IsCorrect).First().Answer;
 }
 <div class="container mt-5">
     <div class="d-flex justify-content-center row">
@@ -24,12 +25,13 @@
                             <div class="ans ml-2">
                                 <label class="radio">
                                     <input asp-for="@Model.SelectedAnswer.Answer" type="radio"  value="@answer.Answer"> <span>@answer.Answer</span>
-                                    <input asp-for="@Model.SelectedAnswer.IsCorrect" type="hidden" value="@correctAnsw.IsCorrect">
                                 </label>
                             </div>
                         }                                               
                     </div>
                     <input type="submit" value="Next" />
+                    <input asp-for="@Model.CorrectAnswer" type="hidden" value="@correctAnsw">
+
 
                 </form>
 

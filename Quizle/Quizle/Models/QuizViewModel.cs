@@ -1,6 +1,6 @@
 ﻿using Quizle.Core.Questions.Models;
 
-namespace Quizle.Models
+namespace Quizle.Web.Models
 {
     public class QuizViewModel
     {

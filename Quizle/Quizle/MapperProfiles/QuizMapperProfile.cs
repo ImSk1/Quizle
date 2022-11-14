@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Quizle.Core.Questions.Models;
-using Quizle.Models;
+using Quizle.Web.Models;
 
-namespace Quizle.Profiles
+namespace Quizle.Web.MapperProfiles
 {
     public class QuizMapperProfile : Profile
     {

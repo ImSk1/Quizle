@@ -2,10 +2,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Quizle.Core.Questions.Contracts;
-using Quizle.Models;
+using Quizle.Web.Models;
 using System.Diagnostics;
 
-namespace Quizle.Controllers
+namespace Quizle.Web.Controllers
 {
     [Authorize]
     public class QuizController : Controller

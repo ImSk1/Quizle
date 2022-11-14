@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
     <PackageReference Include="AutoMapper.Collection" Version="9.0.0" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.10" />
@@ -22,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Quizle.Core.Questions\Quizle.Core.Questions.csproj" />
     <ProjectReference Include="..\Quizle.DB\Quizle.DB.csproj" />
+    <ProjectReference Include="..\Quizle.Web.Infra\Quizle.Web.Infra.csproj" />
   </ItemGroup>
 
 </Project>

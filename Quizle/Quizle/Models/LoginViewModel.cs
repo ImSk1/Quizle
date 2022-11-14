@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Quizle.Models
+namespace Quizle.Web.Models
 {
     public class LoginViewModel
     {

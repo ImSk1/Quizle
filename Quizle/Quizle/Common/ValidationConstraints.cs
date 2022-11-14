@@ -1,4 +1,4 @@
-﻿namespace Quizle.Common
+﻿namespace Quizle.Web.Common
 {
     public static class ValidationConstraints
     {

@@ -6,8 +6,8 @@ using Quizle.Core.Questions.Services;
 using Quizle.Data;
 using Quizle.DB;
 using Quizle.DB.Models;
-using Quizle.Profiles;
-using Quizle.Web.Jobs;
+using Quizle.Web.MapperProfiles;
+using Quizle.Web.Infra.QuartzJobs;
 using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,12 +32,7 @@ builder.Services.AddAutoMapper(cfg =>
 });
 builder.Services.Configure<QuartzOptions>(builder.Configuration.GetSection("Quartz"));
 
-// if you are using persistent job store, you might want to alter some options
-builder.Services.Configure<QuartzOptions>(options =>
-{
-    options.Scheduling.IgnoreDuplicates = true; // default: false
-    options.Scheduling.OverWriteExistingData = true; // default: true
-});
+
 builder.Services.AddQuartz(q =>
 {
     q.SchedulerId = "Scheduler-Core";
@@ -54,11 +49,10 @@ builder.Services.AddQuartz(q =>
         tp.MaxConcurrency = 10;
     });
 
-    q.ScheduleJob<TestJob>(trigger => trigger
+    q.ScheduleJob<TriviaJob>(trigger => trigger
             .WithIdentity("Combined Configuration Trigger")
-            .StartAt(DateBuilder.EvenSecondDate(DateTimeOffset.UtcNow.AddSeconds(7)))
-            .WithDailyTimeIntervalSchedule(x => x.WithInterval(10, IntervalUnit.Second))
-            .WithDescription("my awesome trigger configured for a job with single call")
+            .StartNow()
+            .WithDailyTimeIntervalSchedule(x => x.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0,0)).OnEveryDay())            
         );
 });
 builder.Services.AddQuartzHostedService(options =>

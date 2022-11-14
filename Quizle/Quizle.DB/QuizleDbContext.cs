@@ -15,6 +15,9 @@ namespace Quizle.DB
         public QuizleDbContext(DbContextOptions<QuizleDbContext> options)
            : base(options)
         {
+
         }
+        public DbSet<Quiz> QuizzesHistory { get; set; }
+        public DbSet<Answer> Answers { get; set; }
     }
 }
