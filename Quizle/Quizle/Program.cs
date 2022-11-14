@@ -1,11 +1,14 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Quartz;
 using Quizle.Core.Questions.Contracts;
 using Quizle.Core.Questions.Services;
 using Quizle.Data;
 using Quizle.DB;
 using Quizle.DB.Models;
 using Quizle.Profiles;
+using Quizle.Web.Jobs;
+using System.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +30,48 @@ builder.Services.AddAutoMapper(cfg =>
 {
     cfg.AddProfile<QuizMapperProfile>();
 });
+builder.Services.Configure<QuartzOptions>(builder.Configuration.GetSection("Quartz"));
+
+// if you are using persistent job store, you might want to alter some options
+builder.Services.Configure<QuartzOptions>(options =>
+{
+    options.Scheduling.IgnoreDuplicates = true; // default: false
+    options.Scheduling.OverWriteExistingData = true; // default: true
+});
+builder.Services.AddQuartz(q =>
+{
+    q.SchedulerId = "Scheduler-Core";
+
+    // we take this from appsettings.json, just show it's possible
+    // q.SchedulerName = "Quartz ASP.NET Core Sample Scheduler";
+
+    // as of 3.3.2 this also injects scoped services (like EF DbContext) without problems
+    q.UseMicrosoftDependencyInjectionJobFactory();
+    q.UseSimpleTypeLoader();
+    q.UseInMemoryStore();
+    q.UseDefaultThreadPool(tp =>
+    {
+        tp.MaxConcurrency = 10;
+    });
+
+    q.ScheduleJob<TestJob>(trigger => trigger
+            .WithIdentity("Combined Configuration Trigger")
+            .StartAt(DateBuilder.EvenSecondDate(DateTimeOffset.UtcNow.AddSeconds(7)))
+            .WithDailyTimeIntervalSchedule(x => x.WithInterval(10, IntervalUnit.Second))
+            .WithDescription("my awesome trigger configured for a job with single call")
+        );
+});
+builder.Services.AddQuartzHostedService(options =>
+{
+    // when shutting down we want jobs to complete gracefully
+    options.WaitForJobsToComplete = true;
+});
+
+
+
+
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

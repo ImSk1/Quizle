@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Quizle.Core.Questions.Services
 {
@@ -18,16 +19,20 @@ namespace Quizle.Core.Questions.Services
             {
                 Console.WriteLine("Json is empty");
             }
-            var result = JsonConvert.DeserializeObject<TriviaResponseModel>(json).Results.First();
-            var answers = new List<AnswerDto>();
-            foreach (var item in result.IncorrectAnswers)
+            var result = JsonConvert.DeserializeObject<TriviaResponseModel>(json)?.Results.First();
+            if (result == null)
             {
-                answers.Add(new AnswerDto() { Answer = item, IsCorrect = false });
+                return null;
             }
-            answers.Add(new AnswerDto() { Answer = result.CorrectAnswer, IsCorrect = true });
+            var answers = new List<AnswerDto>();
+            foreach (var incAnswer in result.IncorrectAnswers)
+            {
+                answers.Add(new AnswerDto() { Answer = HttpUtility.HtmlDecode(incAnswer), IsCorrect = false });
+            }
+            answers.Add(new AnswerDto() { Answer = HttpUtility.HtmlDecode(result.CorrectAnswer), IsCorrect = true });
             var quiz = new QuizDto()
             {
-                Question = result.Question,
+                Question = HttpUtility.HtmlDecode(result.Question),
                 Difficulty = result.Difficulty,
                 Answers = answers,
                 Category = result.Category,

@@ -26,6 +26,11 @@ namespace Quizle.Controllers
         public async Task<IActionResult> Quiz()
         {
             var triviaData = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrl"));
+
+            if (triviaData == null)
+            {
+                return View();
+            }
             var quizViewModel = _mapper.Map<QuizViewModel>(triviaData);
             
             return View(quizViewModel);
