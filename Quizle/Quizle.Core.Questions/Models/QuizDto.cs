@@ -1,16 +1,17 @@
-﻿using Quizle.Core.Questions.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Quizle.Models
+namespace Quizle.Core.Questions.Models
 {
-    public class QuizViewModel
+    public class QuizDto
     {
         public string Question { get; set; }
         public string Category { get; set; }
         public string Type { get; set; }
         public string Difficulty { get; set; }
-        public string CorrectAnswer { get; set; }
         public List<AnswerDto> Answers { get; set; }
-        public AnswerDto SelectedAnswer { get; set; }
-
     }
 }

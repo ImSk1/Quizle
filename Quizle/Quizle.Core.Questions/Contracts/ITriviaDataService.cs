@@ -8,6 +8,6 @@ namespace Quizle.Core.Questions.Contracts
 {
     public interface ITriviaDataService
     {
-        Task<TriviaResponseModel> GetDataAsync(string url);
+        Task<QuizDto> GetDataAsync(string url);
     }
 }

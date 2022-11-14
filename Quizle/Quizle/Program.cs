@@ -5,6 +5,7 @@ using Quizle.Core.Questions.Services;
 using Quizle.Data;
 using Quizle.DB;
 using Quizle.DB.Models;
+using Quizle.Profiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,10 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.LoginPath = "/User/Login";
 });
 builder.Services.AddScoped<ITriviaDataService, TriviaDataService>();
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddProfile<QuizMapperProfile>();
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -43,6 +48,7 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",

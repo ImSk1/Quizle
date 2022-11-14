@@ -1,5 +1,8 @@
 ﻿@model QuizViewModel
-
+@{
+    var model = Model;
+    var correctAnsw = model.Answers.Where(a => a.IsCorrect).First();
+}
 <div class="container mt-5">
     <div class="d-flex justify-content-center row">
         <div class="col-md-10 col-lg-10">
@@ -17,9 +20,11 @@
                         </div>
                         @foreach (var answer in Model.Answers)
                         {
+
                             <div class="ans ml-2">
                                 <label class="radio">
-                                    <input asp-for="@Model.SelectedAnswer" type="radio" value="@answer"> <span>@answer</span>
+                                    <input asp-for="@Model.SelectedAnswer.Answer" type="radio"  value="@answer.Answer"> <span>@answer.Answer</span>
+                                    <input asp-for="@Model.SelectedAnswer.IsCorrect" type="hidden" value="@correctAnsw.IsCorrect">
                                 </label>
                             </div>
                         }                                               

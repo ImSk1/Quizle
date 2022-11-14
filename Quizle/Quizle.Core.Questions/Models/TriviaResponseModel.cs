@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Quizle.Core.Questions.Models
 {
-    public class TriviaResponseModel
+    internal class TriviaResponseModel
     {
         [JsonProperty("response_code")]
         public int ResponseCode { get; set; }
