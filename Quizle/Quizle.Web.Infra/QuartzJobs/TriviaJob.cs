@@ -7,9 +7,9 @@ namespace Quizle.Web.Infra.QuartzJobs
 {
     public class TriviaJob : IJob
     {
-        private readonly ITriviaDataService _triviaDataService;
+        private readonly IQuizDataService _triviaDataService;
         private readonly IConfiguration _config;
-        public TriviaJob(ITriviaDataService triviaDataService, IConfiguration configuration)
+        public TriviaJob(IQuizDataService triviaDataService, IConfiguration configuration)
         {
             _triviaDataService = triviaDataService;
             _config = configuration;
@@ -17,6 +17,7 @@ namespace Quizle.Web.Infra.QuartzJobs
         public async Task Execute(IJobExecutionContext context)
         {
             var triviaData = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrl"));
+            await _triviaDataService.AddQuiz(triviaData);
         }
     }
 }

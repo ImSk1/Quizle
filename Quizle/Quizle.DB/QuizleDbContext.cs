@@ -17,7 +17,7 @@ namespace Quizle.DB
         {
 
         }
-        public DbSet<Quiz> QuizzesHistory { get; set; }
+        public DbSet<Quiz> Quizzes { get; set; }
         public DbSet<Answer> Answers { get; set; }
     }
 }

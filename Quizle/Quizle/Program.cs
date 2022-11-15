@@ -3,12 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using Quartz;
 using Quizle.Core.Questions.Contracts;
 using Quizle.Core.Questions.Services;
-using Quizle.Data;
 using Quizle.DB;
 using Quizle.DB.Models;
 using Quizle.Web.MapperProfiles;
 using Quizle.Web.Infra.QuartzJobs;
 using System.Configuration;
+using Quizle.DB.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,12 +25,14 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/User/Login";
 });
-builder.Services.AddScoped<ITriviaDataService, TriviaDataService>();
 builder.Services.AddAutoMapper(cfg =>
 {
     cfg.AddProfile<QuizMapperProfile>();
 });
 builder.Services.Configure<QuartzOptions>(builder.Configuration.GetSection("Quartz"));
+
+builder.Services.AddScoped<IQuizDataService, QuizDataService>();
+builder.Services.AddScoped<IRepository, Repository>();
 
 
 builder.Services.AddQuartz(q =>
@@ -52,7 +54,7 @@ builder.Services.AddQuartz(q =>
     q.ScheduleJob<TriviaJob>(trigger => trigger
             .WithIdentity("Combined Configuration Trigger")
             .StartNow()
-            .WithDailyTimeIntervalSchedule(x => x.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0,0)).OnEveryDay())            
+            .WithDailyTimeIntervalSchedule(x => x.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0,0)).WithIntervalInHours(3))            
         );
 });
 builder.Services.AddQuartzHostedService(options =>
@@ -60,11 +62,6 @@ builder.Services.AddQuartzHostedService(options =>
     // when shutting down we want jobs to complete gracefully
     options.WaitForJobsToComplete = true;
 });
-
-
-
-
-
 
 var app = builder.Build();
 

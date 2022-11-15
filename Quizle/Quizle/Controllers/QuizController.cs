@@ -12,37 +12,40 @@ namespace Quizle.Web.Controllers
     {
         private readonly ILogger<QuizController> _logger;
         private readonly IConfiguration _config;
-        private readonly ITriviaDataService _triviaDataService;
+        private readonly IQuizDataService _quizDataService;
         private readonly IMapper _mapper;
 
-        public QuizController(ILogger<QuizController> logger, IConfiguration configuration, ITriviaDataService triviaDataService, IMapper mapper)
+        public QuizController(ILogger<QuizController> logger, IConfiguration configuration, IQuizDataService quizDataService, IMapper mapper)
         {
             _logger = logger;
             _config = configuration;
-            _triviaDataService = triviaDataService;
+            _quizDataService = quizDataService;
             _mapper = mapper;
         }
         [HttpGet]
         public async Task<IActionResult> Quiz()
         {
-            var triviaData = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrl"));
+            var quizData = await _quizDataService.GetCurrentQuestion();
 
-            if (triviaData == null)
+            if (quizData == null)
             {
                 return View();
             }
-            var quizViewModel = _mapper.Map<QuizViewModel>(triviaData);
+            var quizViewModel = _mapper.Map<QuizViewModel>(quizData);
             
             return View(quizViewModel);
         }
         [HttpPost]
-        public IActionResult Quiz(QuizViewModel model)
+        public async Task<IActionResult> Quiz(QuizViewModel model)
         {
+            var quizData = await _quizDataService.GetCurrentQuestion();
+
+
             if (!ModelState.IsValid)
             {
                 return RedirectToAction("Quiz");
             }
-            if (model.SelectedAnswer.IsCorrect == true)
+            if (model.SelectedAnswer == quizData.Answers.Where(a => a.IsCorrect == true).First())
             {
                 _logger.LogDebug("Correct!");
                 //TODO: Redirect To Correct Answer Page

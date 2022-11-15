@@ -1,9 +1,5 @@
 ﻿@using Quizle.Web.Models
 @model QuizViewModel
-@{
-    var model = Model;
-    var correctAnsw = model.Answers.Where(a => a.IsCorrect).First().Answer;
-}
 <div class="container mt-5">
     <div class="d-flex justify-content-center row">
         <div class="col-md-10 col-lg-10">
@@ -30,7 +26,7 @@
                         }                                               
                     </div>
                     <input type="submit" value="Next" />
-                    <input asp-for="@Model.CorrectAnswer" type="hidden" value="@correctAnsw">
+                   
 
 
                 </form>

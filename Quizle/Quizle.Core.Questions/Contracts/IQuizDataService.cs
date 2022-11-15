@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Quizle.Core.Questions.Contracts
 {
-    public interface ITriviaDataService
+    public interface IQuizDataService
     {
         Task<QuizDto> GetDataAsync(string url);
+        Task AddQuiz(QuizDto quiz);
+        Task<QuizDto> GetCurrentQuestion();
     }
 }

@@ -3,19 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Quizle.DB;
 
 #nullable disable
 
-namespace Quizle.Data.Migrations
+namespace Quizle.DB.Migrations
 {
     [DbContext(typeof(QuizleDbContext))]
-    [Migration("20221114193308_AddedQuizzes")]
-    partial class AddedQuizzes
+    partial class QuizleDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -281,7 +279,7 @@ namespace Quizle.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("QuizzesHistory");
+                    b.ToTable("Quizzes");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
