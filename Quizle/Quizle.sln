@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizle.Web", "Quizle\Quizle
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizle.DB", "Quizle.DB\Quizle.DB.csproj", "{F4398333-1827-4CE9-8145-6F3D6A0D2831}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizle.Core.Questions", "Quizle.Core.Questions\Quizle.Core.Questions.csproj", "{B703C51D-A519-4E20-985A-4C2EF043D695}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizle.Core", "Quizle.Core.Questions\Quizle.Core.csproj", "{B703C51D-A519-4E20-985A-4C2EF043D695}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{5A623AFB-B3DE-4F4A-AE27-8E2098FC20E4}"
 EndProject
@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9EA7F1AE-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{4E58711D-CDCD-4CB6-A503-68149E3C810F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizle.Web.Infra", "Quizle.Web.Infra\Quizle.Web.Infra.csproj", "{ABC5FD6D-74D9-4A3A-BFF2-EE0B4037351E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizle.Web.Infra", "Quizle.Web.Infra\Quizle.Web.Infra.csproj", "{ABC5FD6D-74D9-4A3A-BFF2-EE0B4037351E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

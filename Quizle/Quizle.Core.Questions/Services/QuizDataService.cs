@@ -2,8 +2,8 @@
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
-using Quizle.Core.Questions.Contracts;
-using Quizle.Core.Questions.Models;
+using Quizle.Core.Contracts;
+using Quizle.Core.Models;
 using Quizle.DB.Common;
 using Quizle.DB.Models;
 using System;
@@ -14,7 +14,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 
-namespace Quizle.Core.Questions.Services
+namespace Quizle.Core.Services
 {
     public class QuizDataService : IQuizDataService
     {

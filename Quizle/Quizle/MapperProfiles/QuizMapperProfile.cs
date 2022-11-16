@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Quizle.Core.Questions.Models;
+using Quizle.Core.Models;
 using Quizle.DB.Models;
 using Quizle.Web.Models;
 

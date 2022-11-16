@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Quartz;
-using Quizle.Core.Questions.Contracts;
-using Quizle.Core.Questions.Services;
+using Quizle.Core.Contracts;
+using Quizle.Core.Services;
 using Quizle.DB;
 using Quizle.DB.Models;
 using Quizle.Web.MapperProfiles;
@@ -33,6 +33,8 @@ builder.Services.Configure<QuartzOptions>(builder.Configuration.GetSection("Quar
 
 builder.Services.AddScoped<IQuizDataService, QuizDataService>();
 builder.Services.AddScoped<IRepository, Repository>();
+builder.Services.AddScoped<IUserService, UserService>();
+
 
 
 builder.Services.AddQuartz(q =>
@@ -51,10 +53,10 @@ builder.Services.AddQuartz(q =>
         tp.MaxConcurrency = 10;
     });
 
-    q.ScheduleJob<TriviaJob>(trigger => trigger
+    q.ScheduleJob<QuizJob>(trigger => trigger
             .WithIdentity("Combined Configuration Trigger")
             .StartNow()
-            .WithDailyTimeIntervalSchedule(x => x.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0,0)).WithIntervalInHours(3))            
+            .WithDailyTimeIntervalSchedule(x => x.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(19,0)).WithIntervalInMinutes(1))            
         );
 });
 builder.Services.AddQuartzHostedService(options =>

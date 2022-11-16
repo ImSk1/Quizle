@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Quizle.Core.Questions\Quizle.Core.Questions.csproj" />
+    <ProjectReference Include="..\Quizle.Core.Questions\Quizle.Core.csproj" />
   </ItemGroup>
 
 </Project>

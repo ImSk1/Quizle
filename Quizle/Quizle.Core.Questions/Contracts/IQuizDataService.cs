@@ -1,10 +1,10 @@
-﻿using Quizle.Core.Questions.Models;
+﻿using Quizle.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Quizle.Core.Questions.Contracts
+namespace Quizle.Core.Contracts
 {
     public interface IQuizDataService
     {

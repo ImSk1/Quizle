@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Quizle.Core.Questions.Models
+namespace Quizle.Core.Models
 {
     internal class QuizResponseModel
     {
