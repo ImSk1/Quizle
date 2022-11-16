@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Quizle.Core.Contracts;
 using Quizle.Web.Models;
 using System.Diagnostics;
+using System.Runtime.CompilerServices;
 
 namespace Quizle.Web.Controllers
 {
@@ -15,7 +16,7 @@ namespace Quizle.Web.Controllers
         private readonly IQuizDataService _quizDataService;
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
-
+        private int _selectedDifficulty;
         public QuizController(ILogger<QuizController> logger, IConfiguration configuration, IQuizDataService quizDataService, IMapper mapper, IUserService userService)
         {
             _logger = logger;
@@ -25,9 +26,28 @@ namespace Quizle.Web.Controllers
             _userService = userService;
         }
         [HttpGet]
-        public async Task<IActionResult> Quiz()
+        public async Task<IActionResult> SelectDifficulty()
         {
-            var quizData = await _quizDataService.GetCurrentQuestion();
+            return View();
+        }
+        [HttpPost]
+
+        public async Task<IActionResult> SelectDifficulty(int selectedDifficulty)
+        {           
+            return RedirectToAction("Quiz", "Quiz", new { selectedDifficulty = selectedDifficulty} );          
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Quiz(int selectedDifficulty)
+        {
+            _selectedDifficulty = selectedDifficulty;
+            if (selectedDifficulty == 0)
+            {
+                return RedirectToAction("SelectDifficulty", "Quiz");
+
+            }
+            var quizData = await _quizDataService.GetCurrentQuestion(selectedDifficulty);
+            
 
             if (quizData == null)
             {
@@ -41,7 +61,7 @@ namespace Quizle.Web.Controllers
         
         public async Task<IActionResult> Quiz(QuizViewModel model)
         {
-            var quizData = await _quizDataService.GetCurrentQuestion();
+            var quizData = await _quizDataService.GetCurrentQuestion(_selectedDifficulty);
 
 
             if (!ModelState.IsValid)

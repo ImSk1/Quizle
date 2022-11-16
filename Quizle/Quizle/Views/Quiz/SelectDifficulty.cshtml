@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome to your hourly quiz.</h1>
+    <p>Please select your preferred difficulty.</p>
+</div>
+<div>
+    <form id="quiz" method="post" asp-action="SelectDifficulty" asp-controller="Quiz">
+
+        <div class="question bg-white p-3 border-bottom">
+
+            <input type="radio" value=1 name="selectedDifficulty"> <span>Easy</span>
+            <input type="radio" value=2 name="selectedDifficulty"> <span>Easy</span>
+            <input type="radio" value=3 name="selectedDifficulty"> <span>Easy</span>
+        </div>
+        <input type="submit" value="Next" />
+
+    </form>
+</div>
+

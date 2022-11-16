@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Quartz;
 using Quizle.Core.Contracts;
+using Quizle.Core.Models;
 using System.Diagnostics;
 
 namespace Quizle.Web.Infra.QuartzJobs
@@ -19,8 +20,11 @@ namespace Quizle.Web.Infra.QuartzJobs
         }
         public async Task Execute(IJobExecutionContext context)
         {
-            var triviaData = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrl"));
-            await _triviaDataService.AddQuiz(triviaData);
+            var quizEasy = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlEasy"));
+            var quizMedium = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlMedium"));
+            var quizHard = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlHard"));
+
+            await _triviaDataService.AddQuizRange(new List<QuizDto> { quizEasy, quizMedium, quizHard});
             await _userService.UpdateAllUsersHasDoneQuestion(false);            
         }
     }

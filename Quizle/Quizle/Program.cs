@@ -56,7 +56,7 @@ builder.Services.AddQuartz(q =>
     q.ScheduleJob<QuizJob>(trigger => trigger
             .WithIdentity("Combined Configuration Trigger")
             .StartNow()
-            .WithDailyTimeIntervalSchedule(x => x.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(19,0)).WithIntervalInMinutes(1))            
+            .WithDailyTimeIntervalSchedule(x => x.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(19,0)).WithIntervalInMinutes(60))            
         );
 });
 builder.Services.AddQuartzHostedService(options =>

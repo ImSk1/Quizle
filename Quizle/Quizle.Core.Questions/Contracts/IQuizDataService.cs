@@ -9,7 +9,7 @@ namespace Quizle.Core.Contracts
     public interface IQuizDataService
     {
         Task<QuizDto> GetDataAsync(string url);
-        Task AddQuiz(QuizDto quiz);
-        Task<QuizDto> GetCurrentQuestion();
+        Task AddQuizRange(IEnumerable<QuizDto> quizzes);
+        Task<QuizDto> GetCurrentQuestion(int difficulty);
     }
 }

@@ -54,46 +54,59 @@ namespace Quizle.Core.Services
             return quiz;
         }
 
-        public async Task AddQuiz(QuizDto quiz)
+        public async Task AddQuizRange(IEnumerable<QuizDto> quizzes)
         {
-            if (quiz == null)
+            if (quizzes == null)
             {
                 return;
             }
-            var quizDbo = new Quiz()
+            var quizzesDbos = new List<Quiz>();
+            foreach (var quiz in quizzes)
             {
-                Question = quiz.Question,
-                Category = quiz.Category,
-                Type = quiz.Type,
-                Difficulty = quiz.Difficulty
-            };
-            var answers = new List<Answer>();
-            foreach (var answer in quiz.Answers)
-            {
-                var answerDbo = new Answer()
+                var quizDbo = new Quiz()
                 {
-                    Text = answer.Answer,
-                    IsCorrect = answer.IsCorrect,
-                    Quiz = quizDbo
+                    Question = quiz.Question,
+                    Category = quiz.Category,
+                    Type = quiz.Type,
+                    Difficulty = quiz.Difficulty
                 };
-                answers.Add(answerDbo);
+                var answers = new List<Answer>();
+                foreach (var answer in quiz.Answers)
+                {
+                    var answerDbo = new Answer()
+                    {
+                        Text = answer.Answer,
+                        IsCorrect = answer.IsCorrect,
+                        Quiz = quizDbo
+                    };
+                    answers.Add(answerDbo);
+                }
+                quizDbo.Answers = answers;
+                quizzesDbos.Add(quizDbo);
             }
-            quizDbo.Answers = answers;
+            
+            
 
-            await _repository.AddAsync<Quiz>(quizDbo);
-            await _repository.AddRangeAsync<Answer>(answers);
+            await _repository.AddRangeAsync<Quiz>(quizzesDbos);
             await _repository.SaveChangesAsync();
 
         }
-        public async Task<QuizDto> GetCurrentQuestion()
+        public async Task<QuizDto> GetCurrentQuestion(int difficulty)
         {
+            string testDiff = "";
+            if (difficulty == 1)
+            {
+                testDiff = "easy";
+            }
             var count = _repository.Count<Quiz>();
-            var quizDto = await _repository
+            var quizDto = _repository
                 .All<Quiz>()
                 .Include(a => a.Answers)
-                .Where(a => a.Id == count)
-                .ProjectTo<QuizDto>(_mapper.ConfigurationProvider)                
-                .FirstOrDefaultAsync();
+                .Where(a => a.Difficulty == testDiff)
+                .ProjectTo<QuizDto>(_mapper.ConfigurationProvider)
+                .ToList()
+                .Last();
+                           
             return quizDto;
         }
         //public async Task<AnswerDto> GetCurrentCorrectAnswer()
