@@ -5,6 +5,7 @@ using Newtonsoft.Json;
 using Quizle.Core.Contracts;
 using Quizle.Core.Models;
 using Quizle.DB.Common;
+using Quizle.DB.Common.Enums;
 using Quizle.DB.Models;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
+using static Quizle.Core.Models.QuizResponseModel;
 
 namespace Quizle.Core.Services
 {
@@ -37,6 +39,7 @@ namespace Quizle.Core.Services
             {
                 return null;
             }
+                               
             var answers = new List<AnswerDto>();
             foreach (var incAnswer in result.IncorrectAnswers)
             {
@@ -61,14 +64,22 @@ namespace Quizle.Core.Services
                 return;
             }
             var quizzesDbos = new List<Quiz>();
+
+           
             foreach (var quiz in quizzes)
             {
+                Difficulty difficulty;
+                bool enumParseSuccess = Enum.TryParse(quiz.Difficulty, out difficulty);
+                if (!enumParseSuccess)
+                {
+                    return;
+                }
                 var quizDbo = new Quiz()
                 {
                     Question = quiz.Question,
                     Category = quiz.Category,
                     Type = quiz.Type,
-                    Difficulty = quiz.Difficulty
+                    Difficulty = difficulty
                 };
                 var answers = new List<Answer>();
                 foreach (var answer in quiz.Answers)
@@ -91,18 +102,13 @@ namespace Quizle.Core.Services
             await _repository.SaveChangesAsync();
 
         }
-        public async Task<QuizDto> GetCurrentQuestion(int difficulty)
-        {
-            string testDiff = "";
-            if (difficulty == 1)
-            {
-                testDiff = "easy";
-            }
+        public async Task<QuizDto> GetCurrentQuestion(int? difficulty)
+        {            
             var count = _repository.Count<Quiz>();
             var quizDto = _repository
                 .All<Quiz>()
                 .Include(a => a.Answers)
-                .Where(a => a.Difficulty == testDiff)
+                .Where(a => (int)a.Difficulty == difficulty)
                 .ProjectTo<QuizDto>(_mapper.ConfigurationProvider)
                 .ToList()
                 .Last();

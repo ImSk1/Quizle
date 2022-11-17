@@ -19,7 +19,7 @@ namespace Quizle.Web.Controllers
         {
             if (User?.Identity?.IsAuthenticated ?? false)
             {
-                return RedirectToAction("Quiz", "Quiz");
+                return RedirectToAction("SelectDifficulty", "Quiz");
             }
             return View();
         }

@@ -10,6 +10,6 @@ namespace Quizle.Core.Contracts
     {
         Task<QuizDto> GetDataAsync(string url);
         Task AddQuizRange(IEnumerable<QuizDto> quizzes);
-        Task<QuizDto> GetCurrentQuestion(int difficulty);
+        Task<QuizDto> GetCurrentQuestion(int? difficulty);
     }
 }

@@ -16,7 +16,7 @@ namespace Quizle.Web.Controllers
         private readonly IQuizDataService _quizDataService;
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
-        private int _selectedDifficulty;
+        private int? _selectedDifficulty;
         public QuizController(ILogger<QuizController> logger, IConfiguration configuration, IQuizDataService quizDataService, IMapper mapper, IUserService userService)
         {
             _logger = logger;
@@ -32,28 +32,32 @@ namespace Quizle.Web.Controllers
         }
         [HttpPost]
 
-        public async Task<IActionResult> SelectDifficulty(int selectedDifficulty)
+        public async Task<IActionResult> SelectDifficulty(int? selectedDifficulty)
         {           
             return RedirectToAction("Quiz", "Quiz", new { selectedDifficulty = selectedDifficulty} );          
         }
 
         [HttpGet]
-        public async Task<IActionResult> Quiz(int selectedDifficulty)
+        public async Task<IActionResult> Quiz(int? selectedDifficulty)
         {
-            _selectedDifficulty = selectedDifficulty;
-            if (selectedDifficulty == 0)
+            if (selectedDifficulty == null)
             {
                 return RedirectToAction("SelectDifficulty", "Quiz");
 
             }
-            var quizData = await _quizDataService.GetCurrentQuestion(selectedDifficulty);
-            
+            _selectedDifficulty = selectedDifficulty;
 
+            var quizData = await _quizDataService.GetCurrentQuestion(selectedDifficulty);
+            HttpContext.Session.SetString("CorrectAnswer", quizData.Answers.Where(a => a.IsCorrect == true).First().Answer.ToString() ?? "");            
             if (quizData == null)
             {
                 return View();
             }
             var quizViewModel = _mapper.Map<QuizViewModel>(quizData);
+            if (quizViewModel == null)
+            {
+                return RedirectToAction("SelectDifficulty", "Quiz");
+            }
             
             return View(quizViewModel);
         }
@@ -61,14 +65,13 @@ namespace Quizle.Web.Controllers
         
         public async Task<IActionResult> Quiz(QuizViewModel model)
         {
-            var quizData = await _quizDataService.GetCurrentQuestion(_selectedDifficulty);
-
+            var correctAnswer = HttpContext.Session.GetString("CorrectAnswer");
 
             if (!ModelState.IsValid)
             {
                 return RedirectToAction("Quiz");
             }
-            if (model.SelectedAnswer.Answer == quizData.Answers.Where(a => a.IsCorrect == true).First().Answer)
+            if (model.SelectedAnswer.Answer == correctAnswer)
             {
                 _logger.LogDebug("Correct!");
                 await _userService.UpdateAllUsersHasDoneQuestion(true, a => a.UserName == User.Identity.Name);

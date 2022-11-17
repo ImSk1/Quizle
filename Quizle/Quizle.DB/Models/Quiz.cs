@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Quizle.DB.Common.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,8 +21,7 @@ namespace Quizle.DB.Models
         [StringLength(50)]
         public string Type { get; set; }
         [Required]
-        [StringLength(50)]
-        public string Difficulty { get; set; }
+        public Difficulty Difficulty { get; set; }
 
         public virtual ICollection<Answer> Answers { get; set; }
     }
