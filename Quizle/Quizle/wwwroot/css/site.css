@@ -1,4 +1,6 @@
-html {
+
+
+    html {
   font-size: 14px;
 }
 
@@ -14,10 +16,14 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;    
 }
 body {
-    background-color: #eee;
+    background-image: url("../images/background.jpg")
+}
+.questionBox {
+    background: rgba(255, 255, 255, 0.9);
+    
 }
 
 label.radio {
@@ -62,4 +68,31 @@ label.radio {
 .btn:active {
     outline: 0 !important;
     box-shadow: none !important;
+}
+.faq {
+    padding: 12px 20px;
+    display: block;
+    box-sizing: border-box;
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.outerDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;   
+}
+
+.save {
+    align-self: flex-end;    
+}
+footer.sticky {
+    height: 35px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
 }

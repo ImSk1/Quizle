@@ -3,35 +3,52 @@
 <div class="container mt-5">
     <div class="d-flex justify-content-center row">
         <div class="col-md-10 col-lg-10">
-            <div class="border">
-                <div class="question bg-white p-3 border-bottom">
-                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                        <h4>MCQ Quiz</h4><span>(5 of 20)</span>
-                    </div>
+            < class="border">
+            <div class="question bg-white p-3 border-bottom">
+                <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                    <h4>MCQ Quiz</h4><span>(5 of 20)</span>
                 </div>
-                <form id="quiz" method="post" asp-action="Quiz" asp-controller="Quiz">
+            </div>
 
-                    <div class="question bg-white p-3 border-bottom">
-                        <div class="d-flex flex-row align-items-center question-title">
-                            <h3 class="text-danger">@Model.Question</h3>                            
-                        </div>
+            <form id="quiz" method="post" asp-action="Quiz" asp-controller="Quiz">
+                <div class="questionBox p-3 border-bottom">
+
+                    <div class="d-flex flex-row align-items-center question-title">
+                        <h3 class="text-danger">@Model.Question</h3>
+                    </div>
                         @foreach (var answer in Model.Answers)
                         {
 
-                            <div class="ans ml-2">
-                                <label class="radio">
-                                    <input asp-for="@Model.SelectedAnswer.Answer" type="radio"  value="@answer.Answer"> <span>@answer.Answer</span>
-                                </label>
-                            </div>
-                        }                                               
+                        <div class="ans ml-2">
+                            <label class="radio">
+                                <input asp-for="@Model.SelectedAnswer.Answer" type="radio" value="@answer.Answer"> <span>@answer.Answer</span>
+                            </label>
+                        </div>
+                        }
+                    @*<div class="d-flex justify-content-between pt-3">
+                        
+                        <div class="align-self:flex-end;">
+                            <button class="btn btn-success">Next</button>
+                        </div>
+                    </div>*@
+                   @* <div class="d-flex flex-row justify-content-end align-items-center p-5">
+                            <button class="btn btn-primary border-success align-items-right btn-success" type="button">
+                                Next                                  
+                            </button>                                                
+                    </div>*@
+                    <div class="outerDiv">                        
+                        <input type="submit" class="save btn btn-primary border-success align-items-center btn-success mt-2" value="Next">
                     </div>
-                    <input type="submit" value="Next"/>
-                   
+
+                    <div>
+                        
+                    </div>
+
+                </div>
+            </form>
 
 
-                </form>
-
-            </div>
         </div>
     </div>
+</div>
 </div>
