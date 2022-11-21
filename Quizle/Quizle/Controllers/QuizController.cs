@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Quizle.Core.Contracts;
+using Quizle.Core.Models;
 using Quizle.Web.Models;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -26,9 +27,14 @@ namespace Quizle.Web.Controllers
             _userService = userService;
         }
         [HttpGet]
-        public async Task<IActionResult> SelectDifficulty()
+        public async Task<IActionResult> All()
         {
-            return View();
+            var list = new List<QuizViewModel>();
+            var easy = await _quizDataService.GetCurrentQuestion(1);
+            var quizViewModel = _mapper.Map<QuizViewModel>(easy);
+
+            list.Add(quizViewModel);
+            return View(list);
         }
         [HttpPost]
 
@@ -42,7 +48,7 @@ namespace Quizle.Web.Controllers
         {
             if (selectedDifficulty == null)
             {
-                return RedirectToAction("SelectDifficulty", "Quiz");
+                return RedirectToAction("All", "Quiz");
 
             }
             _selectedDifficulty = selectedDifficulty;
@@ -56,7 +62,7 @@ namespace Quizle.Web.Controllers
             var quizViewModel = _mapper.Map<QuizViewModel>(quizData);
             if (quizViewModel == null)
             {
-                return RedirectToAction("SelectDifficulty", "Quiz");
+                return RedirectToAction("All", "Quiz");
             }
             
             return View(quizViewModel);
