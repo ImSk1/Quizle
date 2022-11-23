@@ -13,13 +13,13 @@ namespace Quizle.Web.Controllers
 {
     [Authorize]
     public class QuizController : Controller
-    {       
+    {  
+        //TESTCOMMIT
         private readonly ILogger<QuizController> _logger;
         private readonly IConfiguration _config;
         private readonly IQuizDataService _quizDataService;
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
-        private int? _selectedDifficulty;
         public QuizController(ILogger<QuizController> logger, IConfiguration configuration, IQuizDataService quizDataService, IMapper mapper, IUserService userService)
         {
             _logger = logger;
@@ -62,8 +62,7 @@ namespace Quizle.Web.Controllers
             {
                 return RedirectToAction("All", "Quiz");
 
-            }
-            _selectedDifficulty = selectedDifficulty;
+            }            
 
             var quizData = await _quizDataService.GetCurrentQuestion(selectedDifficulty);
             HttpContext.Session.SetString("CorrectAnswer", quizData.Answers.Where(a => a.IsCorrect == true).First().Answer.ToString() ?? "");            

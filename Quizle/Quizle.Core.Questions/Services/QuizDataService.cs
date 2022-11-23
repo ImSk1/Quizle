@@ -14,7 +14,6 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using static Quizle.Core.Models.QuizResponseModel;
 
 namespace Quizle.Core.Services
 {
