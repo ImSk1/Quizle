@@ -13,8 +13,7 @@ namespace Quizle.Web.Controllers
 {
     [Authorize]
     public class QuizController : Controller
-    {
-        //TEST
+    {       
         private readonly ILogger<QuizController> _logger;
         private readonly IConfiguration _config;
         private readonly IQuizDataService _quizDataService;
