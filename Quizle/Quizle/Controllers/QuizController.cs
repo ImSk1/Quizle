@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Quizle.Core.Contracts;
 using Quizle.Core.Models;
+using Quizle.DB.Common.Enums;
+using Quizle.DB.Models;
 using Quizle.Web.Models;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
@@ -29,12 +31,22 @@ namespace Quizle.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> All()
         {
-            var list = new List<QuizViewModel>();
-            var easy = await _quizDataService.GetCurrentQuestion(1);
-            var quizViewModel = _mapper.Map<QuizViewModel>(easy);
-
-            list.Add(quizViewModel);
-            return View(list);
+            var listOfQuestions = await _quizDataService.GetAllCurrentQuestions();
+            var quizViewModel = listOfQuestions
+                .Select(a => new QuizViewModel()
+                {
+                    Question = a.Question,
+                    Category = a.Category,
+                    Difficulty = (int)Enum.Parse(typeof(Difficulty), a.Difficulty),
+                    Type = a.Type,
+                    Answers = a.Answers.Select(a => new AnswerDto()
+                    {
+                        Answer = a.Answer,
+                        IsCorrect = a.IsCorrect
+                    }).ToList()
+                })
+                .ToList();            
+            return View(quizViewModel);
         }
         [HttpPost]
 
@@ -67,8 +79,7 @@ namespace Quizle.Web.Controllers
             
             return View(quizViewModel);
         }
-        [HttpPost]
-        
+        [HttpPost]        
         public async Task<IActionResult> Quiz(QuizViewModel model)
         {
             var correctAnswer = HttpContext.Session.GetString("CorrectAnswer");

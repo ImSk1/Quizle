@@ -1,4 +1,5 @@
-﻿@using Quizle.Web.Models
+﻿@using Quizle.DB.Common.Enums
+@using Quizle.Web.Models
 @model List<QuizViewModel>
 @{
     ViewData["Title"] = "Home Page";
@@ -9,17 +10,15 @@
 <div class="text-center row">
     @foreach (var quiz in Model)
     {
-        <div class="card col-4" style="width: 20rem; ">
-            @*<img class="card-img-top" style="width: 18rem;"
-             src="@quiz.ImageUrl" alt="Book Image">*@
+        var difficulty = (Difficulty)quiz.Difficulty;
+                   
+        <div class="card col-4" style="width: 20rem; ">           
             <div class="card-body">
 
-                <h5 class="card-title mt-1">Difficulty: @quiz.Difficulty</h5>
+                <h5 class="card-title mt-1 ">Difficulty: @(difficulty)</h5>
                 <p class="mb-0">Category: @quiz.Category </p>
-                @*<p class="mb-0">Rating: @quiz.</p>
-                <p>Category: @book.Category</p>*@
+               
             </div>
-
             <form class="input-group-sm" asp-controller="Quiz" asp-action="SelectDifficulty" asp-route-selectedDifficulty="@quiz.Difficulty">
                 <input type="submit" value="Play" class="fs-6 btn btn-success mb-3 p-2" />
             </form>
@@ -28,21 +27,4 @@
 </div>
 
 
-@*<div class="text-center">
-    <h1 class="display-4">Welcome to your hourly quiz.</h1>
-    <p>Please select your preferred difficulty.</p>
-</div>
-<div>
-    <form id="quiz" method="post" asp-action="SelectDifficulty" asp-controller="Quiz">
-
-        <div class="question bg-white p-3 border-bottom">
-
-            <input type="radio" value=1 name="selectedDifficulty"> <span>Easy</span>
-            <input type="radio" value=2 name="selectedDifficulty"> <span>Easy</span>
-            <input type="radio" value=3 name="selectedDifficulty"> <span>Easy</span>
-        </div>
-        <input type="submit" value="Next" />
-
-    </form>
-</div>*@
 

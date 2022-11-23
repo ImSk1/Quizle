@@ -12,7 +12,9 @@ namespace Quizle.Web.MapperProfiles
         {
             CreateMap<QuizDto, QuizViewModel>()
                 .ForMember(a => a.Difficulty, b => b.MapFrom(src => (Difficulty)Enum.Parse(typeof(Difficulty), src.Difficulty)));
+            
             CreateMap<Quiz, QuizDto>();
+            //CreateMap<List<Quiz>, List<QuizDto>>();
 
 
             CreateMap<Answer, AnswerDto>()

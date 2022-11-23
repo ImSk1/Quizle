@@ -6,7 +6,7 @@ using Quizle.Core.Services;
 using Quizle.DB;
 using Quizle.DB.Models;
 using Quizle.Web.MapperProfiles;
-using Quizle.Web.Infra.QuartzJobs;
+using Quizle.Core.QuartzJobs;
 using System.Configuration;
 using Quizle.DB.Common;
 
@@ -78,7 +78,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseMigrationsEndPoint();
+    app.UseDeveloperExceptionPage();
 }
 else
 {

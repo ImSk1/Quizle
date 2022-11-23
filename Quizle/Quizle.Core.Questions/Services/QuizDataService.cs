@@ -115,9 +115,34 @@ namespace Quizle.Core.Services
                            
             return quizDto;
         }
-        //public async Task<AnswerDto> GetCurrentCorrectAnswer()
-        //{
-        //    var quiz
-        //}
+        public async Task<List<QuizDto>> GetAllCurrentQuestions()
+        {
+            var count = _repository.Count<Quiz>();
+            var quizDto = _repository
+                .All<Quiz>()
+                .Include(a => a.Answers)
+                .ToList()
+                .OrderByDescending(a => a.Id)
+                .DistinctBy(a => a.Difficulty)
+                .Take(3)
+                .OrderBy(a => a.Id)
+                .Select(a => new QuizDto()
+                {
+                    Question = a.Question,
+                    Category = a.Category,
+                    Difficulty = a.Difficulty.ToString(),
+                    Type = a.Type,
+                    Answers = a.Answers.Select(a => new AnswerDto() 
+                    {
+                        Answer = a.Text,
+                        IsCorrect = a.IsCorrect
+                    }).ToList()
+                })                 
+                .ToList();                               
+
+            return quizDto;
+        }
+
+
     }
 }
