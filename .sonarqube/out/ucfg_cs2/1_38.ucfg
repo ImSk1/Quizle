@@ -1,0 +1,80 @@
+
+DQuizle.Core.Services.UserService.UpdateAllUsersHasDoneQuestion(bool)T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (7"0*æ
+0T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (&Ø
+Õ
+T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (#"
+%0Quizle.DB.Common.IRepository"__id*S*Q"
+ Quizle.Core.Services.UserService"+
+_repositoryQuizle.DB.Common.IRepositoryÑÎ
+T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (:
+%1System.Linq.IQueryable<T>"%Quizle.DB.Common.IRepository.All<T>()*$
+"
+%0Quizle.DB.Common.IRepository2All<T>()›
+˜
+T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (C(
+%2"System.Collections.Generic.List<T>"WSystem.Linq.Enumerable.ToList<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
+System.Linq.Enumerable*!
+
+%1System.Linq.IQueryable<T>¸
+µ
+T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (C+
+users"System.Collections.Generic.List<T>"__id**
+(
+%2"System.Collections.Generic.List<T>*
+1*a
+1T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs	 (	*
+2
+3*»
+2T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (AÚ
+×
+T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (A
+
+%3bool"?Quizle.DB.Models.ApplicationUser.HasAnsweredCurrentQuestion.set**
+(
+user Quizle.DB.Models.ApplicationUser*
+""*
+1*×
+3T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (0Ø
+Õ
+T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs ("
+%4Quizle.DB.Common.IRepository"__id*S*Q"
+ Quizle.Core.Services.UserService"+
+_repositoryQuizle.DB.Common.IRepositoryÍÊ
+T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (*
+
+%5void"VQuizle.DB.Common.IRepository.UpdateRange<T>(System.Collections.Generic.IEnumerable<T>)*$
+"
+%4Quizle.DB.Common.IRepository*-
++
+users"System.Collections.Generic.List<T>29UpdateRange<T>(System.Collections.Generic.IEnumerable<T>)Ø
+Õ
+T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs ("
+%6Quizle.DB.Common.IRepository"__id*S*Q"
+ Quizle.Core.Services.UserService"+
+_repositoryQuizle.DB.Common.IRepositoryðí
+T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (0*
+%7$System.Threading.Tasks.Task<TResult>"/Quizle.DB.Common.IRepository.SaveChangesAsync()*$
+"
+%6Quizle.DB.Common.IRepository2SaveChangesAsync()*
+4*Æ
+4T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs	 (	"k
+T
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs (	
+implicit return:
+valueToChangeToboolB$"
+ Quizle.Core.Services.UserService

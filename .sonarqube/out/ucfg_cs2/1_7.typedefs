@@ -1,0 +1,7 @@
+—
+$Quizle.Core.Models.QuizResponseModelobjectO
+QuizResponseModel()8Quizle.Core.Models.QuizResponseModel.QuizResponseModel()I
+ResponseCode.get5Quizle.Core.Models.QuizResponseModel.ResponseCode.getI
+ResponseCode.set5Quizle.Core.Models.QuizResponseModel.ResponseCode.set?
+Results.get0Quizle.Core.Models.QuizResponseModel.Results.get?
+Results.set0Quizle.Core.Models.QuizResponseModel.Results.set

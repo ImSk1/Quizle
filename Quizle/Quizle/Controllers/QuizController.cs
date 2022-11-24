@@ -14,7 +14,7 @@ namespace Quizle.Web.Controllers
     [Authorize]
     public class QuizController : Controller
     {  
-        //TESTCOMMIT
+        
         private readonly ILogger<QuizController> _logger;
         private readonly IConfiguration _config;
         private readonly IQuizDataService _quizDataService;
@@ -82,19 +82,34 @@ namespace Quizle.Web.Controllers
         public async Task<IActionResult> Quiz(QuizViewModel model)
         {
             var correctAnswer = HttpContext.Session.GetString("CorrectAnswer");
+            TempData["Flag"] = "FlagExists";
 
             if (!ModelState.IsValid)
             {
                 return RedirectToAction("Quiz");
             }
-            if (model.SelectedAnswer.Answer == correctAnswer)
+            await _userService.UpdateAllUsersHasDoneQuestion(true, a => a.UserName == User.Identity.Name);
+            return RedirectToAction("Result", "Quiz", new { answeredCorrectly = model.SelectedAnswer.Answer == correctAnswer, selected = model.SelectedAnswer.Answer, correct = correctAnswer });                      
+        }
+        
+        public IActionResult Result(bool answeredCorrectly, string selected, string correct)
+        {
+            if (TempData["Flag"] == null)
             {
-                _logger.LogDebug("Correct!");
-                await _userService.UpdateAllUsersHasDoneQuestion(true, a => a.UserName == User.Identity.Name);
-                //TODO: Redirect To Correct Answer Page
-            }           
-           
-            return RedirectToAction("Quiz");
+                return RedirectToAction("All", "Quiz");
+            }
+            var model = new ResultViewModel()
+            {
+                IsResultCorrect = answeredCorrectly,
+                SelectedAnswer = selected,
+                CorrectAnswer = correct
+            };
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult Result()
+        {
+            return RedirectToAction("All", "Quiz");
         }
 
     }

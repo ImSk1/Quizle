@@ -1,0 +1,232 @@
+
+quizle/views/user/register"0*≤;
+0í
+ÜMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_User_Register_cshtml.g.csN í(Eí
+è
+H
+>C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\User\Register.cshtml (#
+%0"__mapSet*
+
+ViewBagDataAllobject*	
+Title*
+
+Registerã
+à
+F
+>C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\User\Register.cshtml (/
+%1object"__mapGet*
+
+ViewBagDataHtmlobject*	
+Titles
+q
+F
+>C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\User\Register.cshtml (/
+
+%2void"!razor_sink*
+
+%1object–
+ÕI
+%3CMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager"KAspNetCoreGeneratedDocument.Views_User_Register.__tagHelperScopeManager.get*31
+/AspNetCoreGeneratedDocument.Views_User_Register
+
+%4"__id*
+""ô
+ñ
+
+%5void"!quizle/views/user/register!form91*
+
+%6*.
+,
+Model#Quizle.Web.Models.RegisterViewModel*
+
+ViewBagDataAllobject*
+
+ViewBagDataHtmlobject*
+
+TempDataAllobject*
+
+TempDataHtmlobject*
+
+HttpContextItemsAllobject* 
+
+HttpContextItemsHtmlobjectµ
+≤õ1
+/AspNetCoreGeneratedDocument.Views_User_Register"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*
+
+
+%5void∫
+∑7
+%71Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper"JMicrosoft.AspNetCore.Mvc.Razor.RazorPageBase.CreateTagHelper<TTagHelper>()*0.
+,Microsoft.AspNetCore.Mvc.Razor.RazorPageBase‰
+·ù1
+/AspNetCoreGeneratedDocument.Views_User_Register"h
+3__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper1Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper"__id*9
+7
+%71Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper˘
+ˆM
+%8GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*û*õ1
+/AspNetCoreGeneratedDocument.Views_User_Register"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextÂ
+‚7
+%91Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper"__id*†*ù1
+/AspNetCoreGeneratedDocument.Views_User_Register"h
+3__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper1Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelperõ
+ò
+%10void"}Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.Add(Microsoft.AspNetCore.Razor.TagHelpers.ITagHelper)*O
+M
+%8GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext*9
+7
+%91Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper»
+≈E
+%11>Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper"JMicrosoft.AspNetCore.Mvc.Razor.RazorPageBase.CreateTagHelper<TTagHelper>()*0.
+,Microsoft.AspNetCore.Mvc.Razor.RazorPageBaseç
+ä∏1
+/AspNetCoreGeneratedDocument.Views_User_Register"Ç
+@__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper>Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper"__id*G
+E
+%11>Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper˙
+˜N
+%12GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*û*õ1
+/AspNetCoreGeneratedDocument.Views_User_Register"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContexté
+ãE
+%13>Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper"__id*ª*∏1
+/AspNetCoreGeneratedDocument.Views_User_Register"Ç
+@__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper>Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper™
+ß
+%14void"}Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.Add(Microsoft.AspNetCore.Razor.TagHelpers.ITagHelper)*P
+N
+%12GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext*G
+E
+%13>Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper˙
+˜N
+%15GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*û*õ1
+/AspNetCoreGeneratedDocument.Views_User_Register"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext◊
+‘?
+%168Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute"__id*ä*á1
+/AspNetCoreGeneratedDocument.Views_User_Register"R
+__tagHelperAttribute_78Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute∫
+∑
+%17void"íMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.AddHtmlAttribute(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute)*P
+N
+%15GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext*A
+?
+%168Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttributeÊ
+„8
+%181Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper"__id*†*ù1
+/AspNetCoreGeneratedDocument.Views_User_Register"h
+3__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper1Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper◊
+‘?
+%198Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute"__id*ä*á1
+/AspNetCoreGeneratedDocument.Views_User_Register"R
+__tagHelperAttribute_88Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttributeô
+ñ
+%20object"BMicrosoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute.Value.get*A
+?
+%198Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute 
+
+%21"__id*
+
+%20objectï
+í
+%22string"<Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper.Method.set*:
+8
+%181Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper*
+
+%21˙
+˜N
+%23GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*û*õ1
+/AspNetCoreGeneratedDocument.Views_User_Register"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext◊
+‘?
+%248Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute"__id*ä*á1
+/AspNetCoreGeneratedDocument.Views_User_Register"R
+__tagHelperAttribute_88Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttributeø
+º
+%25void"óMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.AddTagHelperAttribute(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute)*P
+N
+%23GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext*A
+?
+%248Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute‹
+ŸD
+%26=Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner"__id*ä*á1
+/AspNetCoreGeneratedDocument.Views_User_Register"R
+__tagHelperRunner=Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner˙
+˜N
+%27GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*û*õ1
+/AspNetCoreGeneratedDocument.Views_User_Register"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext”
+–"
+%28System.Threading.Tasks.Task"èMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.RunAsync(Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext)*F
+D
+%26=Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner*P
+N
+%27GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext˙
+˜N
+%29GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*û*õ1
+/AspNetCoreGeneratedDocument.Views_User_Register"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextÁ
+‰<
+%305Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput"RMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.Output.get*P
+N
+%29GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextù
+ö
+%31bool"KMicrosoft.AspNetCore.Razor.TagHelpers.TagHelperOutput.IsContentModified.get*>
+<
+%305Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput*
+1
+2*¯
+1ì
+ÜMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_User_Register_cshtml.g.csî î(I˙
+˜N
+%32GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*û*õ1
+/AspNetCoreGeneratedDocument.Views_User_Register"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext⁄
+◊"
+%33System.Threading.Tasks.Task"_Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()*P
+N
+%32GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext*
+2*∑
+2ì
+ÜMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_User_Register_cshtml.g.csñ ¨(˙
+˜N
+%34GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*û*õ1
+/AspNetCoreGeneratedDocument.Views_User_Register"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextÁ
+‰<
+%355Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput"RMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.Output.get*P
+N
+%34GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext\
+Z
+%36void"!razor_sink*>
+<
+%355Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput—
+ŒJ
+%37CMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager"KAspNetCoreGeneratedDocument.Views_User_Register.__tagHelperScopeManager.get*31
+/AspNetCoreGeneratedDocument.Views_User_RegisterÏ
+ÈN
+%38GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"IMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager.End()*L
+J
+%37CMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager˘
+ˆõ1
+/AspNetCoreGeneratedDocument.Views_User_Register"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*P
+N
+%38GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextíè
+%39void"rMicrosoft.AspNetCore.Mvc.Razor.RazorPage.DefineSection(string, Microsoft.AspNetCore.Mvc.Razor.RenderAsyncDelegate)*,*
+(Microsoft.AspNetCore.Mvc.Razor.RazorPage*	
+Scripts*
+""2IDefineSection(string, Microsoft.AspNetCore.Mvc.Razor.RenderAsyncDelegate)*
+3*∞
+3ì
+ÜMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_User_Register_cshtml.g.cs≠	 ≠(	"
+implicit return:,
+Model#Quizle.Web.Models.RegisterViewModel:
+ViewBagDataAllobject:
+ViewBagDataHtmlobject:
+TempDataAllobject:
+TempDataHtmlobject:
+HttpContextItemsAllobject:
+HttpContextItemsHtmlobjectB 

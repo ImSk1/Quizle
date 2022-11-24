@@ -1,0 +1,39 @@
+
+¥Quizle.Core.QuartzJobs.QuizJob.QuizJob(Quizle.Core.Contracts.IQuizDataService, Microsoft.Extensions.Configuration.IConfiguration, Quizle.Core.Contracts.IUserService)R
+HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs ("1*\
+1R
+HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs	 (	*
+0*Ò
+0R
+HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (&þ
+û
+R
+HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (2` 
+Quizle.Core.QuartzJobs.QuizJob"<
+_triviaDataService&Quizle.Core.Contracts.IQuizDataService"__id*=
+;
+triviaDataService&Quizle.Core.Contracts.IQuizDataService…
+‚
+R
+HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (#` 
+Quizle.Core.QuartzJobs.QuizJob"<
+_config1Microsoft.Extensions.Configuration.IConfiguration"__id*D
+B
+configuration1Microsoft.Extensions.Configuration.IConfigurationê
+ç
+R
+HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (&V 
+Quizle.Core.QuartzJobs.QuizJob"2
+_userService"Quizle.Core.Contracts.IUserService"__id*3
+1
+userService"Quizle.Core.Contracts.IUserService*
+2*Â
+2R
+HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs	 (	"i
+R
+HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (	
+implicit return:;
+triviaDataService&Quizle.Core.Contracts.IQuizDataService:B
+configuration1Microsoft.Extensions.Configuration.IConfiguration:1
+userService"Quizle.Core.Contracts.IUserServiceB" 
+Quizle.Core.QuartzJobs.QuizJob

@@ -1,0 +1,12 @@
+Y
+PC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Contracts\IQuizDataService.csutf-8U
+LC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Contracts\IUserService.csutf-8O
+FC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Models\AnswerDto.csutf-8M
+DC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Models\QuizDto.csutf-8W
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Models\QuizResponseModel.csutf-8Q
+HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.csutf-8W
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csutf-8S
+JC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.csutf-8l
+aC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\obj\Debug\net6.0\Quizle.Core.GlobalUsings.g.csutf-8}
+rC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\obj\Debug\net6.0\.NETCoreApp,Version=v6.0.AssemblyAttributes.csutf-8j
+_C:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\obj\Debug\net6.0\Quizle.Core.AssemblyInfo.csutf-8

@@ -1,0 +1,5 @@
+’
+ Quizle.Core.Services.UserServiceobject"Quizle.Core.Contracts.IUserServicew
+)UserService(Quizle.DB.Common.IRepository)JQuizle.Core.Services.UserService.UserService(Quizle.DB.Common.IRepository)k
+#UpdateAllUsersHasDoneQuestion(bool)DQuizle.Core.Services.UserService.UpdateAllUsersHasDoneQuestion(bool)û
+|UpdateAllUsersHasDoneQuestion(bool, System.Linq.Expressions.Expression<System.Func<Quizle.DB.Models.ApplicationUser, bool>>)ùQuizle.Core.Services.UserService.UpdateAllUsersHasDoneQuestion(bool, System.Linq.Expressions.Expression<System.Func<Quizle.DB.Models.ApplicationUser, bool>>)

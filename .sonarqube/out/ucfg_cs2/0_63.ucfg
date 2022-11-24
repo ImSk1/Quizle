@@ -1,0 +1,199 @@
+
+ZQuizle.DB.Migrations.Initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)U
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs
+  
+(""0*Ÿa
+0V
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs Ï(:˘ˆ
+U
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs (_
+%0YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>"∏Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+AspNetRoles*
+""*
+""*
+""*
+""2˛CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)˘ˆ
+U
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs 1(_
+%1YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>"∏Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+AspNetUsers*
+""*
+""*
+""*
+""2˛CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)ıÚ
+U
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs3 A(_
+%2YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>"∏Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*	
+Quizzes*
+""*
+""*
+""*
+""2˛CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)˛˚
+U
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csC V(_
+%3YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>"∏Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+AspNetRoleClaims*
+""*
+""*
+""*
+""2˛CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)˛˚
+U
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csX k(_
+%4YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>"∏Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+AspNetUserClaims*
+""*
+""*
+""*
+""2˛CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)˛˚
+U
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csm (_
+%5YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>"∏Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+AspNetUserLogins*
+""*
+""*
+""*
+""2˛CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)ˇ¸
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÅ ó(_
+%6YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>"∏Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+AspNetUserRoles*
+""*
+""*
+""*
+""2˛CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)Ä˝
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csô ´(_
+%7YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>"∏Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+AspNetUserTokens*
+""*
+""*
+""*
+""2˛CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)˜Ù
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs≠ ¿(_
+%8YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>"∏Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*	
+Answers*
+""*
+""*
+""*
+""2˛CreateTable<TColumns>(string, System.Func<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.ColumnsBuilder, TColumns>, string?, System.Action<Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.CreateTableBuilder<TColumns>>?, string?)äá
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs¬ ≈(!_
+%9YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"uMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateIndex(string, string, string, string?, bool, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+IX_Answers_QuizId*	
+Answers*
+
+QuizId*
+""*
+""*
+""2;CreateIndex(string, string, string, string?, bool, string?)ùö
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs«  (!`
+%10YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"uMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateIndex(string, string, string, string?, bool, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+IX_AspNetRoleClaims_RoleId*
+AspNetRoleClaims*
+
+RoleId*
+""*
+""*
+""2;CreateIndex(string, string, string, string?, bool, string?)≠™
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÃ —(7`
+%11YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"uMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateIndex(string, string, string, string?, bool, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+RoleNameIndex*
+AspNetRoles*
+NormalizedName*
+""*
+""* 
+[NormalizedName] IS NOT NULL2;CreateIndex(string, string, string, string?, bool, string?)ùö
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs” ÷(!`
+%12YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"uMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateIndex(string, string, string, string?, bool, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+IX_AspNetUserClaims_UserId*
+AspNetUserClaims*
+
+UserId*
+""*
+""*
+""2;CreateIndex(string, string, string, string?, bool, string?)ùö
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÿ €(!`
+%13YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"uMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateIndex(string, string, string, string?, bool, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+IX_AspNetUserLogins_UserId*
+AspNetUserLogins*
+
+UserId*
+""*
+""*
+""2;CreateIndex(string, string, string, string?, bool, string?)õò
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs› ‡(!`
+%14YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"uMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateIndex(string, string, string, string?, bool, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+IX_AspNetUserRoles_RoleId*
+AspNetUserRoles*
+
+RoleId*
+""*
+""*
+""2;CreateIndex(string, string, string, string?, bool, string?)ëé
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs‚ Â(*`
+%15YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"uMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateIndex(string, string, string, string?, bool, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+
+EmailIndex*
+AspNetUsers*
+NormalizedEmail*
+""*
+""*
+""2;CreateIndex(string, string, string, string?, bool, string?)µ≤
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÁ Ï(;`
+%16YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"uMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.CreateIndex(string, string, string, string?, bool, string?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+UserNameIndex*
+AspNetUsers*
+NormalizedUserName*
+""*
+""*$"
+ [NormalizedUserName] IS NOT NULL2;CreateIndex(string, string, string, string?, bool, string?)*
+1*Ã
+1W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÌ	 Ì(	"n
+W
+KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÌ Ì(	
+implicit return:M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilderB 
+Quizle.DB.Migrations.Initial

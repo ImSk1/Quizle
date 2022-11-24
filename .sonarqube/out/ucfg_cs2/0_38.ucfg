@@ -1,0 +1,25 @@
+
+&Quizle.DB.Common.Repository.DbSet<T>()E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs ( "0*‰
+0E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs ((Ã
+À
+E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs (-
+%0'Microsoft.EntityFrameworkCore.DbContext"'Quizle.DB.Common.Repository.Context.get*
+Quizle.DB.Common.Repository÷ô
+E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs ((2
+%1,Microsoft.EntityFrameworkCore.DbSet<TEntity>"6Microsoft.EntityFrameworkCore.DbContext.Set<TEntity>()*/
+-
+%0'Microsoft.EntityFrameworkCore.DbContext2Set<TEntity>()"}
+E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs ()4
+2
+%1,Microsoft.EntityFrameworkCore.DbSet<TEntity>*¨
+1E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs 	  (	"\
+E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs   (	
+implicit returnB
+Quizle.DB.Common.Repository

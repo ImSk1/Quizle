@@ -1,0 +1,304 @@
+
+quizle/views/quiz/quiz!form76"0*õ
+0ç
+ÇMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_Quiz_Quiz_cshtml.g.csN Y(=±
+Æ
+D
+:C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\Quiz\Quiz.cshtml (D
+%0string",Quizle.Web.Models.QuizViewModel.Question.get**
+(
+ModelQuizle.Web.Models.QuizViewModelÃ
+…
+D
+:C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\Quiz\Quiz.cshtml (>(
+%1"System.Collections.Generic.List<T>"+Quizle.Web.Models.QuizViewModel.Answers.get**
+(
+ModelQuizle.Web.Models.QuizViewModel*
+1*ù
+1è
+ÇMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_Quiz_Quiz_cshtml.g.csú ú(*
+2
+3*˘K
+2ç
+ÇMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_Quiz_Quiz_cshtml.g.cs` |(I»
+≈I
+%2CMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager"GAspNetCoreGeneratedDocument.Views_Quiz_Quiz.__tagHelperScopeManager.get*/-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz
+
+%3"__id*
+""í
+è
+
+%4void"quizle/views/quiz/quiz!input96*
+
+%5**
+(
+ModelQuizle.Web.Models.QuizViewModel*
+
+ViewBagDataAllobject*
+
+ViewBagDataHtmlobject*
+
+TempDataAllobject*
+
+TempDataHtmlobject*
+
+HttpContextItemsAllobject* 
+
+HttpContextItemsHtmlobject±
+Æó-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*
+
+
+%4voidª
+∏8
+%62Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper"JMicrosoft.AspNetCore.Mvc.Razor.RazorPageBase.CreateTagHelper<TTagHelper>()*0.
+,Microsoft.AspNetCore.Mvc.Razor.RazorPageBase„
+‡õ-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"j
+4__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper2Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper"__id*:
+8
+%62Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelperı
+ÚM
+%7GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*ö*ó-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext‰
+·8
+%82Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper"__id*û*õ-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"j
+4__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper2Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelperõ
+ò
+
+%9void"}Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.Add(Microsoft.AspNetCore.Razor.TagHelpers.ITagHelper)*O
+M
+%7GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext*:
+8
+%82Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper¨
+©
+E
+:C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\Quiz\Quiz.cshtml  (é9
+%102Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper"__id*û*õ-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"j
+4__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper2Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelperã
+à
+E
+:C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\Quiz\Quiz.cshtml  (éE
+%11>Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider"GAspNetCoreGeneratedDocument.Views_Quiz_Quiz.ModelExpressionProvider.get*/-
++AspNetCoreGeneratedDocument.Views_Quiz_Quizäá
+E
+:C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\Quiz\Quiz.cshtml  (é<
+%125Microsoft.AspNetCore.Mvc.ViewFeatures.ModelExpression"ÁMicrosoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider.CreateModelExpression<TModel, TValue>(Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary<TModel>, System.Linq.Expressions.Expression<System.Func<TModel, TValue>>)*G
+E
+%11>Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider*
+
+ViewBagDataAllobject*
+""2®CreateModelExpression<TModel, TValue>(Microsoft.AspNetCore.Mvc.ViewFeatures.ViewDataDictionary<TModel>, System.Linq.Expressions.Expression<System.Func<TModel, TValue>>)¡
+æ
+E
+:C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\Quiz\Quiz.cshtml  (é<
+%135Microsoft.AspNetCore.Mvc.ViewFeatures.ModelExpression":Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.For.set*;
+9
+%102Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper*>
+<
+%125Microsoft.AspNetCore.Mvc.ViewFeatures.ModelExpressionˆ
+ÛN
+%14GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*ö*ó-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextÂ
+‚9
+%152Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper"__id*û*õ-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"j
+4__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper2Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper∫
+∑<
+%165Microsoft.AspNetCore.Mvc.ViewFeatures.ModelExpression":Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.For.get*;
+9
+%152Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper
+
+%17"__id*
+""Á
+‰
+%18void"¨Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.AddTagHelperAttribute(string, object, Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle)*P
+N
+%14GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext*	
+asp-for*>
+<
+%165Microsoft.AspNetCore.Mvc.ViewFeatures.ModelExpression*
+
+%17Â
+‚9
+%192Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper"__id*û*õ-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"j
+4__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper2Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper”
+–?
+%208Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute"__id*Ü*É-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"R
+__tagHelperAttribute_08Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttributeô
+ñ
+%21object"BMicrosoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute.Value.get*A
+?
+%208Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute 
+
+%22"__id*
+
+%21objectû
+õ
+%23string"DMicrosoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.InputTypeName.set*;
+9
+%192Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper*
+
+%22ˆ
+ÛN
+%24GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*ö*ó-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext”
+–?
+%258Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute"__id*Ü*É-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"R
+__tagHelperAttribute_08Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttributeø
+º
+%26void"óMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.AddTagHelperAttribute(Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute)*P
+N
+%24GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext*A
+?
+%258Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttributeè
+å
+%27void"KMicrosoft.AspNetCore.Mvc.Razor.RazorPageBase.BeginWriteTagHelperAttribute()*0.
+,Microsoft.AspNetCore.Mvc.Razor.RazorPageBase¨
+©
+E
+:C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\Quiz\Quiz.cshtml  (é
+%28string"'Quizle.Core.Models.AnswerDto.Answer.get*(
+&
+answerQuizle.Core.Models.AnswerDtoè
+å
+%29string"IMicrosoft.AspNetCore.Mvc.Razor.RazorPageBase.EndWriteTagHelperAttribute()*0.
+,Microsoft.AspNetCore.Mvc.Razor.RazorPageBaser
+pW-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"&
+__tagHelperStringValueBufferstring"__id*
+
+%29stringÂ
+‚9
+%302Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper"__id*û*õ-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"j
+4__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper2Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelperr
+p
+%31string"__id*Y*W-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"&
+__tagHelperStringValueBufferstringû
+õ
+%32string"<Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.Value.set*;
+9
+%302Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper*
+
+%31stringˆ
+ÛN
+%33GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*ö*ó-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextÂ
+‚9
+%342Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper"__id*û*õ-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"j
+4__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper2Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelperç
+ä
+%35string"<Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper.Value.get*;
+9
+%342Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper
+
+%36"__id*
+""∂
+≥
+%37void"¨Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.AddTagHelperAttribute(string, object, Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle)*P
+N
+%33GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext*	
+value*
+
+%35string*
+
+%36ÿ
+’D
+%38=Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner"__id*Ü*É-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"R
+__tagHelperRunner=Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunnerˆ
+ÛN
+%39GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*ö*ó-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext”
+–"
+%40System.Threading.Tasks.Task"èMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner.RunAsync(Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext)*F
+D
+%38=Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner*P
+N
+%39GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextˆ
+ÛN
+%41GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*ö*ó-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextÁ
+‰<
+%425Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput"RMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.Output.get*P
+N
+%41GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextù
+ö
+%43bool"KMicrosoft.AspNetCore.Razor.TagHelpers.TagHelperOutput.IsContentModified.get*>
+<
+%425Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput*
+4
+5*Ó
+4ç
+ÇMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_Quiz_Quiz_cshtml.g.cs~ ~(Mˆ
+ÛN
+%44GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*ö*ó-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext⁄
+◊"
+%45System.Threading.Tasks.Task"_Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.SetOutputContentAsync()*P
+N
+%44GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext*
+5*Ω
+5è
+ÇMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_Quiz_Quiz_cshtml.g.csÄ ä(tˆ
+ÛN
+%46GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*ö*ó-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContextÁ
+‰<
+%475Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput"RMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext.Output.get*P
+N
+%46GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext\
+Z
+%48void"!razor_sink*>
+<
+%475Microsoft.AspNetCore.Razor.TagHelpers.TagHelperOutput…
+∆J
+%49CMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager"GAspNetCoreGeneratedDocument.Views_Quiz_Quiz.__tagHelperScopeManager.get*/-
++AspNetCoreGeneratedDocument.Views_Quiz_QuizÏ
+ÈN
+%50GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"IMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager.End()*L
+J
+%49CMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManagerı
+Úó-
++AspNetCoreGeneratedDocument.Views_Quiz_Quiz"f
+__tagHelperExecutionContextGMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext"__id*P
+N
+%50GMicrosoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext¨
+©
+E
+:C:\DAVID\REPOS\Quizle\Quizle\Quizle\Views\Quiz\Quiz.cshtml  (é
+%51string"'Quizle.Core.Models.AnswerDto.Answer.get*(
+&
+answerQuizle.Core.Models.AnswerDto*
+1*ö
+3è
+ÇMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_Quiz_Quiz_cshtml.g.csí õ(*
+6*¨
+6è
+ÇMicrosoft.NET.Sdk.Razor.SourceGenerators\Microsoft.NET.Sdk.Razor.SourceGenerators.RazorSourceGenerator\Views_Quiz_Quiz_cshtml.g.csú ú("
+implicit return:(
+ModelQuizle.Web.Models.QuizViewModel:
+ViewBagDataAllobject:
+ViewBagDataHtmlobject:
+TempDataAllobject:
+TempDataHtmlobject:
+HttpContextItemsAllobject:
+HttpContextItemsHtmlobjectB 

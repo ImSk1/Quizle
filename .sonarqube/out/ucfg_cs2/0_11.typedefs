@@ -1,0 +1,26 @@
+¥
+Quizle.DB.Common.RepositoryobjectQuizle.DB.Common.IRepository4
+
+DbSet<T>()&Quizle.DB.Common.Repository.DbSet<T>()j
+%Repository(Quizle.DB.QuizleDbContext)AQuizle.DB.Common.Repository.Repository(Quizle.DB.QuizleDbContext)<
+AddAsync<T>(T)*Quizle.DB.Common.Repository.AddAsync<T>(T)–
+;AddRangeAsync<T>(System.Collections.Generic.IEnumerable<T>)WQuizle.DB.Common.Repository.AddRangeAsync<T>(System.Collections.Generic.IEnumerable<T>)0
+All<T>()$Quizle.DB.Common.Repository.All<T>() 
+@All<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)\Quizle.DB.Common.Repository.All<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)@
+AllReadonly<T>(),Quizle.DB.Common.Repository.AllReadonly<T>()°
+HAllReadonly<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)dQuizle.DB.Common.Repository.AllReadonly<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)L
+DeleteAsync<T>(object)2Quizle.DB.Common.Repository.DeleteAsync<T>(object)8
+Delete<T>(T)(Quizle.DB.Common.Repository.Delete<T>(T)8
+Detach<T>(T)(Quizle.DB.Common.Repository.Detach<T>(T)2
+	Dispose()%Quizle.DB.Common.Repository.Dispose()N
+GetByIdAsync<T>(object)3Quizle.DB.Common.Repository.GetByIdAsync<T>(object)T
+GetByIdsAsync<T>(object[])6Quizle.DB.Common.Repository.GetByIdsAsync<T>(object[])D
+SaveChangesAsync().Quizle.DB.Common.Repository.SaveChangesAsync()8
+Update<T>(T)(Quizle.DB.Common.Repository.Update<T>(T)’
+9UpdateRange<T>(System.Collections.Generic.IEnumerable<T>)UQuizle.DB.Common.Repository.UpdateRange<T>(System.Collections.Generic.IEnumerable<T>)’
+9DeleteRange<T>(System.Collections.Generic.IEnumerable<T>)UQuizle.DB.Common.Repository.DeleteRange<T>(System.Collections.Generic.IEnumerable<T>)°
+HDeleteRange<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)dQuizle.DB.Common.Repository.DeleteRange<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)4
+
+Count<T>()&Quizle.DB.Common.Repository.Count<T>()6
+Context.get'Quizle.DB.Common.Repository.Context.get6
+Context.set'Quizle.DB.Common.Repository.Context.set

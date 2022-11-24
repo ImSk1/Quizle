@@ -1,0 +1,35 @@
+
+cQuizle.DB.Migrations.ChangedUserModel.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)^
+TC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs	  	(""0*†
+0^
+TC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs (#›˜
+^
+TC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs ($_
+%0YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"ÈMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.AddColumn<T>(string, string, string?, bool?, int?, bool, string?, bool, object?, string?, string?, bool?, string?, string?, int?, int?, bool?)*O
+M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
+HasAnsweredCurrentQuestion*
+AspNetUsers*
+bit*
+""*
+""*
+""*
+""*
+""*
+""*
+""*
+""*
+""*
+""*
+""*
+""*
+""*
+""2ŽAddColumn<T>(string, string, string?, bool?, int?, bool, string?, bool, object?, string?, string?, bool?, string?, string?, int?, int?, bool?)*
+1*Ú
+1^
+TC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs	 (	"u
+^
+TC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs (	
+implicit return:M
+migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilderB)'
+%Quizle.DB.Migrations.ChangedUserModel

@@ -1,0 +1,34 @@
+
+dQuizle.DB.Common.Repository.DeleteRange<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs¶ ¶("0*¡
+0G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs¸ ¹( ²
+¯
+G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs¸ ¸(4
+%0System.Linq.IQueryable<T>"\Quizle.DB.Common.Repository.All<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)*
+Quizle.DB.Common.Repository*D
+B
+deleteWhereClause-System.Linq.Expressions.Expression<TDelegate>œ
+™
+G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs¸ ¸(4%
+entitiesSystem.Linq.IQueryable<T>"__id*!
+
+%0System.Linq.IQueryable<T>ù
+ö
+G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs¹ ¹(!
+
+%1void"UQuizle.DB.Common.Repository.DeleteRange<T>(System.Collections.Generic.IEnumerable<T>)*
+Quizle.DB.Common.Repository*'
+%
+entitiesSystem.Linq.IQueryable<T>*
+1*¬
+1G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csº	 º(	"^
+G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csº º(	
+implicit return:B
+deleteWhereClause-System.Linq.Expressions.Expression<TDelegate>B
+Quizle.DB.Common.Repository

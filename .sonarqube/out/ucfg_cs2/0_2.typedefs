@@ -1,0 +1,5 @@
+—
+ Quizle.DB.Models.ApplicationUser*Microsoft.AspNetCore.Identity.IdentityUser0Microsoft.AspNetCore.Identity.IdentityUser<TKey>objectG
+ApplicationUser()2Quizle.DB.Models.ApplicationUser.ApplicationUser()a
+HasAnsweredCurrentQuestion.get?Quizle.DB.Models.ApplicationUser.HasAnsweredCurrentQuestion.geta
+HasAnsweredCurrentQuestion.set?Quizle.DB.Models.ApplicationUser.HasAnsweredCurrentQuestion.set

@@ -1,0 +1,7 @@
+í
+ Quizle.Web.Models.LoginViewModelobjectE
+LoginViewModel()1Quizle.Web.Models.LoginViewModel.LoginViewModel()=
+UserName.get-Quizle.Web.Models.LoginViewModel.UserName.get=
+UserName.set-Quizle.Web.Models.LoginViewModel.UserName.set=
+Password.get-Quizle.Web.Models.LoginViewModel.Password.get=
+Password.set-Quizle.Web.Models.LoginViewModel.Password.set

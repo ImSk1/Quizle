@@ -1,0 +1,46 @@
+
+ÐQuizle.Web.Controllers.UserController.UserController(Microsoft.AspNetCore.Identity.UserManager<Quizle.DB.Models.ApplicationUser>, Microsoft.AspNetCore.Identity.SignInManager<Quizle.DB.Models.ApplicationUser>)K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\UserController.cs ("3*À
+1K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\UserController.cs	 (	i
+g
+
+%0void"0Microsoft.AspNetCore.Mvc.Controller.Controller()*'%
+#Microsoft.AspNetCore.Mvc.Controller*
+0*ï
+0K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\UserController.cs (*†
+ƒ
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\UserController.cs (&k'
+%Quizle.Web.Controllers.UserController"@
+_userManager0Microsoft.AspNetCore.Identity.UserManager<TUser>"__id*A
+?
+userManager0Microsoft.AspNetCore.Identity.UserManager<TUser>Ž
+‹
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\UserController.cs (*o'
+%Quizle.Web.Controllers.UserController"D
+_signInManager2Microsoft.AspNetCore.Identity.SignInManager<TUser>"__id*E
+C
+signInManager2Microsoft.AspNetCore.Identity.SignInManager<TUser>*
+2*´
+2K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\UserController.cs	 (	"b
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\UserController.cs (	
+implicit return*Æ
+3K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\UserController.cs9 (9î
+ë
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\UserController.cs (
+%1"__entrypoint*A
+?
+userManager0Microsoft.AspNetCore.Identity.UserManager<TUser>*E
+C
+signInManager2Microsoft.AspNetCore.Identity.SignInManager<TUser>*
+1:?
+userManager0Microsoft.AspNetCore.Identity.UserManager<TUser>:C
+signInManager2Microsoft.AspNetCore.Identity.SignInManager<TUser>B)'
+%Quizle.Web.Controllers.UserController

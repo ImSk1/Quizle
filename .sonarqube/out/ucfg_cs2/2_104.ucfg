@@ -1,0 +1,123 @@
+
++Quizle.Web.Controllers.QuizController.All()K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs )  (,"2*Æ
+0K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs" 1(%í
+ê
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs"( "(8,
+%0&Quizle.Core.Contracts.IQuizDataService"__id*g*e'
+%Quizle.Web.Controllers.QuizController":
+_quizDataService&Quizle.Core.Contracts.IQuizDataService‡„
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs"( "(Q*
+%1$System.Threading.Tasks.Task<TResult>"?Quizle.Core.Contracts.IQuizDataService.GetAllCurrentQuestions()*.
+,
+%0&Quizle.Core.Contracts.IQuizDataService2GetAllCurrentQuestions()•
+’
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs" "(Q5
+listOfQuestions"System.Collections.Generic.List<T>"__id*
+""ß
+Ü
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs#  /(/
+%2)System.Collections.Generic.IEnumerable<T>"System.Linq.Enumerable.Select<TSource, TResult>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, TResult>)*"
+System.Linq.Enumerable*7
+5
+listOfQuestions"System.Collections.Generic.List<T>*
+""¢
+Ÿ
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs#  0((
+%3"System.Collections.Generic.List<T>"WSystem.Linq.Enumerable.ToList<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
+System.Linq.Enumerable*1
+/
+%2)System.Collections.Generic.IEnumerable<T>·
+´
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs# 0(3
+quizViewModel"System.Collections.Generic.List<T>"__id**
+(
+%3"System.Collections.Generic.List<T>ç
+ä
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs1 1(&
+
+%4void"quizle/views/quiz/all*
+
+%5*5
+3
+quizViewModel"System.Collections.Generic.List<T>*
+
+%ViewBagDataAllobject*
+
+%ViewBagDataHtmlobject*
+
+%TempDataAllobject*
+
+%TempDataHtmlobject* 
+
+%HttpContextItemsAllobject*!
+
+%HttpContextItemsHtmlobjecté
+æ
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs1 1(&
+
+%6void"quizle/views/_viewstart*
+
+%7*5
+3
+quizViewModel"System.Collections.Generic.List<T>*
+
+%ViewBagDataAllobject*
+
+%ViewBagDataHtmlobject*
+
+%TempDataAllobject*
+
+%TempDataHtmlobject* 
+
+%HttpContextItemsAllobject*!
+
+%HttpContextItemsHtmlobjectí
+ê
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs1 1(&
+
+%8void"quizle/views/shared/_layout*
+
+%9*5
+3
+quizViewModel"System.Collections.Generic.List<T>*
+
+%ViewBagDataAllobject*
+
+%ViewBagDataHtmlobject*
+
+%TempDataAllobject*
+
+%TempDataHtmlobject* 
+
+%HttpContextItemsAllobject*!
+
+%HttpContextItemsHtmlobject"[
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs1 1('
+
+
+%8void*´
+1K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs2	 2(	"b
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs2 2(	
+implicit return*»
+2K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs .  (.d
+b
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs )  (,
+%10"__entrypoint*
+0B)'
+%Quizle.Web.Controllers.QuizController

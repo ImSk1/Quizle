@@ -1,0 +1,13 @@
+…
+Quizle.Core.Models.QuizDtoobject1
+	QuizDto()$Quizle.Core.Models.QuizDto.QuizDto()7
+Question.get'Quizle.Core.Models.QuizDto.Question.get7
+Question.set'Quizle.Core.Models.QuizDto.Question.set7
+Category.get'Quizle.Core.Models.QuizDto.Category.get7
+Category.set'Quizle.Core.Models.QuizDto.Category.set/
+Type.get#Quizle.Core.Models.QuizDto.Type.get/
+Type.set#Quizle.Core.Models.QuizDto.Type.set;
+Difficulty.get)Quizle.Core.Models.QuizDto.Difficulty.get;
+Difficulty.set)Quizle.Core.Models.QuizDto.Difficulty.set5
+Answers.get&Quizle.Core.Models.QuizDto.Answers.get5
+Answers.set&Quizle.Core.Models.QuizDto.Answers.set

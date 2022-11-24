@@ -1,0 +1,15 @@
+¯
+Quizle.DB.Models.Answerobject,
+Answer() Quizle.DB.Models.Answer.Answer()(
+Id.getQuizle.DB.Models.Answer.Id.get(
+Id.setQuizle.DB.Models.Answer.Id.set,
+Text.get Quizle.DB.Models.Answer.Text.get,
+Text.set Quizle.DB.Models.Answer.Text.set6
+IsCorrect.get%Quizle.DB.Models.Answer.IsCorrect.get6
+IsCorrect.set%Quizle.DB.Models.Answer.IsCorrect.set0
+
+QuizId.get"Quizle.DB.Models.Answer.QuizId.get0
+
+QuizId.set"Quizle.DB.Models.Answer.QuizId.set,
+Quiz.get Quizle.DB.Models.Answer.Quiz.get,
+Quiz.set Quizle.DB.Models.Answer.Quiz.set

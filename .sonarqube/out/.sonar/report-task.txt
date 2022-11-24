@@ -1,0 +1,7 @@
+organization=uwusk1
+projectKey=Quizle
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.34856
+dashboardUrl=https://sonarcloud.io/dashboard?id=Quizle
+ceTaskId=AYSmLiRXHhiZB6OdvtQh
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AYSmLiRXHhiZB6OdvtQh

@@ -1,0 +1,7 @@
+«
+Quizle.DB.QuizleDbContextJMicrosoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext<TUser>WMicrosoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext<TUser, TRole, TKey>’Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext<TUser, TRole, TKey, TUserClaim, TUserRole, TUserLogin, TRoleClaim, TUserToken>vMicrosoft.AspNetCore.Identity.EntityFrameworkCore.IdentityUserContext<TUser, TKey, TUserClaim, TUserLogin, TUserToken>'Microsoft.EntityFrameworkCore.DbContextobjectÒ
+ZQuizleDbContext(Microsoft.EntityFrameworkCore.DbContextOptions<Quizle.DB.QuizleDbContext>)tQuizle.DB.QuizleDbContext.QuizleDbContext(Microsoft.EntityFrameworkCore.DbContextOptions<Quizle.DB.QuizleDbContext>)4
+Quizzes.get%Quizle.DB.QuizleDbContext.Quizzes.get4
+Quizzes.set%Quizle.DB.QuizleDbContext.Quizzes.set4
+Answers.get%Quizle.DB.QuizleDbContext.Answers.get4
+Answers.set%Quizle.DB.QuizleDbContext.Answers.set

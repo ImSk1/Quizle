@@ -1,0 +1,4 @@
+Ö
+Quizle.Core.QuartzJobs.QuizJobobjectQuartz.IJob±
+†QuizJob(Quizle.Core.Contracts.IQuizDataService, Microsoft.Extensions.Configuration.IConfiguration, Quizle.Core.Contracts.IUserService)¥Quizle.Core.QuartzJobs.QuizJob.QuizJob(Quizle.Core.Contracts.IQuizDataService, Microsoft.Extensions.Configuration.IConfiguration, Quizle.Core.Contracts.IUserService)k
+$Execute(Quartz.IJobExecutionContext)CQuizle.Core.QuartzJobs.QuizJob.Execute(Quartz.IJobExecutionContext)

@@ -1,0 +1,33 @@
+
+fQuizle.Core.Services.QuizDataService.QuizDataService(Quizle.DB.Common.IRepository, AutoMapper.IMapper)X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cs ("1*b
+1X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cs	 (	*
+0*œ
+0X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cs (è
+å
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cs ($U&
+$Quizle.Core.Services.QuizDataService"+
+_repositoryQuizle.DB.Common.IRepository"__id*,
+*
+
+repositoryQuizle.DB.Common.IRepositoryÌ
+É
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cs (G&
+$Quizle.Core.Services.QuizDataService"
+_mapperAutoMapper.IMapper"__id*
+
+mapperAutoMapper.IMapper*
+2*Î
+2X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cs	 (	"o
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cs (	
+implicit return:*
+
+repositoryQuizle.DB.Common.IRepository:
+mapperAutoMapper.IMapperB(&
+$Quizle.Core.Services.QuizDataService

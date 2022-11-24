@@ -1,0 +1,31 @@
+
+<Quizle.Web.Controllers.QuizController.SelectDifficulty(int?)K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs5) 5(9"2*®
+0K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs7 7(aÒÏ
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs7 7(d5
+%0/Microsoft.AspNetCore.Mvc.RedirectToActionResult"SMicrosoft.AspNetCore.Mvc.ControllerBase.RedirectToAction(string?, string?, object?)*+)
+'Microsoft.AspNetCore.Mvc.ControllerBase*
+Quiz*
+Quiz*
+""2+RedirectToAction(string?, string?, object?)"†
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs7 7(e7
+5
+%0/Microsoft.AspNetCore.Mvc.RedirectToActionResult*´
+1K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs8	 8(	"b
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs8 8(	
+implicit return*Â
+2K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs5R 5(Rk
+i
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs5) 5(9
+%1"__entrypoint*
+""*
+0:(
+selectedDifficultySystem.Nullable<T>B)'
+%Quizle.Web.Controllers.QuizController

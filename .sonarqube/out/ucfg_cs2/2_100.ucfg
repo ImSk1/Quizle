@@ -1,0 +1,148 @@
+
+-Quizle.Web.Controllers.HomeController.Error()K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs (""6*ñ
+0K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs (Iš—
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs (n&
+%0 Quizle.Web.Models.ErrorViewModel" Quizle.Web.Models.ErrorViewModel¹
+¶
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs (*
+
+%1void"1Quizle.Web.Models.ErrorViewModel.ErrorViewModel()*(
+&
+%0 Quizle.Web.Models.ErrorViewModel½
+º
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs9 (I!
+%2System.Diagnostics.Activity"'System.Diagnostics.Activity.Current.get*"
+System.Diagnostics.Activity*
+1
+2*ÿ
+2K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.csJ (M§
+¤
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.csK (M
+%3string""System.Diagnostics.Activity.Id.get*#
+!
+%2System.Diagnostics.Activity*
+1*X
+1K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs	 (	*
+3
+4*ð
+3K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.csQ (lã
+à
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.csQ (\+
+%7%Microsoft.AspNetCore.Http.HttpContext"7Microsoft.AspNetCore.Mvc.ControllerBase.HttpContext.get*+)
+'Microsoft.AspNetCore.Mvc.ControllerBaseÈ
+Å
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.csQ (l
+%8string"9Microsoft.AspNetCore.Http.HttpContext.TraceIdentifier.get*-
++
+%7%Microsoft.AspNetCore.Http.HttpContexts
+q
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.csQ (l
+%6string"__id*
+
+%8strings
+q
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.csQ (l
+%4string"__id*
+
+%6string*
+4*¢
+4K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs (lÈ
+Å
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs- (l
+%9string".Quizle.Web.Models.ErrorViewModel.RequestId.set*(
+&
+%0 Quizle.Web.Models.ErrorViewModel*
+
+%4stringà
+Ý
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs (o
+%10void"quizle/views/shared/error*
+
+%11*(
+&
+%0 Quizle.Web.Models.ErrorViewModel*
+
+%ViewBagDataAllobject*
+
+%ViewBagDataHtmlobject*
+
+%TempDataAllobject*
+
+%TempDataHtmlobject* 
+
+%HttpContextItemsAllobject*!
+
+%HttpContextItemsHtmlobjectÞ
+Û
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs (o
+%12void"quizle/views/_viewstart*
+
+%13*(
+&
+%0 Quizle.Web.Models.ErrorViewModel*
+
+%ViewBagDataAllobject*
+
+%ViewBagDataHtmlobject*
+
+%TempDataAllobject*
+
+%TempDataHtmlobject* 
+
+%HttpContextItemsAllobject*!
+
+%HttpContextItemsHtmlobjectâ
+ß
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs (o
+%14void"quizle/views/shared/_layout*
+
+%15*(
+&
+%0 Quizle.Web.Models.ErrorViewModel*
+
+%ViewBagDataAllobject*
+
+%ViewBagDataHtmlobject*
+
+%TempDataAllobject*
+
+%TempDataHtmlobject* 
+
+%HttpContextItemsAllobject*!
+
+%HttpContextItemsHtmlobject"\
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs (p
+
+%14void*´
+5K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs	 (	"b
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs (	
+implicit return*»
+6K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs$ ($d
+b
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\HomeController.cs ("
+%16"__entrypoint*
+0B)'
+%Quizle.Web.Controllers.HomeController

@@ -1,0 +1,26 @@
+
+WQuizle.DB.Common.Repository.AddRangeAsync<T>(System.Collections.Generic.IEnumerable<T>)E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs4 4('"0*ˆ
+0E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs6 6(3«
+ƒ
+E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs6 6(2
+%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>"&Quizle.DB.Common.Repository.DbSet<T>()*
+Quizle.DB.Common.Repository⁄◊
+E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs6 6(4!
+%1System.Threading.Tasks.Task"èMicrosoft.EntityFrameworkCore.DbSet<TEntity>.AddRangeAsync(System.Collections.Generic.IEnumerable<TEntity>, System.Threading.CancellationToken)*4
+2
+%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>*7
+5
+entities)System.Collections.Generic.IEnumerable<T>*
+""2bAddRangeAsync(System.Collections.Generic.IEnumerable<TEntity>, System.Threading.CancellationToken)*
+1*®
+1E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs7	 7(	"\
+E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs7 7(	
+implicit return:5
+entities)System.Collections.Generic.IEnumerable<T>B
+Quizle.DB.Common.Repository

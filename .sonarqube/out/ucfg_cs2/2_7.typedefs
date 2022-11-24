@@ -1,0 +1,5 @@
+’
+%Quizle.Web.Controllers.HomeController#Microsoft.AspNetCore.Mvc.Controller'Microsoft.AspNetCore.Mvc.ControllerBaseobject·
+[HomeController(Microsoft.Extensions.Logging.ILogger<Quizle.Web.Controllers.HomeController>)ÅQuizle.Web.Controllers.HomeController.HomeController(Microsoft.Extensions.Logging.ILogger<Quizle.Web.Controllers.HomeController>)8
+Index()-Quizle.Web.Controllers.HomeController.Index()8
+Error()-Quizle.Web.Controllers.HomeController.Error()

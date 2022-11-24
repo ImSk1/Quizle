@@ -1,0 +1,73 @@
+
+”Quizle.Web.Controllers.QuizController.QuizController(Microsoft.Extensions.Logging.ILogger<Quizle.Web.Controllers.QuizController>, Microsoft.Extensions.Configuration.IConfiguration, Quizle.Core.Contracts.IQuizDataService, AutoMapper.IMapper, Quizle.Core.Contracts.IUserService)K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs ("3*À
+1K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs	 (	i
+g
+
+%0void"0Microsoft.AspNetCore.Mvc.Controller.Controller()*'%
+#Microsoft.AspNetCore.Mvc.Controller*
+0*
+
+0K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs (&‚
+ÿ
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs (i'
+%Quizle.Web.Controllers.QuizController">
+_logger3Microsoft.Extensions.Logging.ILogger<TCategoryName>"__id*?
+=
+logger3Microsoft.Extensions.Logging.ILogger<TCategoryName>…
+‚
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs (#g'
+%Quizle.Web.Controllers.QuizController"<
+_config1Microsoft.Extensions.Configuration.IConfiguration"__id*D
+B
+configuration1Microsoft.Extensions.Configuration.IConfigurationú
+÷
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs (.e'
+%Quizle.Web.Controllers.QuizController":
+_quizDataService&Quizle.Core.Contracts.IQuizDataService"__id*;
+9
+quizDataService&Quizle.Core.Contracts.IQuizDataServiceÀ
+½
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs (H'
+%Quizle.Web.Controllers.QuizController"
+_mapperAutoMapper.IMapper"__id*
+
+mapperAutoMapper.IMapperê
+ç
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs (&]'
+%Quizle.Web.Controllers.QuizController"2
+_userService"Quizle.Core.Contracts.IUserService"__id*3
+1
+userService"Quizle.Core.Contracts.IUserService*
+2*´
+2K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs	 (	"b
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs (	
+implicit return*å
+3M
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs§ (§‹
+ˆ
+K
+AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs (
+%1"__entrypoint*?
+=
+logger3Microsoft.Extensions.Logging.ILogger<TCategoryName>*D
+B
+configuration1Microsoft.Extensions.Configuration.IConfiguration*
+
+mapperAutoMapper.IMapper*
+1:=
+logger3Microsoft.Extensions.Logging.ILogger<TCategoryName>:B
+configuration1Microsoft.Extensions.Configuration.IConfiguration:9
+quizDataService&Quizle.Core.Contracts.IQuizDataService:
+mapperAutoMapper.IMapper:1
+userService"Quizle.Core.Contracts.IUserServiceB)'
+%Quizle.Web.Controllers.QuizController

@@ -1,0 +1,11 @@
+ù
+#Quizle.Web.Models.RegisterViewModelobjectN
+RegisterViewModel()7Quizle.Web.Models.RegisterViewModel.RegisterViewModel()@
+UserName.get0Quizle.Web.Models.RegisterViewModel.UserName.get@
+UserName.set0Quizle.Web.Models.RegisterViewModel.UserName.set:
+	Email.get-Quizle.Web.Models.RegisterViewModel.Email.get:
+	Email.set-Quizle.Web.Models.RegisterViewModel.Email.set@
+Password.get0Quizle.Web.Models.RegisterViewModel.Password.get@
+Password.set0Quizle.Web.Models.RegisterViewModel.Password.setN
+ConfirmPassword.get7Quizle.Web.Models.RegisterViewModel.ConfirmPassword.getN
+ConfirmPassword.set7Quizle.Web.Models.RegisterViewModel.ConfirmPassword.set

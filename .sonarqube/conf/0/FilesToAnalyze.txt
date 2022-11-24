@@ -1,0 +1,14 @@
+﻿C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Enums\Difficulty.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\IRepository.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.Designer.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.Designer.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221117130121_DifficultyEnum.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221117130121_DifficultyEnum.Designer.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\QuizleDbContextModelSnapshot.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Models\Answer.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Models\ApplicationUser.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Models\Quiz.cs
+C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\QuizleDbContext.cs

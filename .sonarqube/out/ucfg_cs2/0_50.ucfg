@@ -1,0 +1,25 @@
+
+.Quizle.DB.Common.Repository.SaveChangesAsync()G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csö ö(/"0*Ø
+0G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csú ú(8≈
+¬
+G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csú ú(%-
+%0'Microsoft.EntityFrameworkCore.DbContext"'Quizle.DB.Common.Repository.Context.get*
+Quizle.DB.Common.Repository≈¬
+G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csú ú(8*
+%1$System.Threading.Tasks.Task<TResult>"\Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(System.Threading.CancellationToken)*/
+-
+%0'Microsoft.EntityFrameworkCore.DbContext*
+""24SaveChangesAsync(System.Threading.CancellationToken)"Q
+G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csú ú(9
+""*¨
+1G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csù	 ù(	"^
+G
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csù ù(	
+implicit returnB
+Quizle.DB.Common.Repository

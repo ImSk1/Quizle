@@ -1,0 +1,103 @@
+
+=Quizle.Core.Services.QuizDataService.GetCurrentQuestion(int?)X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csh# h(5"0*¶
+0X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csj s(à
+Ý
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csj j(#"
+%0Quizle.DB.Common.IRepository"__id*W*U&
+$Quizle.Core.Services.QuizDataService"+
+_repositoryQuizle.DB.Common.IRepositoryÃÀ
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csj j(1	
+%1int"'Quizle.DB.Common.IRepository.Count<T>()*$
+"
+%0Quizle.DB.Common.IRepository2
+Count<T>()}
+{
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csj j(1
+countint"__id*
+	
+%1intà
+Ý
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csk k(%"
+%2Quizle.DB.Common.IRepository"__id*W*U&
+$Quizle.Core.Services.QuizDataService"+
+_repositoryQuizle.DB.Common.IRepositoryÕÒ
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csk l(
+%3System.Linq.IQueryable<T>"%Quizle.DB.Common.IRepository.All<T>()*$
+"
+%2Quizle.DB.Common.IRepository2All<T>()ç
+ä
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csk m((R
+%4LMicrosoft.EntityFrameworkCore.Query.IIncludableQueryable<TEntity, TProperty>"ÂMicrosoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.Include<TEntity, TProperty>(System.Linq.IQueryable<TEntity>, System.Linq.Expressions.Expression<System.Func<TEntity, TProperty>>)*D"B
+@Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions*!
+
+%3System.Linq.IQueryable<T>*
+""ÿ
+ü
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csk n(<
+%5System.Linq.IQueryable<T>"…System.Linq.Queryable.Where<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource, bool>>)*"
+System.Linq.Queryable*T
+R
+%4LMicrosoft.EntityFrameworkCore.Query.IIncludableQueryable<TEntity, TProperty>*
+""È
+Å
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cso$ o(+
+%6AutoMapper.IMapper"__id*I*G&
+$Quizle.Core.Services.QuizDataService"
+_mapperAutoMapper.IMapperëè
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cso$ o(A'
+%7!AutoMapper.IConfigurationProvider",AutoMapper.IMapper.ConfigurationProvider.get*
+
+%6AutoMapper.IMapper2ConfigurationProvider.getÒ
+Ï
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csk o(B
+%8System.Linq.IQueryable<T>"ÌAutoMapper.QueryableExtensions.Extensions.ProjectTo<TDestination>(System.Linq.IQueryable, AutoMapper.IConfigurationProvider, params System.Linq.Expressions.Expression<System.Func<TDestination, object>>[])*-"+
+)AutoMapper.QueryableExtensions.Extensions*!
+
+%5System.Linq.IQueryable<T>*)
+'
+%7!AutoMapper.IConfigurationProvider*
+""Ÿ
+œ
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csk p((
+%9"System.Collections.Generic.List<T>"WSystem.Linq.Enumerable.ToList<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
+System.Linq.Enumerable*!
+
+%8System.Linq.IQueryable<T>Ÿ
+œ
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csk q(!
+%10Quizle.Core.Models.QuizDto"USystem.Linq.Enumerable.Last<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
+System.Linq.Enumerable**
+(
+%9"System.Collections.Generic.List<T>¯
+¬
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csk q(%
+quizDtoQuizle.Core.Models.QuizDto"__id*#
+!
+%10Quizle.Core.Models.QuizDto"ƒ
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.css s('
+%
+quizDtoQuizle.Core.Models.QuizDto*Î
+1X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cst	 t(	"o
+X
+NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cst t(	
+implicit return: 
+
+difficultySystem.Nullable<T>B(&
+$Quizle.Core.Services.QuizDataService

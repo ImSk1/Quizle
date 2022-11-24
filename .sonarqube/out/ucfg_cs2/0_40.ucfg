@@ -1,0 +1,26 @@
+
+*Quizle.DB.Common.Repository.AddAsync<T>(T)E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs+ +(""0*ÿ
+0E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs- -(,Ç
+Ä
+E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs- -(2
+%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>"&Quizle.DB.Common.Repository.DbSet<T>()*
+Quizle.DB.Common.Repositoryãà
+E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs- -(-/
+%1)System.Threading.Tasks.ValueTask<TResult>"bMicrosoft.EntityFrameworkCore.DbSet<TEntity>.AddAsync(TEntity, System.Threading.CancellationToken)*4
+2
+%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>*
+
+entityT*
+""25AddAsync(TEntity, System.Threading.CancellationToken)*
+1*¨
+1E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs.	 .(	"\
+E
+;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs. .(	
+implicit return:
+entityTB
+Quizle.DB.Common.Repository

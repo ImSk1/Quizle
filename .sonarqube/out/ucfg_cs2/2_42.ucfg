@@ -1,0 +1,48 @@
+
+?Quizle.Web.MapperProfiles.QuizMapperProfile.QuizMapperProfile()Q
+GC:\DAVID\REPOS\Quizle\Quizle\Quizle\MapperProfiles\QuizMapperProfile.cs ( "1*°
+1Q
+GC:\DAVID\REPOS\Quizle\Quizle\Quizle\MapperProfiles\QuizMapperProfile.cs	 (	D
+B
+
+%0void"AutoMapper.Profile.Profile()*
+AutoMapper.Profile*
+0*î
+0Q
+GC:\DAVID\REPOS\Quizle\Quizle\Quizle\MapperProfiles\QuizMapperProfile.cs (I·
+ﬁ
+Q
+GC:\DAVID\REPOS\Quizle\Quizle\Quizle\MapperProfiles\QuizMapperProfile.cs (/:
+%14AutoMapper.IMappingExpression<TSource, TDestination>"5AutoMapper.Profile.CreateMap<TSource, TDestination>()*
+AutoMapper.ProfileÑÅ
+R
+GC:\DAVID\REPOS\Quizle\Quizle\Quizle\MapperProfiles\QuizMapperProfile.cs (Ä:
+%24AutoMapper.IMappingExpression<TSource, TDestination>"ÈAutoMapper.IMappingExpression<TSource, TDestination>.ForMember<TMember>(System.Linq.Expressions.Expression<System.Func<TDestination, TMember>>, System.Action<AutoMapper.IMemberConfigurationExpression<TSource, TDestination, TMember>>)*<
+:
+%14AutoMapper.IMappingExpression<TSource, TDestination>*
+""*
+""2¥ForMember<TMember>(System.Linq.Expressions.Expression<System.Func<TDestination, TMember>>, System.Action<AutoMapper.IMemberConfigurationExpression<TSource, TDestination, TMember>>)·
+ﬁ
+Q
+GC:\DAVID\REPOS\Quizle\Quizle\Quizle\MapperProfiles\QuizMapperProfile.cs (&:
+%34AutoMapper.IMappingExpression<TSource, TDestination>"5AutoMapper.Profile.CreateMap<TSource, TDestination>()*
+AutoMapper.Profile·
+ﬁ
+Q
+GC:\DAVID\REPOS\Quizle\Quizle\Quizle\MapperProfiles\QuizMapperProfile.cs (*:
+%44AutoMapper.IMappingExpression<TSource, TDestination>"5AutoMapper.Profile.CreateMap<TSource, TDestination>()*
+AutoMapper.ProfileÉÄ
+Q
+GC:\DAVID\REPOS\Quizle\Quizle\Quizle\MapperProfiles\QuizMapperProfile.cs (J:
+%54AutoMapper.IMappingExpression<TSource, TDestination>"ÈAutoMapper.IMappingExpression<TSource, TDestination>.ForMember<TMember>(System.Linq.Expressions.Expression<System.Func<TDestination, TMember>>, System.Action<AutoMapper.IMemberConfigurationExpression<TSource, TDestination, TMember>>)*<
+:
+%44AutoMapper.IMappingExpression<TSource, TDestination>*
+""*
+""2¥ForMember<TMember>(System.Linq.Expressions.Expression<System.Func<TDestination, TMember>>, System.Action<AutoMapper.IMemberConfigurationExpression<TSource, TDestination, TMember>>)*
+2*¿
+2Q
+GC:\DAVID\REPOS\Quizle\Quizle\Quizle\MapperProfiles\QuizMapperProfile.cs	 (	"h
+Q
+GC:\DAVID\REPOS\Quizle\Quizle\Quizle\MapperProfiles\QuizMapperProfile.cs (	
+implicit returnB/-
++Quizle.Web.MapperProfiles.QuizMapperProfile
