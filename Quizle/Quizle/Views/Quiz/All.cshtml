@@ -1,8 +1,13 @@
-﻿@using Quizle.DB.Common.Enums
+﻿@using Microsoft.AspNetCore.Identity
+@using Quizle.DB.Common.Enums
+@using Quizle.DB.Models
 @using Quizle.Web.Models
+@using System.Security.Claims
+@inject UserManager<ApplicationUser> UserManager;
 @model List<QuizViewModel>
 @{
     ViewData["Title"] = "Home Page";
+    var user = UserManager.FindByNameAsync(User?.Identity?.Name).Result;
 }
 <h2 class="text-center">@ViewBag.Title</h2>
 <hr />
@@ -20,7 +25,15 @@
                
             </div>
             <form class="input-group-sm" asp-controller="Quiz" asp-action="SelectDifficulty" asp-route-selectedDifficulty="@quiz.Difficulty">
-                <input type="submit" value="Play" class="fs-6 btn btn-success mb-3 p-2" />
+                @if (user == null || !user.HasAnsweredCurrentQuestion )
+            {
+                    <input type="submit" value="Play" class="fs-6 btn btn-success mb-3 p-2" />
+                }
+                else
+                {
+                    <input type="submit" value="Play" disabled class="fs-6 btn btn-success mb-3 p-2" />
+                }
+
             </form>
         </div>
     }
