@@ -10,6 +10,7 @@ namespace Quizle.DB.Models
 {
     public class Answer
     {
+        
         [Key]
         public int Id   { get; set; }
         [StringLength(150)]
