@@ -142,6 +142,25 @@ namespace Quizle.Core.Services
             return quizDto;
         }
 
+        public async Task AwardPoints(int quizDifficulty, string username)
+        {
+            var user = _repository.All<ApplicationUser>().First(a => a.UserName == username);
+            switch (quizDifficulty)
+            {
+                case 1:     
+                    user.QuizPoints += 25;                                         
+                    break;
+                case 2:
+                    user.QuizPoints += 50;
+                    break;
+                case 3:
+                    user.QuizPoints += 100;
+                    break;                                   
+            }
+            _repository.Update(user);
+            await _repository.SaveChangesAsync();
+        }
+
 
     }
 }
