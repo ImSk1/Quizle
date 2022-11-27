@@ -42,6 +42,7 @@ builder.Services.Configure<QuartzOptions>(builder.Configuration.GetSection("Quar
 builder.Services.AddScoped<IQuizDataService, QuizDataService>();
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IBadgeService, BadgeService>();
 
 
 

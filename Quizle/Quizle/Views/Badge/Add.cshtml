@@ -1,5 +1,49 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@using Quizle.Web.Models
+@model BadgeAddViewModel
 @{
+    ViewBag.Title = "Add Badge";
+}
+
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="row">
+    <div class="col-sm-12 offset-lg-2 col-lg-8 offset-xl-3 col-xl-6">
+        <form asp-action="Add" EncType="multipart/form-data"  method="post">
+            <div class="mb-3">
+                <label asp-for="@Model.Name" class="form-label">Name</label>
+                <input asp-for="@Model.Name" class="form-control" aria-required="true" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>           
+            <div class="mb-3">
+                <label asp-for="@Model.Description" class="form-label">Description</label>
+                <textarea asp-for="@Model.Description" class="form-control" aria-required="true" rows="5"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="@Model.Image" class="form-label">Image URL</label>
+                <input type="file" asp-for="@Model.Image" class="form-control" aria-required="true" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>            
+            <div class="mb-3">
+                <label asp-for="@Model.Rarity" class="form-label">Category</label>
+                <select asp-for="@Model.Rarity" class="form-control">
+                    @foreach (var rarity in Model.Rarities)
+                    {
+                        <option value="@rarity">@rarity</option>
+                    }
+                </select>
+                <span asp-validation-for="Rarity" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input class="btn btn-primary" type="submit" value="Add" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
 }

@@ -1,4 +1,5 @@
-﻿@*
+﻿@using Quizle.Web.Models
+@model List<BadgeViewModel>
 @{
     ViewBag.Title = "All Badges";
 }
@@ -8,21 +9,20 @@
 <hr />
 
 <div class="text-center row">
-    @foreach (var book in Model.Books)
+    @foreach (var badge in Model)
     {
         <div class="card col-4" style="width: 20rem; ">
             <img class="card-img-top" style="width: 18rem;"
-             src="@book.ImageUrl" alt="Book Image">
+             src="@badge.Image" alt="Book Image">
             <div class="card-body">
 
-                <h5 class="card-title mt-1">@book.Title</h5>
-                <p class="mb-0">Author: @book.Author</p>
-                <p class="mb-0">Rating: @book.Rating</p>
-                <p>Category: @book.Category</p>
+                <h5 class="card-title mt-1">@badge.Name</h5>
+                <p class="mb-0">Description: @badge.Description</p>
+                <p class="mb-0">Rarity: @badge.Rarity</p>                
             </div>
 
-            <form class="input-group-sm" asp-controller="Books" asp-action="AddToCollection" asp-route-bookId="@book.Id">
+            @*<form class="input-group-sm" asp-controller="Books" asp-action="AddToCollection" asp-route-bookId="@book.Id">
                 <input type="submit" value="Add to Collection" class="fs-6 btn btn-success mb-3 p-2" />
-            </form>
+            </form>*@
         </div>
-    }*@
+    }
