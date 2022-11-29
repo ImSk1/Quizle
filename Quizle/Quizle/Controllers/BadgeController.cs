@@ -1,18 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Quizle.Core.Contracts;
 using Quizle.Core.Models;
+using Quizle.DB.Models;
 using Quizle.Web.Models;
-using static System.Net.Mime.MediaTypeNames;
+using System.Net;
+using System.Security.Claims;
 
 namespace Quizle.Web.Controllers
 {
+    [Authorize]
     public class BadgeController : Controller
     {
         private readonly IBadgeService _badgeService;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public BadgeController(IBadgeService badgeService)
+        public BadgeController(IBadgeService badgeService, UserManager<ApplicationUser> userManager)
         {
             _badgeService = badgeService;
+            _userManager = userManager;
         }
 
         public IActionResult All()
@@ -23,9 +30,11 @@ namespace Quizle.Web.Controllers
             {
                 var model = new BadgeViewModel()
                 {
+                    Id = badgeDto.Id,
                     Name = badgeDto.Name,
                     Description = badgeDto.Description,
                     Rarity = badgeDto.Rarity,
+                    Price = badgeDto.Price
                 };
                 var photoStr = Convert.ToBase64String(badgeDto.Image);
                 var imageString = string.Format("data:image/jpg;base64,{0}", photoStr);
@@ -35,10 +44,7 @@ namespace Quizle.Web.Controllers
             return View(models);
 
         }
-        public IActionResult AddToCollection(int badgeId)
-        {
-            return View();
-        }
+        
         [HttpGet]
         public IActionResult Add()
         {
@@ -68,7 +74,8 @@ namespace Quizle.Web.Controllers
             {
                 Name = model.Name,
                 Rarity = model.Rarity,
-                Description = model.Description
+                Description = model.Description,
+                Price = model.Price
             };
             using (var memoryStream = new MemoryStream())
             {
@@ -78,6 +85,23 @@ namespace Quizle.Web.Controllers
             await _badgeService.AddBadgeAsync(dto);
             return RedirectToAction("Add", "Badge");
         }
+        public async Task<IActionResult> Buy(int badgeId, int badgePrice)
+        {
+            try
+            {
+                var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                var user = await _userManager.FindByIdAsync(userId);
+                if (user.QuizPoints >= badgePrice)
+                {
+                    await _badgeService.BuyBadgeAsync(badgeId, userId);
+                }
+            }
+            catch (Exception ex)
+            {
 
+                throw ex;
+            }
+            return RedirectToAction(nameof(All));
+        }
     }
 }

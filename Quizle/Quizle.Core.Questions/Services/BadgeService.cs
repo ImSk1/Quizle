@@ -7,6 +7,7 @@ using Quizle.DB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,11 +31,13 @@ namespace Quizle.Core.Services
                 .ThenInclude(a => a.ApplicationUser)
                 .Select(a => new BadgeDto()
                 {
+                    Id = a.Id,
                     Name = a.Name,
                     Description = a.Description,
                     Rarity = a.Rarity.ToString(),
                     Image = a.Image,
-                    OwnerIds = a.ApplicationUsersBadges.Select(a => a.ApplicationUserId).ToArray()
+                    OwnerIds = a.ApplicationUsersBadges.Select(a => a.ApplicationUserId).ToArray(),
+                    Price = a.Price
                 }).ToList();
             return list;
         }
@@ -43,7 +46,7 @@ namespace Quizle.Core.Services
             var rarities = new List<string>();
             foreach (var rarity in (Rarity[])Enum.GetValues(typeof(Rarity)))
             {
-                 rarities.Add(rarity.ToString());
+                rarities.Add(rarity.ToString());
             }
             return rarities;
         }
@@ -55,10 +58,38 @@ namespace Quizle.Core.Services
                 Name = badge.Name,
                 Description = badge.Description,
                 Rarity = (Rarity)Enum.Parse(typeof(Rarity), badge.Rarity),
-                Image = badge.Image
+                Image = badge.Image,
+                Price = badge.Price
             };
             await _repo.AddAsync(entity);
             await _repo.SaveChangesAsync();
         }
+        public async Task BuyBadgeAsync(int badgeId, string userId)
+        {
+            var user = await _repo.All<ApplicationUser>(a => a.Id == userId)                
+                .Include(u => u.ApplicationUsersBadges)
+                .FirstOrDefaultAsync();
+            if (user == null)
+            {
+                throw new ArgumentException("Invalid user id.");
+            }
+            var badge = await _repo.GetByIdAsync<Badge>(badgeId);
+            if (badge == null)
+            {
+                throw new ArgumentException("Invalid badge id.");
+            }
+            if (!user.ApplicationUsersBadges.Any(b => b.BadgeId == badgeId))
+            {
+                user.ApplicationUsersBadges.Add(new ApplicationUserBadge()
+                {
+                    Badge = badge,
+                    ApplicationUserId = user.Id,
+                    BadgeId = badge.Id,
+                    ApplicationUser = user
+                });
+                await _repo.SaveChangesAsync();
+            }
+        }
+
     }
 }

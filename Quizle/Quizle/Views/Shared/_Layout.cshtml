@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@using Quizle.DB.Models
+@inject UserManager<ApplicationUser> userManager
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,11 +11,13 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Quizle.styles.css" asp-append-version="true" />
 </head>
+
+
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light  box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Quizle</a>
+                <a class="navbar-brand fw-bold text-white" asp-area="" asp-controller="Home" asp-action="Index">Quizle</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -22,14 +27,15 @@
                         
                         @if (User?.Identity?.IsAuthenticated ?? false)
                         {
+                            
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Quiz" asp-action="All">All Available Quizzes</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Quiz" asp-action="All">All Available Quizzes</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Badge" asp-action="Add">Add Quiz</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Badge" asp-action="Add">Add Badge</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Badge" asp-action="All">All Badges</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Badge" asp-action="All">All Badges</a>
                             </li>
 
                             
@@ -37,7 +43,17 @@
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                        }
+
+                    </ul>
+                    
+                    <ul class="navbar-nav aflex-grow-1" style="float: right">
+                         @if (User?.Identity?.IsAuthenticated ?? false)
+                        {
+                            <li class="nav-item mx-1">
+                                <a class="nav-link" style="color: #dd2476;" asp-area="" asp-controller="Badge" asp-action="All">QP: @userManager.FindByNameAsync(User?.Identity?.Name).Result.QuizPoints</a>
                             </li>
                         }
                     </ul>
@@ -51,10 +67,10 @@
             @RenderBody()
         </main>
     </div>
-    <footer id="footer" class="sticky bg-white" style="">
+    <footer id="footer" class="sticky" style="">
 @*    <footer class="border-top footer text-muted">
 *@        <div class="container">
-            &copy; 2022 - Quizle - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; @DateTime.Now - Quizle -
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -17,6 +17,9 @@ namespace Quizle.Web.Models
         public IFormFile Image { get; set; } = null!;
         [Required]
         public string Rarity { get; set; } = null!;
+        [Required]
+        public int Price { get; set; }
+        
         public List<string> Rarities { get; set; } = new List<string>();
     }
 }

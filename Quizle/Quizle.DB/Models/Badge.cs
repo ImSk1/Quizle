@@ -26,6 +26,8 @@ namespace Quizle.DB.Models
         public Rarity Rarity { get; set; }
         [Required]
         public byte[] Image { get; set; } = null!;
+        [Required]
+        public int Price { get; set; }
 
         public virtual ICollection<ApplicationUserBadge> ApplicationUsersBadges { get; set; }
 

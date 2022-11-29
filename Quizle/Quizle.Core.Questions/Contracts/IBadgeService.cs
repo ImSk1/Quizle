@@ -12,5 +12,6 @@ namespace Quizle.Core.Contracts
         List<BadgeDto> GetAllBadges();
         List<string> GetRarities();
         Task AddBadgeAsync(BadgeDto badge);
+        Task BuyBadgeAsync(int badgeId, string userId);
     }
 }
