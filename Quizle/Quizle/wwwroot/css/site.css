@@ -23,7 +23,7 @@ body {
 body {
     /*background: #111 !important;*/
     background-image: url("../images/background.jpg");
-    font-family: 'Comic Sans MS';
+    font-family: 'Comic Sans MS', 'sans-serif';
     color: #dd2476;
 }
 .questionBox {
