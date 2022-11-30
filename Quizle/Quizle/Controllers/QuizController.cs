@@ -8,6 +8,7 @@ using Quizle.DB.Models;
 using Quizle.Web.Models;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
+using System.Security.Claims;
 
 namespace Quizle.Web.Controllers
 {
@@ -18,9 +19,9 @@ namespace Quizle.Web.Controllers
         private readonly ILogger<QuizController> _logger;
         private readonly IConfiguration _config;
         private readonly IQuizDataService _quizDataService;
-        private readonly IUserService _userService;
+        private readonly IProfileService _userService;
         private readonly IMapper _mapper;
-        public QuizController(ILogger<QuizController> logger, IConfiguration configuration, IQuizDataService quizDataService, IMapper mapper, IUserService userService)
+        public QuizController(ILogger<QuizController> logger, IConfiguration configuration, IQuizDataService quizDataService, IMapper mapper, IProfileService userService)
         {
             _logger = logger;
             _config = configuration;
@@ -67,6 +68,7 @@ namespace Quizle.Web.Controllers
             var quizData = await _quizDataService.GetCurrentQuestion(selectedDifficulty);
             HttpContext.Session.SetString("CorrectAnswer", quizData.Answers.Where(a => a.IsCorrect == true).First().Answer.ToString() ?? "");
             HttpContext.Session.SetInt32("Difficulty", (int)selectedDifficulty);
+            HttpContext.Session.SetString("Question", quizData.Question);
 
             var quizViewModel = _mapper.Map<QuizViewModel>(quizData);
             if (quizViewModel == null)
@@ -80,13 +82,26 @@ namespace Quizle.Web.Controllers
         public async Task<IActionResult> Quiz(QuizViewModel model)
         {
             var correctAnswer = HttpContext.Session.GetString("CorrectAnswer");
+            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            var question = HttpContext.Session.GetString("Question");
+            var difficulty = HttpContext.Session.GetInt32("Difficulty");
+
             TempData["Flag"] = "FlagExists";
 
             if (!ModelState.IsValid)
             {
                 return RedirectToAction("Quiz");
             }
+            if (correctAnswer == null || question == null || difficulty == null)
+            {
+                return RedirectToAction("Quiz");
+
+            }
             await _userService.UpdateAllUsersHasDoneQuestion(true, a => a.UserName == User.Identity.Name);
+
+            await _userService.AddUserQuestion(userId, question, (int)difficulty, model.SelectedAnswer.Answer, correctAnswer);
+
+
             if (model.SelectedAnswer.Answer == correctAnswer && HttpContext.Session.GetInt32("Difficulty") != null)
             {
                 await _quizDataService.AwardPoints((int)HttpContext.Session.GetInt32("Difficulty"), User?.Identity?.Name);

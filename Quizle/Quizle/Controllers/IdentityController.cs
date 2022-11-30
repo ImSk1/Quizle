@@ -7,13 +7,13 @@ using Quizle.Web.Models;
 namespace Quizle.Web.Controllers
 {
     [Authorize]
-    public class UserController : Controller
+    public class IdentityController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
 
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public UserController(
+        public IdentityController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager)
         {
@@ -93,7 +93,7 @@ namespace Quizle.Web.Controllers
 
             if (result.Succeeded)
             {
-                return RedirectToAction("Login", "User");
+                return RedirectToAction("Login", "Identity");
             }
 
             foreach (var item in result.Errors)

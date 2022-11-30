@@ -25,7 +25,7 @@ namespace Quizle.DB
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<ApplicationUserBadge>()
-                .HasKey(k => new { k.ApplicationUserId, k.BadgeId });
+                .HasKey(k => new { k.ApplicationUserId, k.BadgeId });            
             base.OnModelCreating(builder);
 
         }

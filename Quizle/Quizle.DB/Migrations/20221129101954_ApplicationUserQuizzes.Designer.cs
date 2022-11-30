@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Quizle.DB;
 
@@ -11,9 +12,10 @@ using Quizle.DB;
 namespace Quizle.DB.Migrations
 {
     [DbContext(typeof(QuizleDbContext))]
-    partial class QuizleDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221129101954_ApplicationUserQuizzes")]
+    partial class ApplicationUserQuizzes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -271,6 +273,21 @@ namespace Quizle.DB.Migrations
                     b.ToTable("ApplicationUsersBadges");
                 });
 
+            modelBuilder.Entity("Quizle.DB.Models.ApplicationUserQuiz", b =>
+                {
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("QuizId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ApplicationUserId", "QuizId");
+
+                    b.HasIndex("QuizId");
+
+                    b.ToTable("ApplicationUserQuizzes");
+                });
+
             modelBuilder.Entity("Quizle.DB.Models.Badge", b =>
                 {
                     b.Property<int>("Id")
@@ -332,45 +349,6 @@ namespace Quizle.DB.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Quizzes");
-                });
-
-            modelBuilder.Entity("Quizle.DB.Models.UserQuestion", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("CorrectAnswer")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("Difficulty")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("Question")
-                        .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar(300)");
-
-                    b.Property<string>("SelectedAnswer")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UserQuestion");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -454,22 +432,28 @@ namespace Quizle.DB.Migrations
                     b.Navigation("Badge");
                 });
 
-            modelBuilder.Entity("Quizle.DB.Models.UserQuestion", b =>
+            modelBuilder.Entity("Quizle.DB.Models.ApplicationUserQuiz", b =>
                 {
-                    b.HasOne("Quizle.DB.Models.ApplicationUser", "User")
-                        .WithMany("UserQuestions")
-                        .HasForeignKey("UserId")
+                    b.HasOne("Quizle.DB.Models.ApplicationUser", "ApplicationUser")
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.HasOne("Quizle.DB.Models.Quiz", "Quiz")
+                        .WithMany()
+                        .HasForeignKey("QuizId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("Quiz");
                 });
 
             modelBuilder.Entity("Quizle.DB.Models.ApplicationUser", b =>
                 {
                     b.Navigation("ApplicationUsersBadges");
-
-                    b.Navigation("UserQuestions");
                 });
 
             modelBuilder.Entity("Quizle.DB.Models.Badge", b =>

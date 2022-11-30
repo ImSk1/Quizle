@@ -8,9 +8,9 @@ namespace Quizle.DB.Common.Enums
 {
     public enum Rarity
     {
-        Common,
-        Rare,
-        Epic,
-        Legendary
+        Common = 1,
+        Rare = 2,
+        Epic = 3,
+        Legendary = 4
     }
 }

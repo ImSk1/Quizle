@@ -10,10 +10,10 @@ namespace Quizle.Core.QuartzJobs
     public class QuizJob : IJob
     {
         private readonly IQuizDataService _triviaDataService;
-        private readonly IUserService _userService;
+        private readonly IProfileService _userService;
         
         private readonly IConfiguration _config;
-        public QuizJob(IQuizDataService triviaDataService, IConfiguration configuration, IUserService userService)
+        public QuizJob(IQuizDataService triviaDataService, IConfiguration configuration, IProfileService userService)
         {
             _triviaDataService = triviaDataService;
             _config = configuration;

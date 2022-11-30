@@ -1,5 +1,6 @@
 ﻿@using Quizle.Web.Models
 @model QuizViewModel
+
 <div class="container mt-5">
     <div class="d-flex justify-content-center row">
         <div class="col-md-10 col-lg-10">
@@ -15,23 +16,21 @@
                     <div class="d-flex flex-row align-items-center question-title">
                         <h3 class="text-danger">@Model.Question</h3>
                     </div>
-                        @foreach (var answer in Model.Answers)
-                        {
+                    @foreach (var answer in Model.Answers)
+                    {
 
                         <div class="ans ml-2">
                             <label class="radio">
                                 <input asp-for="@Model.SelectedAnswer.Answer" type="radio" value="@answer.Answer"> <span>@answer.Answer</span>
+
                             </label>
                         </div>
-                        }
-                   
-                    <div class="outerDiv">                        
+                    }
+
+                    <div class="outerDiv">
                         <input type="submit" class="save btn btn-primary border-success align-items-center btn-success mt-2" value="Next">
                     </div>
 
-                    <div>
-                        
-                    </div>
 
                 </div>
             </form>

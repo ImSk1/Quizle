@@ -1,0 +1,90 @@
+﻿@using Quizle.Web.Models
+@model ProfileViewModel
+<div class="container rounded bg-white mt-5 mb-2">
+    <div class="row">
+        <div class="col-md-3">
+            @*<div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+            <span class="font-weight-bold">Edogaru</span>
+            <span class="text-black-50">edogaru@mail.com.my</span>
+            <span></span>
+            </div>*@
+            @if (Model.Badge != null)
+            {
+                <div class="card mt-4" style="width: 18rem;">
+                    <img src="@Model.Badge.Image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@Model.Badge.Name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                        <p class="card-text">@Model.Badge.Description</p>
+                        <p class="card-text">Rarity: @Model.Badge.Rarity</p>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <div class="col">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">@Model.Username's Profile</h4>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label class="labels">Username</label>
+                        <input type="text" disabled value="@Model.Username" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-12">
+                        <label class="labels">E-mail</label>
+                        <input type="text" disabled class="form-control" value="@Model.Email">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="labels">Current Question Status</label>
+                        <input type="text" disabled class="form-control" value="@Model.CurrentQuestionStatus">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="labels">Answered Questions</label>
+                        <input type="text" class="form-control" disabled value="@Model.AnsweredQuestionsCount">
+                    </div>
+                    <div class="col-md-12">
+                        <label class="labels">Winrate</label>
+                        <input type="text" class="form-control" disabled value="@Model.WinratePercent%">
+                    </div>
+                    <div class="mt-5 text-center">
+                        <button class="btn btn-primary profile-button" type="button">Back to Quiz Selection</button>
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-md-4">
+
+            </div>*@
+        </div>
+        <div class="col">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center experience">
+                    <h4>Question History</h4>
+                </div>
+                <br>
+                <div class="col-md-12">
+                    <label class="labels">Last two Questions</label>
+                    @foreach (var question in Model.AnsweredQuestions.OrderByDescending(a => a.Id).Take(2))
+                    {
+                        <div class="card mt-3" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">@question.Question</h5>
+                                <h7 class="card-subtitle mb-2 text-muted">Selected: @question.SelectedAnswer</h7>
+                                <p class="card-text">Correct:@question.CorrectAnswer</p>
+                                <p class="card-text">Difficulty: @question.Difficulty</p>
+                            </div>
+                        </div>
+                    }                    
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
