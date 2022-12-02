@@ -15,8 +15,12 @@ namespace Quizle.DB.Models
             ApplicationUsersBadges = new HashSet<ApplicationUserBadge>();
             UserQuestions = new HashSet<UserQuestion>();
         }
+        [Required]
         public bool HasAnsweredCurrentQuestion { get; set; }
-        public int QuizPoints { get; set; }
+        [Required]
+        public int CurrentQuizPoints { get; set; }
+        [Required]
+        public int AllTimeQuizPoints { get; set; }
         public virtual ICollection<ApplicationUserBadge> ApplicationUsersBadges { get; set; }
         public virtual ICollection<UserQuestion> UserQuestions { get; set; }
 

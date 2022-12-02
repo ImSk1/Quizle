@@ -16,5 +16,6 @@ namespace Quizle.Core.Models
         public string Rarity { get; set; } = null!;
         public string[]? OwnerIds { get; set; }
         public int Price { get; set; }
+       
     }
 }

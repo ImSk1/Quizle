@@ -7,13 +7,13 @@ using System.Diagnostics;
 
 namespace Quizle.Core.QuartzJobs
 {
-    public class QuizJob : IJob
+    public class GetQuestionsJob : IJob
     {
         private readonly IQuizDataService _triviaDataService;
         private readonly IProfileService _userService;
         
         private readonly IConfiguration _config;
-        public QuizJob(IQuizDataService triviaDataService, IConfiguration configuration, IProfileService userService)
+        public GetQuestionsJob(IQuizDataService triviaDataService, IConfiguration configuration, IProfileService userService)
         {
             _triviaDataService = triviaDataService;
             _config = configuration;

@@ -53,7 +53,7 @@
                          @if (User?.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item mx-1">
-                                <a class="nav-link" style="color: #dd2476;" asp-area="" asp-controller="Badge" asp-action="All">QP: @userManager.FindByNameAsync(User?.Identity?.Name).Result.QuizPoints</a>
+                                <a class="nav-link" style="color: #dd2476;" asp-area="" asp-controller="Badge" asp-action="All">QP: @userManager.FindByNameAsync(User?.Identity?.Name).Result.CurrentQuizPoints</a>
                             </li>
                             <li class="nav-item mx-1">
                                 <a class="nav-link text-light"  asp-area="" asp-controller="Profile" asp-action="Profile">View Profile</a>

@@ -1,4 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@using Quizle.DB.Common.Enums
 @using Quizle.DB.Models
 @using Quizle.Web.Models
 @using System.Security.Claims
@@ -7,7 +9,7 @@
 @inject UserManager<ApplicationUser> _userManager;
 @{
     ViewBag.Title = "All Badges";
-    var user = await _userManager.FindByIdAsync(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
+    var user = _userManager.Users.Include(a => a.ApplicationUsersBadges).ThenInclude(a => a.Badge).ToList().FirstOrDefault(a => a.Id == User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
 }
 
 
@@ -26,13 +28,23 @@
                         <h6 class="card-subtitle mb-2 text-muted">Description</h6>
                         <p class="card-text">@badge.Description</p>
                         <form class="input-group-sm" asp-controller="Badge" asp-action="Buy" asp-route-badgeId="@badge.Id" asp-route-badgePrice="@badge.Price">
-                            @if (user.QuizPoints < badge.Price)
+                            @if (user.ApplicationUsersBadges.Any(a => (int)a.Badge.Rarity > (int)Enum.Parse(typeof(Rarity), badge.Rarity)))
+                            {
+                                <input id="buyInactive" type="submit" value="Better Badge Owned" disabled class="btn mr-2">
+
+                            }
+                            else if (badge.OwnerIds.Any(a => a == user.Id))
+                            {
+                                <input id="buyInactive" type="submit" value="Already Owned" disabled class="btn mr-2">
+
+                            }
+                            else if (user.CurrentQuizPoints < badge.Price)
                             {                               
-                                <input id="buyInactive"type="submit" value="buy" disabled class="btn mr-2">
+                                <input id="buyInactive"type="submit" value="Not Enough Money" disabled class="btn mr-2">
                             }
                             else
                             {
-                                <input id="buyInactive" type="submit" value="buy" class="btn mr-2">                                
+                                <input id="buyInactive" type="submit" value="Purchase" class="btn mr-2">                                
                             }
                         </form>
                         
@@ -43,32 +55,3 @@
         </div>
         }
 </div>
-
-        @*<div class="text-center row">
-    @foreach (var badge in Model)
-    {
-        <div class="card col-4" style="width: 20rem; ">
-            <img class="card-img-top" style="width: 18rem;"
-             src="@badge.Image" alt="Book Image">
-            <div class="card-body">
-
-                <h5 class="card-title mt-1">@badge.Name</h5>
-                <p class="mb-0">Description: @badge.Description</p>
-                <p class="mb-0">Rarity: @badge.Rarity</p>                
-                <p class="mb-0">Price: @badge.Price</p>                
-            </div>
-
-            <form class="input-group-sm" asp-controller="Badge" asp-action="Buy" asp-route-badgeId="@badge.Id" asp-route-badgePrice="@badge.Price">
-                @if (user.QuizPoints < badge.Price)
-                {
-                    <input type="submit" disabled value="Buy" class="fs-6 btn btn-success mb-3 p-2" />
-                }
-                else
-                {
-                    <input type="submit" value="Buy" class="fs-6 btn btn-success mb-3 p-2" />
-
-                }
-            </form>
-        </div>
-    }
-</div>*@

@@ -62,7 +62,7 @@ builder.Services.AddQuartz(q =>
         tp.MaxConcurrency = 10;
     });
 
-    q.ScheduleJob<QuizJob>(trigger => trigger
+    q.ScheduleJob<GetQuestionsJob>(trigger => trigger
             .WithIdentity("Combined Configuration Trigger")
             .StartNow()
             .WithDailyTimeIntervalSchedule(x => x.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0,0)).WithIntervalInMinutes(1))            

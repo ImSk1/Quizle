@@ -148,13 +148,13 @@ namespace Quizle.Core.Services
             switch (quizDifficulty)
             {
                 case 1:     
-                    user.QuizPoints += 25;                                         
+                    user.CurrentQuizPoints += 25;                                         
                     break;
                 case 2:
-                    user.QuizPoints += 50;
+                    user.CurrentQuizPoints += 50;
                     break;
                 case 3:
-                    user.QuizPoints += 100;
+                    user.CurrentQuizPoints += 100;
                     break;                                   
             }
             _repository.Update(user);

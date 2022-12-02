@@ -34,7 +34,8 @@ namespace Quizle.Web.Controllers
                     Name = badgeDto.Name,
                     Description = badgeDto.Description,
                     Rarity = badgeDto.Rarity,
-                    Price = badgeDto.Price
+                    Price = badgeDto.Price,
+                    OwnerIds = badgeDto.OwnerIds
                 };
                 var photoStr = Convert.ToBase64String(badgeDto.Image);
                 var imageString = string.Format("data:image/jpg;base64,{0}", photoStr);
@@ -91,7 +92,7 @@ namespace Quizle.Web.Controllers
             {
                 var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
                 var user = await _userManager.FindByIdAsync(userId);
-                if (user.QuizPoints >= badgePrice)
+                if (user.CurrentQuizPoints >= badgePrice)
                 {
                     await _badgeService.BuyBadgeAsync(badgeId, userId);
                 }
