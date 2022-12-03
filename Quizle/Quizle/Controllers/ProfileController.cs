@@ -60,5 +60,9 @@ namespace Quizle.Web.Controllers
             }
             return View(userViewModel);
         }
+        public IActionResult Leaderboard()
+        {
+            return View();
+        }
     }
 }

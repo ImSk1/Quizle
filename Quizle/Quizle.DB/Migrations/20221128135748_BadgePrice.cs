@@ -1,9 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System.Diagnostics.CodeAnalysis;
 
 #nullable disable
 
 namespace Quizle.DB.Migrations
 {
+    [ExcludeFromCodeCoverage]
+
     public partial class BadgePrice : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

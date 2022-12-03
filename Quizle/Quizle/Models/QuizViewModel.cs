@@ -13,7 +13,7 @@ namespace Quizle.Web.Models
         public string? ImageUrl { get; set; }
         public List<AnswerDto>? Answers { get; set; }
         [Required]
-        public AnswerDto SelectedAnswer { get; set; } = null!;
+        public string SelectedAnswer { get; set; } = null!;
 
     }
 }

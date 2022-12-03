@@ -1,0 +1,124 @@
+﻿/*
+ * Reference - https://codepen.io/supah/pen/WwrJpw
+ */
+
+/* basic */
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+
+
+a {
+    display: inline-block;
+    color: #333;
+    text-decoration: none;
+}
+leaderboardbody {
+    height: 100%;
+}
+
+leaderboardbody {
+    font: 16px/1.2 "Roboto", sans-serif;
+    color: #333;
+}
+
+.blog {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    bottom: 15px;
+    left: 50%;
+    transform: translatex(-50%);
+    z-index: 1;
+}
+
+/* container */
+.leaderboardcontainer {
+    width: auto;
+    height: auto;
+    text-align: center;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #3a404d, #181c26);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ top: 50%;
+    left: 50%;
+    overflow: auto;*/
+}
+
+ leaderboard 
+.leaderboard {
+    background: linear-gradient(to bottom, #3a404d, #181c26);
+}
+
+     head 
+    .leaderboard .head {
+        padding: 20px 16px;
+        color: snow;
+        font-size: 20px;
+        text-align: center;
+    }
+
+        .leaderboard .head h1 {
+            display: inline-block;
+            margin-left: 4px;
+        }
+
+     body 
+    .leaderboard .body {
+        color: snow;
+        font-size: 16px;
+    }
+
+    .leaderboard ol {
+        height: 350px;
+        counter-reset: number;
+        margin-top: 20px;
+        margin-bottom: 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom:1rem;
+    }
+
+    .leaderboard li {
+        padding: 16px;
+        display: flex;
+        border-radius : 10px;
+        margin-bottom: 5px;
+        color: black;        
+        text-align:left !important;
+    }
+
+        .leaderboard li mark {
+            flex-grow: 1;
+            color: snow;
+            background-color: transparent;
+        }
+
+        .leaderboard li:before {
+            counter-increment: number;
+            content: counter(number) ".";
+            margin-right: 4px;
+        }
+
+        .leaderboard li:nth-child(1) {
+            background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+        }
+
+        .leaderboard li:nth-child(2) {
+            background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+        }
+
+        .leaderboard li:nth-child(3) {
+            background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+        }
+
+        .leaderboard li:nth-child(4) {
+            background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+        }
+
+        .leaderboard li:nth-child(5) {
+            background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+        }

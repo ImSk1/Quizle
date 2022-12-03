@@ -83,7 +83,15 @@ namespace Quizle.Core.Services
             var correctAnswers = user.AnsweredQuestions.Where(a => a.SelectedAnswer == a.CorrectAnswer).ToList();            
             var questionCount = user.AnsweredQuestions.Count;
             user.AnsweredQuestionsCount = questionCount;
-            user.WinratePercent = ((decimal)correctAnswers.Count / (decimal)user.AnsweredQuestionsCount) * 100;
+            if (user.AnsweredQuestionsCount != 0)
+            {
+                user.WinratePercent = ((decimal)correctAnswers.Count / (decimal)user.AnsweredQuestionsCount) * 100;
+
+            }
+            else
+            {
+                user.WinratePercent = 0;
+            }
 
             return user;
         }

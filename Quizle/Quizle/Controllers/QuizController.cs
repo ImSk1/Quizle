@@ -79,7 +79,7 @@ namespace Quizle.Web.Controllers
             return View(quizViewModel);
         }
         [HttpPost]
-        public async Task<IActionResult> Quiz(QuizViewModel model)
+        public async Task<IActionResult> Quiz(string selectedAnswer)
         {
             var correctAnswer = HttpContext.Session.GetString("CorrectAnswer");
             var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
@@ -90,23 +90,23 @@ namespace Quizle.Web.Controllers
 
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("Quiz");
+                return RedirectToAction("Quiz", "Quiz");
             }
-            if (correctAnswer == null || question == null || difficulty == null)
+            if (question == null || difficulty == null)
             {
-                return RedirectToAction("Quiz");
+                return RedirectToAction("Quiz", "Quiz");
 
             }
             await _userService.UpdateAllUsersHasDoneQuestion(true, a => a.UserName == User.Identity.Name);
 
-            await _userService.AddUserQuestion(userId, question, (int)difficulty, model.SelectedAnswer.Answer, correctAnswer);
+            await _userService.AddUserQuestion(userId, question, (int)difficulty, selectedAnswer, correctAnswer);
 
 
-            if (model.SelectedAnswer.Answer == correctAnswer && HttpContext.Session.GetInt32("Difficulty") != null)
+            if (selectedAnswer == correctAnswer && HttpContext.Session.GetInt32("Difficulty") != null)
             {
                 await _quizDataService.AwardPoints((int)HttpContext.Session.GetInt32("Difficulty"), User?.Identity?.Name);
             }
-            return RedirectToAction("Result", "Quiz", new { answeredCorrectly = model.SelectedAnswer.Answer == correctAnswer, selected = model.SelectedAnswer.Answer, correct = correctAnswer });
+            return RedirectToAction("Result", "Quiz", new { answeredCorrectly = selectedAnswer == correctAnswer, selected = selectedAnswer, correct = correctAnswer });
         }
 
         public IActionResult Result(bool answeredCorrectly, string selected, string correct)
