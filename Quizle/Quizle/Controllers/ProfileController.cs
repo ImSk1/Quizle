@@ -54,10 +54,7 @@ namespace Quizle.Web.Controllers
                 var imageString = string.Format("data:image/jpg;base64,{0}", photoStr);
                 userViewModel.Badge.Image = imageString;
             }            
-            if (user == null)
-            {
-                BadRequest();
-            }
+            
             return View(userViewModel);
         }
         public IActionResult Leaderboard()
