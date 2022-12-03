@@ -20,7 +20,7 @@
 
                         <div class="ans ml-2">
                             <label class="radio">
-                                <input name="selectedAnswer" type="radio" value="@answer.Answer" class="disableButton" onchange="enableButton()"> <span>@answer.Answer</span>
+                                <input name="selectedAnswer" type="radio" value="@answer.Answer" class="disableButton" onchange="enableButton()"> <span class="mx-2">@answer.Answer</span>
                             </label>
                         </div>
                     }
@@ -33,6 +33,29 @@
     </div>
 </div>
 <script>
-    
+    $(document).ready(function () {
 
+        const myTimeout = setTimeout(myGreeting, 15000);
+
+        function myGreeting() {
+            selectedAnswer = "Not Selected";
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Quiz", "Quiz")",
+                data: { selectedAnswer: selectedAnswer },               
+                dataType: "html",
+                success: function (response) {
+                    
+                    console.log(response);
+                    document.open;
+                    document.write(response);
+                    document.close;
+                },
+                error: function (req, status, error) {
+                    
+                    console.log(msg);
+                }
+            });
+        }
+    });
 </script>

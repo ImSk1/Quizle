@@ -106,6 +106,10 @@ namespace Quizle.Web.Controllers
             {
                 await _quizDataService.AwardPoints((int)HttpContext.Session.GetInt32("Difficulty"), User?.Identity?.Name);
             }
+            if (selectedAnswer == "Not Selected")
+            {
+                return RedirectToAction("Result", "Quiz", new { answeredCorrectly = selectedAnswer == correctAnswer, selected = "You ran out of time!", correct = correctAnswer });
+            }
             return RedirectToAction("Result", "Quiz", new { answeredCorrectly = selectedAnswer == correctAnswer, selected = selectedAnswer, correct = correctAnswer });
         }
 
@@ -122,7 +126,16 @@ namespace Quizle.Web.Controllers
                 SelectedAnswer = selected,
                 CorrectAnswer = correct
             };
-            return View(model);
+            try
+            {
+                return View(model);
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         [HttpPost]
         public IActionResult Result()
