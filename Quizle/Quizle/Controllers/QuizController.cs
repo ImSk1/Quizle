@@ -26,7 +26,7 @@ namespace Quizle.Web.Controllers
             _userService = userService;
         }
         [HttpGet]
-        public async Task<IActionResult> All()
+        public IActionResult All()
         {
             var listOfQuestions = _quizDataService.GetAllCurrentQuestions();
             var quizViewModel = listOfQuestions
@@ -53,7 +53,7 @@ namespace Quizle.Web.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Quiz(int? selectedDifficulty)
+        public IActionResult Quiz(int? selectedDifficulty)
         {
             if (selectedDifficulty == null)
             {

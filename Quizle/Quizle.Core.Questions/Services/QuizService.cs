@@ -115,14 +115,13 @@ namespace Quizle.Core.Services
                 .Include(a => a.Answers)
                 .Where(a => (int)a.Difficulty == difficulty)
                 .ProjectTo<QuizDto>(_mapper.ConfigurationProvider)
-                .ToList()
+                .AsEnumerable()
                 .Last();
                            
             return quizDto;
         }
         public List<QuizDto> GetAllCurrentQuestions()
         {
-            var count = _repository.Count<Quiz>();
             var quizDto = _repository
                 .All<Quiz>()
                 .Include(a => a.Answers)

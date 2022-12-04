@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Quizle.Core.Exceptions
 {
+    [Serializable]
     public class InvalidApiResponseException : Exception
     {
         public InvalidApiResponseException() : base()

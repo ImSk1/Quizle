@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace Quizle.Core.Exceptions
 {
+    [Serializable]
+
     public class NotFoundException : Exception
     {
         public NotFoundException() : base()
