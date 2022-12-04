@@ -10,11 +10,11 @@ namespace Quizle.DB.Models
     public class ApplicationUserBadge
     {
         [ForeignKey(nameof(ApplicationUser))]
-        public string ApplicationUserId { get; set; }
-        public ApplicationUser ApplicationUser { get; set; }
+        public string ApplicationUserId { get; set; } = null!;
+        public ApplicationUser? ApplicationUser { get; set; }
         [ForeignKey(nameof(Badge))]
         public int BadgeId { get; set; }
-        public Badge Badge { get; set; }
+        public Badge? Badge { get; set; }
 
     }
 }

@@ -20,6 +20,6 @@ namespace Quizle.DB.Models
         public bool IsCorrect { get; set; }
         [ForeignKey(nameof(Quiz))]
         public int QuizId { get; set; }
-        public Quiz Quiz { get; set; }
+        public Quiz? Quiz { get; set; }
     }
 }

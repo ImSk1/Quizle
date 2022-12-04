@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Quizle.Core.Contracts;
+using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 using Quizle.DB.Common;
 using Quizle.DB.Common.Enums;
@@ -46,7 +47,7 @@ namespace Quizle.Core.Services
             await _repository.SaveChangesAsync();
         }
         public async Task<ProfileDto> GetCurrentUser(string currentUserId)
-        {           
+        {            
             var user =  await _userManager.Users
                 .Include(a => a.ApplicationUsersBadges)
                 .ThenInclude(a => a.Badge)
@@ -79,14 +80,17 @@ namespace Quizle.Core.Services
 
                 })
                 .FirstOrDefaultAsync();
-
-            var correctAnswers = user.AnsweredQuestions.Where(a => a.SelectedAnswer == a.CorrectAnswer).ToList();            
-            var questionCount = user.AnsweredQuestions.Count;
-            user.AnsweredQuestionsCount = questionCount;
+            if (user == null)
+            {
+                throw new NotFoundException();
+            }                        
+            
             if (user.AnsweredQuestionsCount != 0)
             {
+                var correctAnswers = user.AnsweredQuestions.Where(a => a.SelectedAnswer == a.CorrectAnswer).ToList();
+                var questionCount = user.AnsweredQuestions.Count;
+                user.AnsweredQuestionsCount = questionCount;
                 user.WinratePercent = ((decimal)correctAnswers.Count / (decimal)user.AnsweredQuestionsCount) * 100;
-
             }
             else
             {

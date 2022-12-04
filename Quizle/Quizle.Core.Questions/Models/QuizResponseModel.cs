@@ -11,26 +11,26 @@ namespace Quizle.Core.Models
         public int ResponseCode { get; set; }
 
         [JsonProperty("results")]
-        public List<Result> Results { get; set; }
+        public List<Result> Results { get; set; } = new List<Result>();
         public class Result
         {
             [JsonProperty("category")]
-            public string Category { get; set; }
+            public string Category { get; set; } = null!;
 
             [JsonProperty("type")]
-            public string Type { get; set; }
+            public string Type { get; set; } = null!;
 
             [JsonProperty("difficulty")]
-            public string Difficulty { get; set; }
+            public string Difficulty { get; set; } = null!;
 
             [JsonProperty("question")]
-            public string Question { get; set; }
+            public string Question { get; set; } = null!;
 
             [JsonProperty("correct_answer")]
-            public string CorrectAnswer { get; set; }
+            public string CorrectAnswer { get; set; } = null!;
 
             [JsonProperty("incorrect_answers")]
-            public List<string> IncorrectAnswers { get; set; }
+            public List<string> IncorrectAnswers { get; set; } = new List<string>();
         }
     }
 }

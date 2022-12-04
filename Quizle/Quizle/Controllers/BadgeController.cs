@@ -45,7 +45,7 @@ namespace Quizle.Web.Controllers
             return View(models);
 
         }
-        
+
         [HttpGet]
         public IActionResult Add()
         {
@@ -88,19 +88,12 @@ namespace Quizle.Web.Controllers
         }
         public async Task<IActionResult> Buy(int badgeId, int badgePrice)
         {
-            try
-            {
-                var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-                var user = await _userManager.FindByIdAsync(userId);
-                if (user.CurrentQuizPoints >= badgePrice)
-                {
-                    await _badgeService.BuyBadgeAsync(badgeId, userId);
-                }
-            }
-            catch (Exception ex)
-            {
 
-                throw ex;
+            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user.CurrentQuizPoints >= badgePrice)
+            {
+                await _badgeService.BuyBadgeAsync(badgeId, userId);
             }
             return RedirectToAction(nameof(All));
         }

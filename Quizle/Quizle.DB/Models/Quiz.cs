@@ -10,16 +10,20 @@ namespace Quizle.DB.Models
 {
     public class Quiz
     {
+        public Quiz()
+        {
+            Answers = new HashSet<Answer>();
+        }
         [Key]
         public int Id { get; set; }
-        [Required]        
-        public string Question { get; set; }
+        [Required]
+        public string Question { get; set; } = null!;
         [Required]
         [StringLength(50)]
-        public string Category { get; set; }
+        public string Category { get; set; } = null!;
         [Required]
         [StringLength(50)]
-        public string Type { get; set; }
+        public string Type { get; set; } = null!;
         [Required]
         public Difficulty Difficulty { get; set; }
 

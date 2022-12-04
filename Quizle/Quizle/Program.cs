@@ -39,7 +39,7 @@ builder.Services.AddAutoMapper(cfg =>
 });
 builder.Services.Configure<QuartzOptions>(builder.Configuration.GetSection("Quartz"));
 
-builder.Services.AddScoped<IQuizDataService, QuizDataService>();
+builder.Services.AddScoped<IQuizService, QuizService>();
 builder.Services.AddScoped<IRepository, Repository>();
 builder.Services.AddScoped<IProfileService, ProfileService>();
 builder.Services.AddScoped<IBadgeService, BadgeService>();
@@ -49,11 +49,7 @@ builder.Services.AddScoped<IBadgeService, BadgeService>();
 builder.Services.AddQuartz(q =>
 {
     q.SchedulerId = "Scheduler-Core";
-
-    // we take this from appsettings.json, just show it's possible
-    // q.SchedulerName = "Quartz ASP.NET Core Sample Scheduler";
-
-    // as of 3.3.2 this also injects scoped services (like EF DbContext) without problems
+    
     q.UseMicrosoftDependencyInjectionJobFactory();
     q.UseSimpleTypeLoader();
     q.UseInMemoryStore();
@@ -70,7 +66,6 @@ builder.Services.AddQuartz(q =>
 });
 builder.Services.AddQuartzHostedService(options =>
 {
-    // when shutting down we want jobs to complete gracefully
     options.WaitForJobsToComplete = true;
 });
 
@@ -100,6 +95,5 @@ app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-//app.MapRazorPages();
 
 app.Run();

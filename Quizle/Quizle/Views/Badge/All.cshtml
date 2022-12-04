@@ -9,7 +9,8 @@
 @inject UserManager<ApplicationUser> _userManager;
 @{
     ViewBag.Title = "All Badges";
-    var user = _userManager.Users.Include(a => a.ApplicationUsersBadges).ThenInclude(a => a.Badge).ToList().FirstOrDefault(a => a.Id == User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+ 
+    var user = _userManager.Users.Include(a => a.ApplicationUsersBadges).ThenInclude(a => a.Badge).ToList().FirstOrDefault(a => a.Id == User?.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
 }
 
 
@@ -18,7 +19,7 @@
 <div class="container mx-auto mt-4">
     <div class="row">
         @foreach (var badge in Model)
-        {
+        {            
         <div class="col-md-4">
             
                 <div class="card" style="width: 18rem;">
@@ -28,7 +29,12 @@
                         <h6 class="card-subtitle mb-2 text-muted">Description</h6>
                         <p class="card-text">@badge.Description</p>
                         <form class="input-group-sm" asp-controller="Badge" asp-action="Buy" asp-route-badgeId="@badge.Id" asp-route-badgePrice="@badge.Price">
-                            @if (user.ApplicationUsersBadges.Any(a => (int)a.Badge.Rarity > (int)Enum.Parse(typeof(Rarity), badge.Rarity)))
+                            @if (user == null)
+                            {
+                                <input id="buyInactive" type="submit" value="Not Logged in" disabled class="btn mr-2">
+
+                            }
+                            else if (user.ApplicationUsersBadges.Any(a => (int)a.Badge.Rarity > (int)Enum.Parse(typeof(Rarity), badge.Rarity)))
                             {
                                 <input id="buyInactive" type="submit" value="Better Badge Owned" disabled class="btn mr-2">
 

@@ -2,7 +2,9 @@
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using Quizle.Core.Common;
 using Quizle.Core.Contracts;
+using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 using Quizle.DB.Common;
 using Quizle.DB.Common.Enums;
@@ -17,28 +19,33 @@ using System.Web;
 
 namespace Quizle.Core.Services
 {
-    public class QuizDataService : IQuizDataService
+    public class QuizService : IQuizService
     {
         private readonly IRepository _repository;
         private readonly IMapper _mapper;
-        public QuizDataService(IRepository repository, IMapper mapper)
+        public QuizService(IRepository repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;   
         }
-        public async Task<QuizDto> GetDataAsync(string url)
+        public async Task<QuizDto> GetDataAsync(string? url)
         {
-            var json = await new WebClient().DownloadStringTaskAsync(url);
+            if (string.IsNullOrEmpty(url))
+            {
+                throw new ArgumentException("Url not set in configuration.");
+            }
+            var client = new HttpClient();
+            var json = await client.GetStringAsync(url);
             if (string.IsNullOrEmpty(json))
             {
-                Console.WriteLine("Json is empty");
+                throw new InvalidApiResponseException();
             }
             var result = JsonConvert.DeserializeObject<QuizResponseModel>(json)?.Results.First();
             if (result == null)
             {
-                return null;
+                throw new InvalidApiResponseException();
             }
-                               
+
             var answers = new List<AnswerDto>();
             foreach (var incAnswer in result.IncorrectAnswers)
             {
@@ -101,9 +108,8 @@ namespace Quizle.Core.Services
             await _repository.SaveChangesAsync();
 
         }
-        public async Task<QuizDto> GetCurrentQuestion(int? difficulty)
+        public QuizDto GetCurrentQuestion(int? difficulty)
         {            
-            var count = _repository.Count<Quiz>();
             var quizDto = _repository
                 .All<Quiz>()
                 .Include(a => a.Answers)
@@ -114,13 +120,13 @@ namespace Quizle.Core.Services
                            
             return quizDto;
         }
-        public async Task<List<QuizDto>> GetAllCurrentQuestions()
+        public List<QuizDto> GetAllCurrentQuestions()
         {
             var count = _repository.Count<Quiz>();
             var quizDto = _repository
                 .All<Quiz>()
                 .Include(a => a.Answers)
-                .ToList()
+                .AsEnumerable()
                 .OrderByDescending(a => a.Id)
                 .DistinctBy(a => a.Difficulty)
                 .Take(3)
@@ -145,17 +151,23 @@ namespace Quizle.Core.Services
         public async Task AwardPoints(int quizDifficulty, string username)
         {
             var user = _repository.All<ApplicationUser>().First(a => a.UserName == username);
+            if (user == null)
+            {
+                throw new NotFoundException();
+            }
             switch (quizDifficulty)
             {
                 case 1:     
-                    user.CurrentQuizPoints += 25;                                         
+                    user.CurrentQuizPoints += Constants.EasyPointsReward;                                         
                     break;
                 case 2:
-                    user.CurrentQuizPoints += 50;
+                    user.CurrentQuizPoints += Constants.MediumPointsReward;
                     break;
                 case 3:
-                    user.CurrentQuizPoints += 100;
-                    break;                                   
+                    user.CurrentQuizPoints += Constants.HardPointsReward;
+                    break;
+                default:
+                    break;
             }
             _repository.Update(user);
             await _repository.SaveChangesAsync();

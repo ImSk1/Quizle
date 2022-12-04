@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Quizle.Core.Contracts;
+using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 using Quizle.DB.Common;
 using Quizle.DB.Common.Enums;
@@ -25,7 +26,7 @@ namespace Quizle.Core.Services
 
         public List<BadgeDto> GetAllBadges()
         {
-            var list = _repo
+            var badges = _repo
                 .All<Badge>()
                 .Include(a => a.ApplicationUsersBadges)
                 .ThenInclude(a => a.ApplicationUser)
@@ -38,8 +39,8 @@ namespace Quizle.Core.Services
                     Image = a.Image,
                     OwnerIds = a.ApplicationUsersBadges.Select(a => a.ApplicationUserId).ToArray(),
                     Price = a.Price
-                }).ToList();
-            return list;
+                }).ToList();            
+            return badges;
         }
         public List<string> GetRarities()
         {
@@ -71,12 +72,12 @@ namespace Quizle.Core.Services
                 .FirstOrDefaultAsync();
             if (user == null)
             {
-                throw new ArgumentException("Invalid user id.");
+                throw new NotFoundException();
             }
             var badge = await _repo.GetByIdAsync<Badge>(badgeId);
             if (badge == null)
             {
-                throw new ArgumentException("Invalid badge id.");
+                throw new NotFoundException();
             }
             if (!user.ApplicationUsersBadges.Any(b => b.BadgeId == badgeId))
             {

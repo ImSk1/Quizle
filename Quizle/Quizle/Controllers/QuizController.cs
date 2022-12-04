@@ -16,15 +16,11 @@ namespace Quizle.Web.Controllers
     public class QuizController : Controller
     {
 
-        private readonly ILogger<QuizController> _logger;
-        private readonly IConfiguration _config;
-        private readonly IQuizDataService _quizDataService;
+        private readonly IQuizService _quizDataService;
         private readonly IProfileService _userService;
         private readonly IMapper _mapper;
-        public QuizController(ILogger<QuizController> logger, IConfiguration configuration, IQuizDataService quizDataService, IMapper mapper, IProfileService userService)
+        public QuizController(IQuizService quizDataService, IMapper mapper, IProfileService userService)
         {
-            _logger = logger;
-            _config = configuration;
             _quizDataService = quizDataService;
             _mapper = mapper;
             _userService = userService;
@@ -32,7 +28,7 @@ namespace Quizle.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> All()
         {
-            var listOfQuestions = await _quizDataService.GetAllCurrentQuestions();
+            var listOfQuestions = _quizDataService.GetAllCurrentQuestions();
             var quizViewModel = listOfQuestions
                 .Select(a => new QuizViewModel()
                 {
@@ -51,7 +47,7 @@ namespace Quizle.Web.Controllers
         }
         [HttpPost]
 
-        public async Task<IActionResult> SelectDifficulty(int? selectedDifficulty)
+        public IActionResult SelectDifficulty(int? selectedDifficulty)
         {
             return RedirectToAction("Quiz", "Quiz", new { selectedDifficulty = selectedDifficulty });
         }
@@ -65,8 +61,8 @@ namespace Quizle.Web.Controllers
 
             }
 
-            var quizData = await _quizDataService.GetCurrentQuestion(selectedDifficulty);
-            HttpContext.Session.SetString("CorrectAnswer", quizData.Answers.Where(a => a.IsCorrect == true).First().Answer.ToString() ?? "");
+            var quizData = _quizDataService.GetCurrentQuestion(selectedDifficulty);
+            HttpContext.Session.SetString("CorrectAnswer", quizData.Answers.First(a => a.IsCorrect).Answer.ToString() ?? "");
             HttpContext.Session.SetInt32("Difficulty", (int)selectedDifficulty);
             HttpContext.Session.SetString("Question", quizData.Question);
 
@@ -126,16 +122,10 @@ namespace Quizle.Web.Controllers
                 SelectedAnswer = selected,
                 CorrectAnswer = correct
             };
-            try
-            {
-                return View(model);
 
-            }
-            catch (Exception)
-            {
+            return View(model);
 
-                throw;
-            }
+
         }
         [HttpPost]
         public IActionResult Result()

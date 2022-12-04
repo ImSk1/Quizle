@@ -24,6 +24,10 @@ namespace Quizle.Web.Controllers
         {
             var currentUserId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
             var user = await _profileService.GetCurrentUser(currentUserId);
+            if (user == null)
+            {
+                return RedirectToAction("Login", "Identity");
+            }
             var userViewModel = new ProfileViewModel()
             {
                 Username = user.Username,
@@ -40,13 +44,13 @@ namespace Quizle.Web.Controllers
                     Difficulty = a.Difficulty,
                     Type = a.Type
                 }).ToList(),
-                Badge = user.Badge != null ? new BadgeViewModel()
+                Badge = new BadgeViewModel()
                 {
                     Id = user.Badge.Id,
                     Name = user.Badge.Name,
                     Description = user.Badge.Description,
                     Rarity = user.Badge.Rarity,                    
-                } : null
+                }
             };
             if (user.Badge != null)
             {

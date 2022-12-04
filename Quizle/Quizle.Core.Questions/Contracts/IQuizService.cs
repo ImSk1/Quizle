@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Quizle.Core.Contracts
 {
-    public interface IQuizDataService
+    public interface IQuizService
     {
-        Task<QuizDto> GetDataAsync(string url);
+        Task<QuizDto> GetDataAsync(string? url);
         Task AddQuizRange(IEnumerable<QuizDto> quizzes);
-        Task<QuizDto> GetCurrentQuestion(int? difficulty);
-        Task<List<QuizDto>> GetAllCurrentQuestions();
+        QuizDto GetCurrentQuestion(int? difficulty);
+        List<QuizDto> GetAllCurrentQuestions();        
         Task AwardPoints(int quizDifficulty, string username);
     }
 }

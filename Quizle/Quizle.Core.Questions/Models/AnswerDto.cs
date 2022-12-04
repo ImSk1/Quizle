@@ -8,7 +8,7 @@ namespace Quizle.Core.Models
 {
     public class AnswerDto
     {
-        public string Answer { get; set; }
+        public string Answer { get; set; } = null!;
         public bool IsCorrect { get; set; }
     }
 }

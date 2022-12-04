@@ -9,11 +9,11 @@ namespace Quizle.Core.QuartzJobs
 {
     public class GetQuestionsJob : IJob
     {
-        private readonly IQuizDataService _triviaDataService;
+        private readonly IQuizService _triviaDataService;
         private readonly IProfileService _userService;
         
         private readonly IConfiguration _config;
-        public GetQuestionsJob(IQuizDataService triviaDataService, IConfiguration configuration, IProfileService userService)
+        public GetQuestionsJob(IQuizService triviaDataService, IConfiguration configuration, IProfileService userService)
         {
             _triviaDataService = triviaDataService;
             _config = configuration;
