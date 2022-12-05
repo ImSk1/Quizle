@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace Quizle.Core.UnitTests
 {
-    public class ProfileServiceTests : TestBase
+    public class ProfileServiceTests
     {
         private Mock<IProfileService> profileService;
 
