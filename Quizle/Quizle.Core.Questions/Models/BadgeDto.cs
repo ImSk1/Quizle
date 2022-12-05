@@ -14,7 +14,7 @@ namespace Quizle.Core.Models
         public string Description { get; set; } = null!;        
         public byte[] Image { get; set; } = null!;
         public string Rarity { get; set; } = null!;
-        public string[]? OwnerIds { get; set; }
+        public List<string>? OwnerIds { get; set; }
         public int Price { get; set; }
        
     }

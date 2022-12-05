@@ -35,7 +35,7 @@ leaderboardbody {
     z-index: 1;
 }
 
-/* container */
+/* container  linear-gradient(to left top, #DD2476 10%, #FF512F 90%)*/
 .leaderboardcontainer {
     width: auto;
     height: auto;
@@ -94,17 +94,21 @@ leaderboardbody {
         .leaderboard li mark {
             flex-grow: 1;
             color: snow;
+            font-size: 20px;
             background-color: transparent;
+            align-content: center;
         }
 
         .leaderboard li:before {
             counter-increment: number;
             content: counter(number) ".";
             margin-right: 4px;
+            font-size: 20px;
+            align-content: center;
         }
 
         .leaderboard li:nth-child(1) {
-            background: linear-gradient(to left top, #DD2476 10%, #FF512F 90%);
+            background-color: darkgray;
         }
 
         .leaderboard li:nth-child(2) {

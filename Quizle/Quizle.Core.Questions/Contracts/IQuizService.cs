@@ -12,6 +12,5 @@ namespace Quizle.Core.Contracts
         Task AddQuizRange(IEnumerable<QuizDto> quizzes);
         QuizDto GetCurrentQuestion(int? difficulty);
         List<QuizDto> GetAllCurrentQuestions();        
-        Task AwardPoints(int quizDifficulty, string username);
     }
 }

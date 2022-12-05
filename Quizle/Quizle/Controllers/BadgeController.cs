@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Quizle.Core.Contracts;
 using Quizle.Core.Models;
+using Quizle.Core.Services;
 using Quizle.DB.Models;
 using Quizle.Web.Models;
 using System.Net;
@@ -14,12 +15,12 @@ namespace Quizle.Web.Controllers
     public class BadgeController : Controller
     {
         private readonly IBadgeService _badgeService;
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IProfileService _profileService;
 
-        public BadgeController(IBadgeService badgeService, UserManager<ApplicationUser> userManager)
+        public BadgeController(IBadgeService badgeService, IProfileService profileService)
         {
             _badgeService = badgeService;
-            _userManager = userManager;
+            _profileService = profileService;
         }
 
         public IActionResult All()
@@ -45,53 +46,13 @@ namespace Quizle.Web.Controllers
             return View(models);
 
         }
-
-        [HttpGet]
-        public IActionResult Add()
-        {
-            var model = new BadgeAddViewModel()
-            {
-                Rarities = _badgeService.GetRarities()
-            };
-            return View(model);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Add(BadgeAddViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return RedirectToAction("Add", "Badge");
-            }
-            if (model.Image.Length == 0)
-            {
-                return BadRequest();
-            }
-            if (model.Image.Length > 5242880)
-            {
-                return BadRequest();
-            }
-            var dto = new BadgeDto()
-            {
-                Name = model.Name,
-                Rarity = model.Rarity,
-                Description = model.Description,
-                Price = model.Price
-            };
-            using (var memoryStream = new MemoryStream())
-            {
-                await model.Image.CopyToAsync(memoryStream);
-                dto.Image = memoryStream.ToArray();
-            }
-            await _badgeService.AddBadgeAsync(dto);
-            return RedirectToAction("Add", "Badge");
-        }
+        
         public async Task<IActionResult> Buy(int badgeId, int badgePrice)
         {
 
             var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            var user = await _userManager.FindByIdAsync(userId);
-            if (user.CurrentQuizPoints >= badgePrice)
+            var user = await _profileService.GetUserAsync(a => a.Id == userId);
+            if (user.QuizPoints >= badgePrice)
             {
                 await _badgeService.BuyBadgeAsync(badgeId, userId);
             }

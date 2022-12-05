@@ -1,6 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Identity
+@using Quizle.Core.Contracts
 @using Quizle.DB.Models
-@inject UserManager<ApplicationUser> userManager
+@using System.Security.Claims
+@inject IProfileService profileService
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,14 +33,16 @@
                             
                             <li class="nav-item">
                                 <a class="nav-link text-white" asp-area="" asp-controller="Quiz" asp-action="All">All Available Quizzes</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" asp-area="" asp-controller="Badge" asp-action="Add">Add Badge</a>
-                            </li>
+                            </li>                            
                             <li class="nav-item">
                                 <a class="nav-link text-white" asp-area="" asp-controller="Badge" asp-action="All">All Badges</a>
                             </li>
-
+                            @if (User.IsInRole("Administrator"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-white" asp-area="Admin" asp-controller="Badge" asp-action="Add">Add Badge</a>
+                                </li>
+                            }
                             
                         }
                         else
@@ -54,15 +58,16 @@
                          @if (User?.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item mx-1">
-                                <a class="nav-link" style="color: #dd2476;" asp-area="" asp-controller="Badge" asp-action="All">QP: @userManager.FindByNameAsync(User?.Identity?.Name).Result.CurrentQuizPoints</a>
+                                <a class="nav-link" style="color: #dd2476;" asp-area="" asp-controller="Badge" asp-action="All">QP: @profileService.GetUserAsync(a => a.Id == User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value).Result.QuizPoints</a>
                             </li>
                             <li class="nav-item mx-1">
                                 <a class="nav-link text-light"  asp-area="" asp-controller="Profile" asp-action="Profile">View Profile</a>
                             </li>
+                            <li class="nav-item mx-1">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Profile" asp-action="Leaderboard">Leaderboard</a>
+                            </li>
                         }
-                        <li class="nav-item mx-1">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Profile" asp-action="Leaderboard">Leaderboard</a>
-                        </li>
+                        
 
                     </ul>
                     <partial name="_LoginPartial" />

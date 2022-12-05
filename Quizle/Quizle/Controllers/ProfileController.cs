@@ -7,6 +7,7 @@ using Quizle.Core.Models;
 using Quizle.DB.Common;
 using Quizle.DB.Models;
 using Quizle.Web.Models;
+using System.Security.AccessControl;
 using System.Security.Claims;
 
 namespace Quizle.Web.Controllers
@@ -20,13 +21,52 @@ namespace Quizle.Web.Controllers
         {
             _profileService = profileService;
         }
-        public async Task<IActionResult> Profile()
+        
+        [HttpGet]
+
+        public async Task<IActionResult> Profile(string? username)
         {
-            var currentUserId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            var user = await _profileService.GetCurrentUser(currentUserId);
+            string name = "";
+            if (username == null)
+            {
+                name = User.Identity.Name;
+
+            }
+            else
+            {
+                name = username;
+            }
+            var user = await GetUser(name);
+            return View(user);
+        }
+        public IActionResult Leaderboard()
+        {
+            var model = new List<LeaderboardProfileViewModel>();
+            var dtos =  _profileService.GetTopFive();
+            foreach (var dto in dtos)
+            {
+                model.Add(new LeaderboardProfileViewModel()
+                {
+                    ProfileId = dto.Id,
+                    Username = dto.Username,
+                    QuizPoints = dto.QuizPoints
+                });
+            }
+            return View(model);
+        }
+        [HttpPost]
+        public IActionResult Leaderboard(string profileId)
+        {
+           
+            return RedirectToAction("Profile", "Profile", new {profileId = profileId});
+        }
+        [NonAction]
+        public async Task<ProfileViewModel> GetUser(string username)
+        {
+            var user = await _profileService.GetUserAsync(a => a.UserName == username);
             if (user == null)
             {
-                return RedirectToAction("Login", "Identity");
+                return null;
             }
             var userViewModel = new ProfileViewModel()
             {
@@ -44,26 +84,21 @@ namespace Quizle.Web.Controllers
                     Difficulty = a.Difficulty,
                     Type = a.Type
                 }).ToList(),
-                Badge = new BadgeViewModel()
+                Badge = user.Badge != null ? new BadgeViewModel()
                 {
                     Id = user.Badge.Id,
                     Name = user.Badge.Name,
                     Description = user.Badge.Description,
-                    Rarity = user.Badge.Rarity,                    
-                }
+                    Rarity = user.Badge.Rarity,
+                } : null
             };
             if (user.Badge != null)
             {
                 var photoStr = Convert.ToBase64String(user.Badge.Image);
                 var imageString = string.Format("data:image/jpg;base64,{0}", photoStr);
                 userViewModel.Badge.Image = imageString;
-            }            
-            
-            return View(userViewModel);
-        }
-        public IActionResult Leaderboard()
-        {
-            return View();
+            }
+            return userViewModel;
         }
     }
 }

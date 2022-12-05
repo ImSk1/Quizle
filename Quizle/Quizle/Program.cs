@@ -9,6 +9,8 @@ using Quizle.Web.MapperProfiles;
 using Quizle.Core.QuartzJobs;
 using System.Configuration;
 using Quizle.DB.Common;
+using Microsoft.AspNetCore.Mvc;
+using Quizle.Web.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,8 +21,12 @@ builder.Services.AddDbContext<QuizleDbContext>(options =>
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<QuizleDbContext>();
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+});
 
 builder.Services.AddDistributedMemoryCache();
 
@@ -91,9 +97,21 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.SeedAdmin();
+
 app.UseSession();
-app.MapControllerRoute(
+app.UseEndpoints(endpoints =>
+{
+    app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+    );
+
+    app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
+
+});
 
 app.Run();

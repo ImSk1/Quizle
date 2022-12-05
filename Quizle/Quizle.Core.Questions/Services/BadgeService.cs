@@ -37,7 +37,7 @@ namespace Quizle.Core.Services
                     Description = a.Description,
                     Rarity = a.Rarity.ToString(),
                     Image = a.Image,
-                    OwnerIds = a.ApplicationUsersBadges.Select(a => a.ApplicationUserId).ToArray(),
+                    OwnerIds = a.ApplicationUsersBadges.Select(a => a.ApplicationUserId).ToList(),
                     Price = a.Price
                 }).ToList();            
             return badges;

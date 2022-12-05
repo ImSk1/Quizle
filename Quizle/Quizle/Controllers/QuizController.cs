@@ -18,11 +18,9 @@ namespace Quizle.Web.Controllers
 
         private readonly IQuizService _quizDataService;
         private readonly IProfileService _userService;
-        private readonly IMapper _mapper;
         public QuizController(IQuizService quizDataService, IMapper mapper, IProfileService userService)
         {
             _quizDataService = quizDataService;
-            _mapper = mapper;
             _userService = userService;
         }
         [HttpGet]
@@ -66,7 +64,15 @@ namespace Quizle.Web.Controllers
             HttpContext.Session.SetInt32("Difficulty", (int)selectedDifficulty);
             HttpContext.Session.SetString("Question", quizData.Question);
 
-            var quizViewModel = _mapper.Map<QuizViewModel>(quizData);
+            var quizViewModel = new QuizViewModel()
+            {
+                Question = quizData.Question,
+                Answers = quizData.Answers,
+                CorrectAnswer = quizData.Answers.First(a => a.IsCorrect).Answer,
+                Category = quizData.Category,
+                Difficulty = (int)Enum.Parse(typeof(Difficulty), quizData.Difficulty),
+                Type = quizData.Type
+            };
             if (quizViewModel == null)
             {
                 return RedirectToAction("All", "Quiz");
@@ -100,7 +106,7 @@ namespace Quizle.Web.Controllers
 
             if (selectedAnswer == correctAnswer && HttpContext.Session.GetInt32("Difficulty") != null)
             {
-                await _quizDataService.AwardPoints((int)HttpContext.Session.GetInt32("Difficulty"), User?.Identity?.Name);
+                await _userService.AwardPoints((int)HttpContext.Session.GetInt32("Difficulty"), User?.Identity?.Name);
             }
             if (selectedAnswer == "Not Selected")
             {

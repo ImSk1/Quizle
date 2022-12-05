@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Quizle.Core.Common;
 using Quizle.Core.Contracts;
 using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
@@ -11,6 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,18 +48,22 @@ namespace Quizle.Core.Services
             _repository.UpdateRange(users);
             await _repository.SaveChangesAsync();
         }
-        public async Task<ProfileDto> GetCurrentUser(string currentUserId)
-        {            
-            var user =  await _userManager.Users
+        public async Task<ProfileDto> GetUserAsync(Func<ApplicationUser, bool> predicate)
+        {
+            var userList = await _userManager.Users
                 .Include(a => a.ApplicationUsersBadges)
                 .ThenInclude(a => a.Badge)
                 .Include(a => a.UserQuestions)
-                .Where(a => a.Id == currentUserId)
+                .ToListAsync();
+            var user = userList
+                .Where(predicate)
                 .Select(a => new ProfileDto()
                 {
+                    Id = a.Id,
                     Username = a.UserName,
                     Email = a.Email,
                     CurrentQuestionStatus = a.HasAnsweredCurrentQuestion,
+                    QuizPoints = a.CurrentQuizPoints,
                     Badge = a.ApplicationUsersBadges.OrderByDescending(a => a.Badge.Rarity).Select(a => new BadgeDto
                     {
                         Id = a.Badge.Id,
@@ -72,14 +78,14 @@ namespace Quizle.Core.Services
                     {
                         Id = a.Id,
                         Question = a.Question,
-                        Difficulty = a.Difficulty,                        
+                        Difficulty = a.Difficulty,
                         SelectedAnswer = a.SelectedAnswer,
                         CorrectAnswer = a.CorrectAnswer
                     })
-                    .ToList()
+                            .ToList()
 
                 })
-                .FirstOrDefaultAsync();
+                .FirstOrDefault();
             if (user == null)
             {
                 throw new NotFoundException();
@@ -99,6 +105,7 @@ namespace Quizle.Core.Services
 
             return user;
         }
+
         public async Task AddUserQuestion(string userId, string question, int difficulty, string selectedAnswer, string correctAnswer)
         {
             string difficultyString = "";
@@ -122,6 +129,47 @@ namespace Quizle.Core.Services
             await _repository.AddAsync<UserQuestion>(userQuestion);
             await _repository.SaveChangesAsync();   
         }
+        public  List<ProfileDto> GetTopFive()
+        {
+            return _repository
+                .AllReadonly<ApplicationUser>()
+                .OrderByDescending(a => a.CurrentQuizPoints)
+                .Select(a => new ProfileDto()
+                {
+                    Id = a.Id,
+                    Username = a.UserName,
+                    Email = a.Email,
+                    CurrentQuestionStatus = a.HasAnsweredCurrentQuestion,
+                    QuizPoints = a.CurrentQuizPoints
+                })
+                .Take(5)
+                .ToList();
+        }
+        public async Task AwardPoints(int quizDifficulty, string username)
+        {
+            var user = _repository.All<ApplicationUser>(a => a.UserName == username).First();
+            if (user == null)
+            {
+                throw new NotFoundException();
+            }
+            switch (quizDifficulty)
+            {
+                case 1:
+                    user.CurrentQuizPoints += Constants.EasyPointsReward;
+                    break;
+                case 2:
+                    user.CurrentQuizPoints += Constants.MediumPointsReward;
+                    break;
+                case 3:
+                    user.CurrentQuizPoints += Constants.HardPointsReward;
+                    break;
+                default:
+                    break;
+            }
+            _repository.Update(user);
+            await _repository.SaveChangesAsync();
+        }
 
     }
+    
 }

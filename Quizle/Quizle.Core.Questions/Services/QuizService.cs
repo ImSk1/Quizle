@@ -22,11 +22,9 @@ namespace Quizle.Core.Services
     public class QuizService : IQuizService
     {
         private readonly IRepository _repository;
-        private readonly IMapper _mapper;
         public QuizService(IRepository repository, IMapper mapper)
         {
             _repository = repository;
-            _mapper = mapper;   
         }
         public async Task<QuizDto> GetDataAsync(string? url)
         {
@@ -114,7 +112,18 @@ namespace Quizle.Core.Services
                 .All<Quiz>()
                 .Include(a => a.Answers)
                 .Where(a => (int)a.Difficulty == difficulty)
-                .ProjectTo<QuizDto>(_mapper.ConfigurationProvider)
+                .Select(a => new QuizDto()
+                {
+                    Question = a.Question,
+                    Category = a.Category,
+                    Type = a.Type,
+                    Difficulty = a.Difficulty.ToString(),
+                    Answers = a.Answers.Select(a => new AnswerDto()
+                    {
+                        Answer = a.Text,
+                        IsCorrect = a.IsCorrect
+                    }).ToList()
+                })
                 .AsEnumerable()
                 .Last();
                            
@@ -147,30 +156,7 @@ namespace Quizle.Core.Services
             return quizDto;
         }
 
-        public async Task AwardPoints(int quizDifficulty, string username)
-        {
-            var user = _repository.All<ApplicationUser>().First(a => a.UserName == username);
-            if (user == null)
-            {
-                throw new NotFoundException();
-            }
-            switch (quizDifficulty)
-            {
-                case 1:     
-                    user.CurrentQuizPoints += Constants.EasyPointsReward;                                         
-                    break;
-                case 2:
-                    user.CurrentQuizPoints += Constants.MediumPointsReward;
-                    break;
-                case 3:
-                    user.CurrentQuizPoints += Constants.HardPointsReward;
-                    break;
-                default:
-                    break;
-            }
-            _repository.Update(user);
-            await _repository.SaveChangesAsync();
-        }
+        
 
 
     }
