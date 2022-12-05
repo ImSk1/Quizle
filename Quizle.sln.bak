@@ -15,7 +15,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{9EA7F1AE-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DAL", "DAL", "{4E58711D-CDCD-4CB6-A503-68149E3C810F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizle.Core.UnitTests", "Quizle\Quizle.Core.UnitTests\Quizle.Core.UnitTests.csproj", "{192F4C2F-B352-48EE-B9CF-AC9FE11CCACB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizle.Core.UnitTests", "Quizle.Core.UnitTests\Quizle.Core.UnitTests.csproj", "{192F4C2F-B352-48EE-B9CF-AC9FE11CCACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
