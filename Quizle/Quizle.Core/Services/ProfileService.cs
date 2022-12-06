@@ -82,7 +82,7 @@ namespace Quizle.Core.Services
                         SelectedAnswer = a.SelectedAnswer,
                         CorrectAnswer = a.CorrectAnswer
                     })
-                            .ToList()
+                    .ToList()
 
                 })
                 .FirstOrDefault();
