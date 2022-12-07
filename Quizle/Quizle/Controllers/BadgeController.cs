@@ -51,7 +51,7 @@ namespace Quizle.Web.Controllers
         {
 
             var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            var user = await _profileService.GetUserAsync(a => a.Id == userId);
+            var user =  _profileService.GetUser(a => a.Id == userId);
             if (user.QuizPoints >= badgePrice)
             {
                 await _badgeService.BuyBadgeAsync(badgeId, userId);

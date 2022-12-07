@@ -20,7 +20,8 @@
 
   <ItemGroup>    
     <ProjectReference Include="..\Quizle.Core\Quizle.Core.csproj" />    
-    <ProjectReference Include="..\Quizle.DB\Quizle.DB.csproj" />
+    <ProjectReference Include="..\Quizle.DB\Quizle.DB.csproj" />    
+    <ProjectReference Include="..\Quizle\Quizle.Web.csproj" />
   </ItemGroup>
 
 </Project>

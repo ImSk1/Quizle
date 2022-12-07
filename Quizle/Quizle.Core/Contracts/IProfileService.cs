@@ -14,9 +14,9 @@ namespace Quizle.Core.Contracts
         Task UpdateAllUsersHasDoneQuestion(bool valueToChangeTo);
 
         Task UpdateAllUsersHasDoneQuestion(bool valueToChangeTo, Expression<Func<ApplicationUser, bool>> usersToUpdate);
-        Task<ProfileDto> GetUserAsync(Func<ApplicationUser, bool> predicate);
+        ProfileDto GetUser(Func<ApplicationUser, bool> predicate);
         Task AddUserQuestion(string userId, string question, int difficulty, string selectedAnswer, string correctAnswer);
         List<ProfileDto> GetTopFive();
-        Task AwardPoints(int quizDifficulty, string username);
+        Task AwardPoints(int quizDifficulty, string userId);
     }
 }

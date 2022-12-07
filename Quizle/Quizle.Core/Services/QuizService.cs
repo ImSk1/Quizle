@@ -22,7 +22,7 @@ namespace Quizle.Core.Services
     public class QuizService : IQuizService
     {
         private readonly IRepository _repository;
-        public QuizService(IRepository repository, IMapper mapper)
+        public QuizService(IRepository repository)
         {
             _repository = repository;
         }
@@ -65,7 +65,7 @@ namespace Quizle.Core.Services
         {
             if (quizzes == null)
             {
-                return;
+                throw new ArgumentNullException();
             }
             var quizzesDbos = new List<Quiz>();
 

@@ -63,7 +63,7 @@ namespace Quizle.Web.Controllers
         [NonAction]
         public async Task<ProfileViewModel> GetUser(string username)
         {
-            var user = await _profileService.GetUserAsync(a => a.UserName == username);
+            var user =  _profileService.GetUser(a => a.UserName == username);
             if (user == null)
             {
                 return null;

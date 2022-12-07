@@ -30,7 +30,7 @@ namespace Quizle.Core.Services
         }
         public async Task UpdateAllUsersHasDoneQuestion(bool valueToChangeTo)
         {
-            var users = _repository.All<ApplicationUser>().ToList();
+            var users = _userManager.Users.ToList();           
             foreach (var user in users)
             {
                 user.HasAnsweredCurrentQuestion = valueToChangeTo;
@@ -40,7 +40,7 @@ namespace Quizle.Core.Services
         }
         public async Task UpdateAllUsersHasDoneQuestion(bool valueToChangeTo, Expression<Func<ApplicationUser, bool>> usersToUpdate)
         {
-            var users = _repository.All<ApplicationUser>(usersToUpdate).ToList();
+            var users = _userManager.Users.Where(usersToUpdate).ToList();
             foreach (var user in users)
             {
                 user.HasAnsweredCurrentQuestion = valueToChangeTo;
@@ -48,14 +48,14 @@ namespace Quizle.Core.Services
             _repository.UpdateRange(users);
             await _repository.SaveChangesAsync();
         }
-        public async Task<ProfileDto> GetUserAsync(Func<ApplicationUser, bool> predicate)
+        public ProfileDto GetUser(Func<ApplicationUser, bool> predicate)
         {
-            var userList = await _userManager.Users
-                .Include(a => a.ApplicationUsersBadges)
-                .ThenInclude(a => a.Badge)
-                .Include(a => a.UserQuestions)
-                .ToListAsync();
-            var user = userList
+           
+            var user =  _userManager.Users
+				.Include(a => a.ApplicationUsersBadges)
+				.ThenInclude(a => a.Badge)
+				.Include(a => a.UserQuestions)	
+                .ToList()
                 .Where(predicate)
                 .Select(a => new ProfileDto()
                 {
@@ -64,7 +64,7 @@ namespace Quizle.Core.Services
                     Email = a.Email,
                     CurrentQuestionStatus = a.HasAnsweredCurrentQuestion,
                     QuizPoints = a.CurrentQuizPoints,
-                    Badge = a.ApplicationUsersBadges.OrderByDescending(a => a.Badge.Rarity).Select(a => new BadgeDto
+                    Badge = a.ApplicationUsersBadges.Where(a => a.Badge != null).Select(a => new BadgeDto
                     {
                         Id = a.Badge.Id,
                         Name = a.Badge.Name,
@@ -72,7 +72,9 @@ namespace Quizle.Core.Services
                         Image = a.Badge.Image,
                         Price = a.Badge.Price,
                         Rarity = a.Badge.Rarity.ToString()
-                    }).FirstOrDefault(),
+                    })
+					.OrderByDescending(a => a.Rarity)
+                    .FirstOrDefault(),
 
                     AnsweredQuestions = a.UserQuestions.Select(a => new UserQuestionDto()
                     {
@@ -108,7 +110,19 @@ namespace Quizle.Core.Services
 
         public async Task AddUserQuestion(string userId, string question, int difficulty, string selectedAnswer, string correctAnswer)
         {
-            string difficultyString = "";
+            if (await _userManager.FindByIdAsync(userId) == null)
+            {
+                throw new NotFoundException();
+            }
+            if (String.IsNullOrEmpty(question) || String.IsNullOrEmpty(selectedAnswer) || String.IsNullOrEmpty(correctAnswer))
+            {
+                throw new ArgumentException();
+            }
+            if (difficulty < 1 || difficulty > 3)
+            {
+				throw new ArgumentException();
+			}
+			string difficultyString = "";
             switch (difficulty)
             {
                 case 1: difficultyString = Difficulty.easy.ToString();
@@ -131,8 +145,8 @@ namespace Quizle.Core.Services
         }
         public  List<ProfileDto> GetTopFive()
         {
-            return _repository
-                .AllReadonly<ApplicationUser>()
+            return _userManager
+                .Users
                 .OrderByDescending(a => a.CurrentQuizPoints)
                 .Select(a => new ProfileDto()
                 {
@@ -145,9 +159,9 @@ namespace Quizle.Core.Services
                 .Take(5)
                 .ToList();
         }
-        public async Task AwardPoints(int quizDifficulty, string username)
+        public async Task AwardPoints(int quizDifficulty, string userId)
         {
-            var user = _repository.All<ApplicationUser>(a => a.UserName == username).First();
+            var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
                 throw new NotFoundException();
@@ -163,8 +177,9 @@ namespace Quizle.Core.Services
                 case 3:
                     user.CurrentQuizPoints += Constants.HardPointsReward;
                     break;
+
                 default:
-                    break;
+                    throw new ArgumentException();
             }
             _repository.Update(user);
             await _repository.SaveChangesAsync();

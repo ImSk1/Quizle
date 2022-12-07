@@ -35,7 +35,6 @@ namespace Quizle.Core.UnitTests
 		    repositoryMock = new Mock<IRepository>();
 			repositoryMock.Setup(r => r.All<Badge>()).Returns(badgeTable.AsQueryable());
 			repositoryMock.Setup(r => r.GetByIdAsync<Badge>(It.IsAny<int>()))!.ReturnsAsync((int id) => badgeTable.FirstOrDefault(a => a.Id == id));
-			//repositoryMock.Setup(s => s.AddAsync(It.IsAny<BadgeDto>())).Returns(Task.CompletedTask);
 
 			badgeService= new BadgeService(repositoryMock.Object, this.userManager.Object);
 

@@ -58,7 +58,7 @@
                          @if (User?.Identity?.IsAuthenticated ?? false)
                         {
                             <li class="nav-item mx-1">
-                                <a class="nav-link" style="color: #dd2476;" asp-area="" asp-controller="Badge" asp-action="All">QP: @profileService.GetUserAsync(a => a.Id == User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value).Result.QuizPoints</a>
+                                <a class="nav-link" style="color: #dd2476;" asp-area="" asp-controller="Badge" asp-action="All">QP: @profileService.GetUser(a => a.Id == User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value).QuizPoints</a>
                             </li>
                             <li class="nav-item mx-1">
                                 <a class="nav-link text-light"  asp-area="" asp-controller="Profile" asp-action="Profile">View Profile</a>

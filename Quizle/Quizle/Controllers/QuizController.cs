@@ -99,14 +99,14 @@ namespace Quizle.Web.Controllers
                 return RedirectToAction("Quiz", "Quiz");
 
             }
-            await _userService.UpdateAllUsersHasDoneQuestion(true, a => a.UserName == User.Identity.Name);
+            await _userService.UpdateAllUsersHasDoneQuestion(true, a => a.Id == userId);
 
             await _userService.AddUserQuestion(userId, question, (int)difficulty, selectedAnswer, correctAnswer);
 
 
             if (selectedAnswer == correctAnswer && HttpContext.Session.GetInt32("Difficulty") != null)
             {
-                await _userService.AwardPoints((int)HttpContext.Session.GetInt32("Difficulty"), User?.Identity?.Name);
+                await _userService.AwardPoints((int)HttpContext.Session.GetInt32("Difficulty"), userId);
             }
             if (selectedAnswer == "Not Selected")
             {
