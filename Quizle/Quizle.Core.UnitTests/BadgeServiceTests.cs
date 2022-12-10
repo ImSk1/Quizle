@@ -25,17 +25,11 @@ namespace Quizle.Core.UnitTests
 		[SetUp]
 		public void TestInitialize()
 		{
-			badgeTable = new List<Badge>()
-			{
-				new Badge(){Id = 1, Name = "Badge1", Description = "Description",  Rarity = Rarity.Rare, Price = 5, Image = new byte[0]},
-				new Badge(){Id = 2, Name = "Badge2", Description = "Description",  Rarity = Rarity.Rare, Price = 5, Image = new byte[0]},
-				new Badge(){Id = 3, Name = "Badge3", Description = "Description",  Rarity = Rarity.Rare, Price = 5, Image = new byte[0]},
-				new Badge(){Id = 4, Name = "Badge4", Description = "Description",  Rarity = Rarity.Rare, Price = 5, Image = new byte[0] },
-			};
-		    repositoryMock = new Mock<IRepository>();
+			badgeTable = dataStorage.BadgeTable;
+
+			repositoryMock = new Mock<IRepository>();
 			repositoryMock.Setup(r => r.All<Badge>()).Returns(badgeTable.AsQueryable());
 			repositoryMock.Setup(r => r.GetByIdAsync<Badge>(It.IsAny<int>()))!.ReturnsAsync((int id) => badgeTable.FirstOrDefault(a => a.Id == id));
-
 			badgeService= new BadgeService(repositoryMock.Object, this.userManager.Object);
 
 		}

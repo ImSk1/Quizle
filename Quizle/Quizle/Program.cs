@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Quartz;
@@ -5,7 +6,6 @@ using Quizle.Core.Contracts;
 using Quizle.Core.Services;
 using Quizle.DB;
 using Quizle.DB.Models;
-using Quizle.Web.MapperProfiles;
 using Quizle.Core.QuartzJobs;
 using System.Configuration;
 using Quizle.DB.Common;
@@ -37,12 +37,9 @@ builder.Services.AddSession(options =>
 });
 builder.Services.ConfigureApplicationCookie(options =>
 {
-    options.LoginPath = "/User/Login";
+    options.LoginPath = "/Identity/Login";
 });
-builder.Services.AddAutoMapper(cfg =>
-{
-    cfg.AddProfile<QuizMapperProfile>();
-});
+
 builder.Services.Configure<QuartzOptions>(builder.Configuration.GetSection("Quartz"));
 
 builder.Services.AddScoped<IQuizService, QuizService>();
@@ -67,7 +64,8 @@ builder.Services.AddQuartz(q =>
     q.ScheduleJob<GetQuestionsJob>(trigger => trigger
             .WithIdentity("Combined Configuration Trigger")
             .StartNow()
-            .WithDailyTimeIntervalSchedule(x => x.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0,0)).WithIntervalInMinutes(1))            
+			//Will be changed to 1Hr when project is released. Now it is 1min just for development convenience.
+			.WithDailyTimeIntervalSchedule(x => x.StartingDailyAt(TimeOfDay.HourAndMinuteOfDay(0,0)).WithIntervalInMinutes(1))          
         );
 });
 builder.Services.AddQuartzHostedService(options =>
@@ -115,3 +113,6 @@ app.UseEndpoints(endpoints =>
 });
 
 app.Run();
+
+[ExcludeFromCodeCoverage]
+public partial class Program { }

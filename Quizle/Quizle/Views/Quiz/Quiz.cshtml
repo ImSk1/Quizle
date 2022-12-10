@@ -25,7 +25,7 @@
                         </div>
                     }
                     <div class="outerDiv">
-                        <input type="submit"  disabled class="save btn btn-primary border-success align-items-center btn-success mt-2" value="Submit">
+                        <input type="submit"  asp-route-question="@Model.Question" asp-route-difficulty="@Model.Difficulty" disabled class="save btn btn-primary border-success align-items-center btn-success mt-2" value="Submit">
                     </div>
                 </div>
             </form>

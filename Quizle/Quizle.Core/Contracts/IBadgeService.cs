@@ -1,4 +1,6 @@
-﻿using Quizle.Core.Models;
+﻿using Quizle.Core.Exceptions;
+using Quizle.Core.Models;
+using Quizle.DB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +15,10 @@ namespace Quizle.Core.Contracts
         List<string> GetRarities();
         Task AddBadgeAsync(BadgeDto badge);
         Task BuyBadgeAsync(int badgeId, string userId);
-    }
+        Task DeleteBadgeAsync(int badgeId);
+        bool ExistsById(int id);
+        bool UserOwnsBadge(string userId, int badgeId);
+        bool UserOwnsBetterBadge(string userId, int badgeId);
+
+    } 
 }

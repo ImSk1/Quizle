@@ -15,8 +15,8 @@ namespace Quizle.Core.UnitTests
     {       
         protected Mock<UserManager<ApplicationUser>> userManager;
         protected DataStorage dataStorage;
-        [OneTimeSetUp]
-        public void Setup()
+        [SetUp]
+        public virtual void Setup()
         {
 
             dataStorage = new DataStorage();

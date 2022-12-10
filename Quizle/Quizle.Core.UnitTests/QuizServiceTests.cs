@@ -21,38 +21,10 @@ namespace Quizle.Core.UnitTests
 		private IQuizService quizService;
 		private List<Quiz> quizTable;
 		[SetUp]
-		public void TestInitialize()
+		public override void Setup()
 		{
-			quizTable = new List<Quiz>()
-			{
-				new Quiz()
-				{
-					Id= 1,
-					Type = "Multiple",
-					Difficulty = Difficulty.easy,
-					Question = "Question",
-					Category = "Category",
-					Answers = new List<Answer>()					
-				},
-				new Quiz()
-				{
-					Id= 2,
-					Type = "Boolean",
-					Difficulty = Difficulty.medium,
-					Question = "Question",
-					Category = "Category",
-					Answers = new List<Answer>()
-				},
-				new Quiz()
-				{
-					Id= 3,
-					Type = "Boolean",
-					Difficulty = Difficulty.hard,
-					Question = "Question",
-					Category = "Category",
-					Answers = new List<Answer>()
-				}
-			};
+			base.Setup();
+			quizTable = dataStorage.QuizTable;
 			repositoryMock = new Mock<IRepository>();
 			repositoryMock.Setup(r => r.All<Quiz>()).Returns(quizTable.AsQueryable());
 			repositoryMock.Setup(r => r.GetByIdAsync<Quiz>(It.IsAny<int>()))!.ReturnsAsync((int id) => quizTable.FirstOrDefault(a => a.Id == id));

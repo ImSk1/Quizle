@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Quizle.Core.Contracts;
+using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 using Quizle.Core.Services;
 using Quizle.DB.Models;
@@ -52,9 +53,30 @@ namespace Quizle.Web.Controllers
 
             var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
             var user =  _profileService.GetUser(a => a.Id == userId);
+            if (_badgeService.UserOwnsBadge(user.Id, badgeId))
+            {
+                return RedirectToAction(nameof(All));
+            }
+            if (_badgeService.UserOwnsBetterBadge(user.Id, badgeId))
+            {
+                return RedirectToAction(nameof(All));
+            }
             if (user.QuizPoints >= badgePrice)
             {
-                await _badgeService.BuyBadgeAsync(badgeId, userId);
+
+                try
+                {
+					await _badgeService.BuyBadgeAsync(badgeId, userId);
+				}
+				catch (ArgumentException argEx)
+                {
+
+                    return BadRequest();
+                }
+                catch(NotFoundException nfEx) 
+                {
+                    return NotFound();
+                }
             }
             return RedirectToAction(nameof(All));
         }

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Quizle.Core.Contracts;
+using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 using Quizle.DB.Common;
 using Quizle.DB.Models;
@@ -36,8 +37,16 @@ namespace Quizle.Web.Controllers
             {
                 name = username;
             }
-            var user = await GetUser(name);
-            return View(user);
+            ProfileViewModel user;
+            try
+            {
+				user = await GetUser(name);
+				return View(user);
+			}
+			catch (NotFoundException nfEx)
+            {
+                return NotFound();
+            }             
         }
         public IActionResult Leaderboard()
         {
@@ -63,11 +72,17 @@ namespace Quizle.Web.Controllers
         [NonAction]
         public async Task<ProfileViewModel> GetUser(string username)
         {
-            var user =  _profileService.GetUser(a => a.UserName == username);
-            if (user == null)
+            ProfileDto user;
+            try
             {
-                return null;
-            }
+				user = _profileService.GetUser(a => a.UserName == username);
+
+			}
+			catch (Exception)
+            {
+
+                throw;
+            }            
             var userViewModel = new ProfileViewModel()
             {
                 Username = user.Username,

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Quartz;
 using Quizle.Core.Contracts;
+using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 
 using System.Diagnostics;
@@ -21,11 +22,33 @@ namespace Quizle.Core.QuartzJobs
         }
         public async Task Execute(IJobExecutionContext context)
         {
-            var quizEasy = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlEasy"));
-            var quizMedium = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlMedium"));
-            var quizHard = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlHard"));
+            QuizDto? quizEasy;
+            QuizDto? quizMedium;
+            QuizDto? quizHard;
+            try
+            {
+				quizEasy = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlEasy"));
+				quizMedium = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlMedium"));
+				quizHard = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlHard"));
+			}
+            catch (InvalidApiResponseException iapEx)
+            {
+                return;
+            }
+			catch (ArgumentException argEx)
+			{
+                return;
+			}
 
-            await _triviaDataService.AddQuizRange(new List<QuizDto> { quizEasy, quizMedium, quizHard});
+            try
+			{
+				await _triviaDataService.AddQuizRange(new List<QuizDto> { quizEasy, quizMedium, quizHard });
+			}
+			catch (ArgumentNullException ex)
+            {
+
+                return;
+            }
             await _userService.UpdateAllUsersHasDoneQuestion(false);            
         }
     }

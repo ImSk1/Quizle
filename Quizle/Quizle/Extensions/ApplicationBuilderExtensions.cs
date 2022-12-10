@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Quizle.DB.Models;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Quizle.Web.Extensions
 {
+    [ExcludeFromCodeCoverage]
     public static class ApplicationBuilderExtensions 
     {
         public static IApplicationBuilder SeedAdmin(this IApplicationBuilder app)

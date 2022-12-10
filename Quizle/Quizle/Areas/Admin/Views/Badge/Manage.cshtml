@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.EntityFrameworkCore
+@using Quizle.DB.Common.Enums
+@using Quizle.DB.Models
+@using Quizle.Web.Models
+@using System.Security.Claims
+@model List<BadgeViewModel>
+
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+<div class="container mx-auto mt-4">
+    <div class="row">
+        @foreach (var badge in Model)
+        {
+            <div class="col-md-4">
+
+                <div class="card" style="width: 18rem;">
+                    <img src="@badge.Image" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@badge.Name</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Description</h6>
+                        <p class="card-text">@badge.Description</p>
+                        <form class="input-group-sm" asp-area="Admin" asp-controller="Badge" asp-route-badgeId="@badge.Id" asp-action="Remove" method="post">
+                                <input type="submit" value="Delete Badge" class="btn mr-2">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

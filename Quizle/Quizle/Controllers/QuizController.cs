@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Quizle.Core.Contracts;
+using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 using Quizle.DB.Common.Enums;
 using Quizle.DB.Models;
@@ -18,7 +19,7 @@ namespace Quizle.Web.Controllers
 
         private readonly IQuizService _quizDataService;
         private readonly IProfileService _userService;
-        public QuizController(IQuizService quizDataService, IMapper mapper, IProfileService userService)
+        public QuizController(IQuizService quizDataService, IProfileService userService)
         {
             _quizDataService = quizDataService;
             _userService = userService;
@@ -47,7 +48,12 @@ namespace Quizle.Web.Controllers
 
         public IActionResult SelectDifficulty(int? selectedDifficulty)
         {
-            return RedirectToAction("Quiz", "Quiz", new { selectedDifficulty = selectedDifficulty });
+            if (selectedDifficulty < 1 || selectedDifficulty > 3)
+            {
+				return RedirectToAction("All", "Quiz");
+
+			}
+			return RedirectToAction("Quiz", "Quiz", new { selectedDifficulty = selectedDifficulty });
         }
 
         [HttpGet]
@@ -60,7 +66,7 @@ namespace Quizle.Web.Controllers
             }
 
             var quizData = _quizDataService.GetCurrentQuestion(selectedDifficulty);
-            HttpContext.Session.SetString("CorrectAnswer", quizData.Answers.First(a => a.IsCorrect).Answer.ToString() ?? "");
+            HttpContext.Session.SetString("CorrectAnswer", quizData.Answers.FirstOrDefault(a => a.IsCorrect)?.Answer.ToString() ?? "");
             HttpContext.Session.SetInt32("Difficulty", (int)selectedDifficulty);
             HttpContext.Session.SetString("Question", quizData.Question);
 
@@ -72,21 +78,16 @@ namespace Quizle.Web.Controllers
                 Category = quizData.Category,
                 Difficulty = (int)Enum.Parse(typeof(Difficulty), quizData.Difficulty),
                 Type = quizData.Type
-            };
-            if (quizViewModel == null)
-            {
-                return RedirectToAction("All", "Quiz");
-            }
-
+            };           
             return View(quizViewModel);
         }
         [HttpPost]
-        public async Task<IActionResult> Quiz(string selectedAnswer)
+        public async Task<IActionResult> Quiz(string selectedAnswer, string question, int difficulty)
         {
             var correctAnswer = HttpContext.Session.GetString("CorrectAnswer");
             var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            var question = HttpContext.Session.GetString("Question");
-            var difficulty = HttpContext.Session.GetInt32("Difficulty");
+            //var question = HttpContext.Session.GetString("Question");
+            //var difficulty = HttpContext.Session.GetInt32("Difficulty");
 
             TempData["Flag"] = "FlagExists";
 
@@ -94,19 +95,28 @@ namespace Quizle.Web.Controllers
             {
                 return RedirectToAction("Quiz", "Quiz");
             }
-            if (question == null || difficulty == null)
+            if (string.IsNullOrEmpty(question))
             {
-                return RedirectToAction("Quiz", "Quiz");
+                return RedirectToAction("All", "Quiz");
 
             }
             await _userService.UpdateAllUsersHasDoneQuestion(true, a => a.Id == userId);
-
-            await _userService.AddUserQuestion(userId, question, (int)difficulty, selectedAnswer, correctAnswer);
-
-
-            if (selectedAnswer == correctAnswer && HttpContext.Session.GetInt32("Difficulty") != null)
+            try
             {
-                await _userService.AwardPoints((int)HttpContext.Session.GetInt32("Difficulty"), userId);
+				await _userService.AddUserQuestion(userId, question, (int)difficulty, selectedAnswer, correctAnswer);
+				if (selectedAnswer == correctAnswer)
+				{
+					await _userService.AwardPoints(difficulty, userId);
+				}
+			}
+			catch (ArgumentException)
+            {
+
+                return BadRequest();
+            }
+            catch (NotFoundException)
+            {
+                return NotFound();
             }
             if (selectedAnswer == "Not Selected")
             {
