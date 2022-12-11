@@ -31,11 +31,11 @@ namespace Quizle.Core.QuartzJobs
 				quizMedium = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlMedium"));
 				quizHard = await _triviaDataService.GetDataAsync(_config.GetValue<string>("TriviaUrlHard"));
 			}
-            catch (InvalidApiResponseException iapEx)
+            catch (InvalidApiResponseException)
             {
                 return;
             }
-			catch (ArgumentException argEx)
+			catch (ArgumentException)
 			{
                 return;
 			}
@@ -44,9 +44,8 @@ namespace Quizle.Core.QuartzJobs
 			{
 				await _triviaDataService.AddQuizRange(new List<QuizDto> { quizEasy, quizMedium, quizHard });
 			}
-			catch (ArgumentNullException ex)
+			catch (ArgumentNullException)
             {
-
                 return;
             }
             await _userService.UpdateAllUsersHasDoneQuestion(false);            

@@ -28,19 +28,23 @@ namespace Quizle.Core.Services
 		}
 		public bool ExistsById(int id) => _repo.GetByIdAsync<Badge>(id) != null;
 		public bool UserOwnsBadge(string userId, int badgeId) => _repo.AllReadonly<ApplicationUserBadge>().Any(a => a.BadgeId == badgeId && a.ApplicationUserId == userId);
-		public bool UserOwnsBetterBadge(string userId, int badgeId)
+		public async Task<bool> UserOwnsBetterBadge(string userId, int badgeId)
 		{
 			if (_userManager.FindByIdAsync(userId) == null)
 			{
 				throw new NotFoundException("User doesn't exist.");
 			}
-			var userBadges = _repo.AllReadonly<ApplicationUserBadge>().Where(a => a.ApplicationUserId == userId);
+			var userBadges = _repo.AllReadonly<ApplicationUserBadge>().Where(a => a.ApplicationUserId == userId).Include(a => a.Badge).ToList();
 			if (!ExistsById(badgeId))
 			{
 				throw new NotFoundException("Badge doesn't exist.");
 			}
-			var badge = _repo.GetByIdAsync<Badge>(badgeId);
-			if (userBadges.Any(a => (int)a.Badge.Rarity > badge.Id))
+			var badge = await _repo.GetByIdAsync<Badge>(badgeId);
+			if (userBadges.Count == 0)
+			{
+				return false;
+			}
+			if (userBadges.Any(a => ((int?)a.Badge?.Rarity ?? 0) > (int)badge.Rarity))
 			{
 				return true;
 			}
@@ -79,10 +83,7 @@ namespace Quizle.Core.Services
 
 		public async Task AddBadgeAsync(BadgeDto badge)
 		{
-			if (badge == null)
-			{
-				throw new ArgumentNullException();
-			}
+			//ADD VALIDATION
 			var entity = new Badge()
 			{
 				Name = badge.Name,
@@ -116,14 +117,14 @@ namespace Quizle.Core.Services
 
 			if (user == null)
 			{
-				throw new NotFoundException();
+				throw new NotFoundException("User not found.");
 			}
 
 			var badge = await _repo.GetByIdAsync<Badge>(badgeId);
 
 			if (badge == null)
 			{
-				throw new NotFoundException();
+				throw new NotFoundException("Badge not found.");
 			}
 			if (!user.ApplicationUsersBadges.Any(b => b.BadgeId == badgeId))
 			{

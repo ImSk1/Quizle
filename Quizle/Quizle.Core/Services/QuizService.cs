@@ -63,10 +63,7 @@ namespace Quizle.Core.Services
 
         public async Task AddQuizRange(IEnumerable<QuizDto> quizzes)
         {
-            if (quizzes == null)
-            {
-                throw new ArgumentNullException();
-            }
+            //ADD VALIDATION
             var quizzesDbos = new List<Quiz>();
 
            

@@ -67,12 +67,20 @@ namespace Quizle.Web.UnitTests.Mocks
 		{
 			if (sessionStorage[key] != null)
 			{
-				value = Encoding.ASCII.GetBytes(sessionStorage[key].ToString());
-				return true;
-			}
+				value = Encoding.ASCII.GetBytes(sessionStorage[key].ToString() ?? string.Empty);
+				if (value == Array.Empty<byte>())
+				{
+					return false;
+				}
+				else
+				{
+                    return true;
+
+                }
+            }
 			else
 			{
-				value = null;
+				value = Array.Empty<byte>();
 				return false;
 			}
 		}

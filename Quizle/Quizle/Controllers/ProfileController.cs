@@ -8,6 +8,7 @@ using Quizle.Core.Models;
 using Quizle.DB.Common;
 using Quizle.DB.Models;
 using Quizle.Web.Models;
+using System.Reflection.Metadata.Ecma335;
 using System.Security.AccessControl;
 using System.Security.Claims;
 
@@ -25,12 +26,18 @@ namespace Quizle.Web.Controllers
         
         [HttpGet]
 
-        public async Task<IActionResult> Profile(string? username)
+        public IActionResult Profile(string? username)
         {
             string name = "";
             if (username == null)
             {
-                name = User.Identity.Name;
+                string? loggedInName = User?.Identity?.Name;
+                if (loggedInName == null)
+                {
+                    return NotFound();
+
+                }
+                name = loggedInName;
 
             }
             else
@@ -40,10 +47,10 @@ namespace Quizle.Web.Controllers
             ProfileViewModel user;
             try
             {
-				user = await GetUser(name);
+				user = GetUser(name);
 				return View(user);
 			}
-			catch (NotFoundException nfEx)
+			catch (NotFoundException)
             {
                 return NotFound();
             }             
@@ -70,19 +77,12 @@ namespace Quizle.Web.Controllers
             return RedirectToAction("Profile", "Profile", new {profileId = profileId});
         }
         [NonAction]
-        public async Task<ProfileViewModel> GetUser(string username)
+        public ProfileViewModel GetUser(string username)
         {
             ProfileDto user;
-            try
-            {
-				user = _profileService.GetUser(a => a.UserName == username);
-
-			}
-			catch (Exception)
-            {
-
-                throw;
-            }            
+            
+		    user = _profileService.GetUser(a => a.UserName == username);
+          
             var userViewModel = new ProfileViewModel()
             {
                 Username = user.Username,
@@ -107,7 +107,7 @@ namespace Quizle.Web.Controllers
                     Rarity = user.Badge.Rarity,
                 } : null
             };
-            if (user.Badge != null)
+            if (userViewModel.Badge != null)
             {
                 var photoStr = Convert.ToBase64String(user.Badge.Image);
                 var imageString = string.Format("data:image/jpg;base64,{0}", photoStr);

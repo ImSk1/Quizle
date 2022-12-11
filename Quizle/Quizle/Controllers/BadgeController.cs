@@ -57,9 +57,13 @@ namespace Quizle.Web.Controllers
             {
                 return RedirectToAction(nameof(All));
             }
-            if (_badgeService.UserOwnsBetterBadge(user.Id, badgeId))
+            if (await _badgeService.UserOwnsBetterBadge(user.Id, badgeId))
             {
                 return RedirectToAction(nameof(All));
+            }
+            if (userId == null)
+            {
+                return NotFound();
             }
             if (user.QuizPoints >= badgePrice)
             {
@@ -68,12 +72,12 @@ namespace Quizle.Web.Controllers
                 {
 					await _badgeService.BuyBadgeAsync(badgeId, userId);
 				}
-				catch (ArgumentException argEx)
+				catch (ArgumentException)
                 {
 
                     return BadRequest();
                 }
-                catch(NotFoundException nfEx) 
+                catch(NotFoundException) 
                 {
                     return NotFound();
                 }

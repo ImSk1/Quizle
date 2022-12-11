@@ -40,9 +40,9 @@ namespace Quizle.Core.UnitTests
 
             //Assert
             repositoryMock.Verify();
-            Assert.IsNotNull(actual);
+            Assert.That(actual, Is.Not.Null);
             Assert.IsAssignableFrom<List<BadgeDto>>(actual);
-            Assert.That(actual.Count, Is.EqualTo(badgeTable.Count));
+            Assert.That(actual, Has.Count.EqualTo(badgeTable.Count));
 
         }
         
@@ -55,11 +55,14 @@ namespace Quizle.Core.UnitTests
 
             //Act
             var actual = badgeService.GetRarities();
-            Assert.IsNotNull(actual);
-            Assert.IsAssignableFrom<List<string>>(actual);
-            Assert.That(expected.Except(actual).Count, Is.EqualTo(0));
-
+            Assert.That(actual, Is.Not.Null);
+            Assert.Multiple(() =>
+            {
+                Assert.IsAssignableFrom<List<string>>(actual);
+                Assert.That(expected.Except(actual).Count, Is.EqualTo(0));
+            });
         }
+
         [Test]
         public void BadgeService_AddBadgeAsync_Should_Add_Badge()
         {
@@ -72,7 +75,7 @@ namespace Quizle.Core.UnitTests
                 Description = "Description",
                 Rarity = "Rare",
                 Price = 5,
-                Image = new byte[0],
+                Image = Array.Empty<byte>(),
                 OwnerIds = new List<string>()
             };
 
@@ -82,13 +85,13 @@ namespace Quizle.Core.UnitTests
             repositoryMock.Verify(v => v.AddAsync<Badge>(It.IsAny<Badge>()), Times.Once);
             repositoryMock.Verify(v => v.SaveChangesAsync(), Times.Once);
 		}
-        [Test]
-        public void BadgeService_AddBadgeAsync_With_Null_Argument_Should_Throw_ArgumentNullException()
-        {
-            //Act
-            //Assert
-            Assert.ThrowsAsync<ArgumentNullException>(() => badgeService.AddBadgeAsync(null));
-		}
+  //      [Test]
+  //      public void BadgeService_AddBadgeAsync_With_Null_Argument_Should_Throw_ArgumentNullException()
+  //      {
+  //          //Act
+  //          //Assert
+  //          Assert.ThrowsAsync<ArgumentNullException>(() => badgeService.AddBadgeAsync(null));
+		//}
         [Test]
         public void BadgeService_BuyBadgeAsync_Gives_Badge_To_User()
         {
@@ -106,24 +109,13 @@ namespace Quizle.Core.UnitTests
             this.repositoryMock.Verify(a => a.SaveChangesAsync(), Times.Once);
             Assert.That(user.ApplicationUsersBadges.Any(a => a.ApplicationUserId == userId && a.BadgeId == badgeId));
             
-        }
-		[Test]
-		public void BadgeService_BuyBadgeAsync_With_Null_UserId_Throws_ArgumentEx()
-		{
-            //Arrange
-            int badgeId = 1;
-			string? userId = null;
-
-            //Assert
-            Assert.ThrowsAsync<ArgumentException>(() => badgeService.BuyBadgeAsync(badgeId, userId));
-
-		}
+        }		
 		[Test]
 		public void BadgeService_BuyBadgeAsync_With_Empty_UserId_Throws_ArgumentEx()
 		{
 			//Arrange
 			int badgeId = 1;
-			string? userId = "";
+			string userId = "";
 
 			//Assert
 			Assert.ThrowsAsync<ArgumentException>(() => badgeService.BuyBadgeAsync(badgeId, userId));

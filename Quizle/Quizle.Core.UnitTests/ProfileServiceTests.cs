@@ -45,7 +45,7 @@ namespace Quizle.Core.UnitTests
             repositoryMock.Verify(a => a.SaveChangesAsync());
             foreach (var user in allUsers)
             {
-                Assert.IsFalse(user.HasAnsweredCurrentQuestion);
+                Assert.That(user.HasAnsweredCurrentQuestion, Is.False);
             }            
 
         }
@@ -68,26 +68,30 @@ namespace Quizle.Core.UnitTests
 			repositoryMock.Verify(a => a.SaveChangesAsync());
 			foreach (var user in usersToUpdate)
 			{
-				Assert.IsFalse(user.HasAnsweredCurrentQuestion);
+				Assert.That(user.HasAnsweredCurrentQuestion, Is.False);
 			}
 
 		}
         [Test]
         public void ProfileService_GetUser_Should_Return_User_With_Info_Matching_The_Arguments_Predicate()
-		{
+        {
             //Arrange
-			var user = dataStorage.Users.First(a => a.UserName == "userWithEverything");
+            var user = dataStorage.Users.First(a => a.UserName == "userWithEverything");
 			string expectedId = user.Id;
             //Act
             
             var actual = profileService.GetUser(a => a.Id == expectedId);
             //Assert
 			userManager.Verify(a => a.Users);
-            Assert.IsNotNull(actual);
-            Assert.IsAssignableFrom<List<UserQuestionDto>>(actual.AnsweredQuestions);
-            Assert.That(actual.Id, Is.EqualTo(expectedId));
-		}
-		[Test]
+            Assert.That(actual, Is.Not.Null);
+            Assert.Multiple(() =>
+            {
+                Assert.IsAssignableFrom<List<UserQuestionDto>>(actual.AnsweredQuestions);
+                Assert.That(actual.Id, Is.EqualTo(expectedId));
+            });
+        }
+
+        [Test]
 		public void ProfileService_GetUser_With_Invalid_Id_Throws_NotFoundEx()
 		{
 			//Arrange
@@ -156,9 +160,9 @@ namespace Quizle.Core.UnitTests
 
 			//Assert
 			userManager.Verify(a => a.Users);
-			Assert.IsNotNull(actual);
+			Assert.That(actual, Is.Not.Null);
 			Assert.IsAssignableFrom <List<ProfileDto>>(actual);
-			Assert.That(actual.Count, Is.LessThanOrEqualTo(5));
+			Assert.That(actual, Has.Count.LessThanOrEqualTo(5));
 			Assert.That(actual, Is.Ordered.Descending.By("QuizPoints"));
 		}
 		[Test]

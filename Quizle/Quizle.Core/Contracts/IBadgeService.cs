@@ -18,7 +18,7 @@ namespace Quizle.Core.Contracts
         Task DeleteBadgeAsync(int badgeId);
         bool ExistsById(int id);
         bool UserOwnsBadge(string userId, int badgeId);
-        bool UserOwnsBetterBadge(string userId, int badgeId);
+        Task<bool> UserOwnsBetterBadge(string userId, int badgeId);
 
     } 
 }

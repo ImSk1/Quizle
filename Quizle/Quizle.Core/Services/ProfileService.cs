@@ -55,7 +55,7 @@ namespace Quizle.Core.Services
 				.Include(a => a.ApplicationUsersBadges)
 				.ThenInclude(a => a.Badge)
 				.Include(a => a.UserQuestions)	
-                .ToList()
+                .AsEnumerable()
                 .Where(predicate)
                 .Select(a => new ProfileDto()
                 {
@@ -90,7 +90,7 @@ namespace Quizle.Core.Services
                 .FirstOrDefault();
             if (user == null)
             {
-                throw new NotFoundException();
+                throw new NotFoundException("User not found.");
             }                        
             
             if (user.AnsweredQuestionsCount != 0)
@@ -116,11 +116,11 @@ namespace Quizle.Core.Services
             }
             if (String.IsNullOrEmpty(question) || String.IsNullOrEmpty(selectedAnswer) || String.IsNullOrEmpty(correctAnswer))
             {
-                throw new ArgumentException();
+                throw new ArgumentException("Invalid arguments.");
             }
             if (difficulty < 1 || difficulty > 3)
             {
-				throw new ArgumentException();
+				throw new ArgumentException("Invalid difficulty.");
 			}
 			string difficultyString = "";
             switch (difficulty)
@@ -179,7 +179,7 @@ namespace Quizle.Core.Services
                     break;
 
                 default:
-                    throw new ArgumentException();
+                    throw new ArgumentException("Invalid difficulty");
             }
             _repository.Update(user);
             await _repository.SaveChangesAsync();

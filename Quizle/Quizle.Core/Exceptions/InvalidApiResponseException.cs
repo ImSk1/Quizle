@@ -12,7 +12,7 @@ namespace Quizle.Core.Exceptions
         public InvalidApiResponseException() : base()
         {
 
-        }
+        }        
         public InvalidApiResponseException(string message) : base(message)
         {
 

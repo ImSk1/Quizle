@@ -84,17 +84,18 @@ namespace Quizle.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Quiz(string selectedAnswer, string question, int difficulty)
         {
-            var correctAnswer = HttpContext.Session.GetString("CorrectAnswer");
+            string correctAnswer = HttpContext.Session.GetString("CorrectAnswer") ?? string.Empty;
             var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            //var question = HttpContext.Session.GetString("Question");
-            //var difficulty = HttpContext.Session.GetInt32("Difficulty");
-
+            if (userId == null)
+            {
+                return BadRequest("Not logged in.");
+            }
             TempData["Flag"] = "FlagExists";
 
             if (!ModelState.IsValid)
             {
                 return RedirectToAction("Quiz", "Quiz");
-            }
+            } 
             if (string.IsNullOrEmpty(question))
             {
                 return RedirectToAction("All", "Quiz");
@@ -103,7 +104,7 @@ namespace Quizle.Web.Controllers
             await _userService.UpdateAllUsersHasDoneQuestion(true, a => a.Id == userId);
             try
             {
-				await _userService.AddUserQuestion(userId, question, (int)difficulty, selectedAnswer, correctAnswer);
+				await _userService.AddUserQuestion(userId, question, difficulty, selectedAnswer, correctAnswer);
 				if (selectedAnswer == correctAnswer)
 				{
 					await _userService.AwardPoints(difficulty, userId);

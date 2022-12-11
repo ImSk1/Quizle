@@ -31,8 +31,8 @@ namespace Quizle.Web.UnitTests
 		{
 			var result = badgeController.All() as ViewResult;
 			var model = ((List<BadgeViewModel>?)result?.Model) ?? null;
-			Assert.IsNotNull(result);
-			Assert.IsNotNull(model);
+			Assert.That(result, Is.Not.Null);
+			Assert.That(model, Is.Not.Null);			
 			Assert.IsAssignableFrom<List<BadgeViewModel>>(model);
 		}
 		[Test]
@@ -46,7 +46,7 @@ namespace Quizle.Web.UnitTests
 			var result = badgeController.Buy(badgeId, badgePrice).Result as RedirectToActionResult;
 
 
-			Assert.AreEqual("All", result.ActionName);
+			Assert.That(result?.ActionName, Is.EqualTo("All"));
 			badgeServiceMock.Verify(a => a.BuyBadgeAsync(badgeId, user.Id));
 			
 		}
@@ -61,7 +61,7 @@ namespace Quizle.Web.UnitTests
 			var result = badgeController.Buy(badgeId, badgePrice).Result as RedirectToActionResult;
 
 
-			Assert.AreEqual("All", result.ActionName);
+			Assert.That(result?.ActionName, Is.EqualTo("All"));
 			badgeServiceMock.Verify(a => a.BuyBadgeAsync(It.IsAny<int>(), It.IsAny<string>()), Times.Never);
 
 		}

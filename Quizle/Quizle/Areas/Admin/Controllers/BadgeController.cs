@@ -11,12 +11,10 @@ namespace Quizle.Web.Areas.Admin.Controllers
     public class BadgeController : BaseAdminController
     {
         private readonly IBadgeService _badgeService;
-        private readonly UserManager<ApplicationUser> _userManager;
 
-        public BadgeController(IBadgeService badgeService, UserManager<ApplicationUser> userManager)
+        public BadgeController(IBadgeService badgeService)
         {
-            _badgeService = badgeService;
-            _userManager = userManager;
+            _badgeService = badgeService;            
         }
         [HttpGet]
         public IActionResult Add()
@@ -59,7 +57,7 @@ namespace Quizle.Web.Areas.Admin.Controllers
             {
                 await _badgeService.AddBadgeAsync(dto);
             }
-            catch (ArgumentNullException argEx)
+            catch (ArgumentNullException)
             {
                 BadRequest();
             }
@@ -101,7 +99,7 @@ namespace Quizle.Web.Areas.Admin.Controllers
                 await _badgeService.DeleteBadgeAsync(badgeId);
 
             }
-            catch (NotFoundException nfEx)
+            catch (NotFoundException)
             {
                 return NotFound();
             }

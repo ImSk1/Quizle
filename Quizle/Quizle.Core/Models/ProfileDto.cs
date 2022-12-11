@@ -12,7 +12,7 @@ namespace Quizle.Core.Models
         {
             AnsweredQuestions = new List<UserQuestionDto>();
         }
-        public string Id { get; set; }
+        public string Id { get; set; } = null!;
         public string Username { get; set; } = null!;
         public string Email { get; set; } = null!;
         public bool CurrentQuestionStatus { get; set; }

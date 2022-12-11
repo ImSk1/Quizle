@@ -43,36 +43,44 @@ namespace Quizle.Web.UnitTests
 
 		[Test]
 		public void QuizController_All_Return_Correct_View_With_Model()
-		{
-
-			var result = quizController.All() as ViewResult;
+        {
+            var result = quizController.All() as ViewResult;
 			var quiz = ((List<QuizViewModel>?)result?.Model) ?? null;
+			if (quiz == null)
+			{
+				Assert.Fail();
+				return;
+			}
+			Assert.That(quiz, Has.Count.LessThanOrEqualTo(3));
+            Assert.Multiple(() =>
+            {
+                Assert.That(quiz[0].Question, Is.EqualTo(dataStorage.CurrentThreeQuestions[0].Question));
+                Assert.That(quiz[1].Question, Is.EqualTo(dataStorage.CurrentThreeQuestions[1].Question));
+                Assert.That(quiz[2].Question, Is.EqualTo(dataStorage.CurrentThreeQuestions[2].Question));
+            });
+        }
 
-			Assert.That(quiz.Count, Is.LessThanOrEqualTo(3));
-			Assert.That(quiz[0].Question, Is.EqualTo(dataStorage.CurrentThreeQuestions[0].Question));
-			Assert.That(quiz[1].Question, Is.EqualTo(dataStorage.CurrentThreeQuestions[1].Question));
-			Assert.That(quiz[2].Question, Is.EqualTo(dataStorage.CurrentThreeQuestions[2].Question));
-		}
-		[Test]
+        [Test]
 		public void QuizController_SelectDifficulty_Redirects_To_Quiz_With_Difficulty()
-		{
-			int difficulty = 1;
+        {
+            int difficulty = 1;
 			string action = "Quiz";
 
 			var result = (RedirectToActionResult)quizController.SelectDifficulty(difficulty);
-
-			Assert.AreEqual(result?.ActionName, action);
-			Assert.That(difficulty, Is.EqualTo(result.RouteValues["selectedDifficulty"]));
-
-		}
-		[Test]
+            Assert.Multiple(() =>
+            {
+                Assert.That(action, Is.EqualTo(result?.ActionName));
+                Assert.That(difficulty, Is.EqualTo(result?.RouteValues?["selectedDifficulty"] ?? string.Empty));
+            });
+        }
+        [Test]
 		public void QuizController_SelectDifficulty_With_Invalid_Difficulty_Redirects_Back_To_All()
 		{
 			int difficulty = -1;
 			string action = "All";
 
 			var result = (RedirectToActionResult)quizController.SelectDifficulty(difficulty);
-			Assert.AreEqual(result?.ActionName, action);
+			Assert.That(action, Is.EqualTo(result?.ActionName));
 
 		}
 		[Test]
@@ -81,51 +89,57 @@ namespace Quizle.Web.UnitTests
 			int selectedDiff = 1;
 
 			var result = quizController.Quiz(selectedDiff) as ViewResult;
-			Assert.IsNotNull(result.Model);
+			Assert.That(result?.Model, Is.Not.Null);
 			Assert.IsAssignableFrom<QuizViewModel>(result.Model);
 		}
 		[Test]
 		public void QuizController_QuizGet_With_Null_Selected_Diff()
 		{
 			int? selectedDiff = null;
+			string action = "All";
 
 			var result = quizController.Quiz(selectedDiff) as RedirectToActionResult;
-			Assert.That("All", Is.EqualTo(result.ActionName));
+			Assert.That(action, Is.EqualTo(result?.ActionName));
 		}
 
 		[Test]
 		public void QuizController_QuizPost_Works()
-		{
-			var tempData = new TempDataDictionary(mockHttpContext.Object, Mock.Of<ITempDataProvider>());
+        {
+            var tempData = new TempDataDictionary(mockHttpContext.Object, Mock.Of<ITempDataProvider>());
 			quizController.TempData = tempData;
 
 			string expectedCorrect = "CorrectAnswer";
 			string expectedQuestion = "Question";
 			int difficulty = 1;
 			string selecded = It.IsAny<string>();
+			string action = "Result";
+				
 
 			var result = quizController.Quiz(expectedCorrect, expectedQuestion, difficulty).Result as RedirectToActionResult;
-			bool answeredCorrectly;
-			object? answeredCorrectlyObj = result!.RouteValues["answeredCorrectly"];
-			if (answeredCorrectlyObj != null)
-			{
-				answeredCorrectly = bool.Parse(answeredCorrectlyObj.ToString());
-			}
-			string selected = result.RouteValues["selected"]?.ToString();
-			string correct = result.RouteValues["correct"]?.ToString();
 
-			Assert.That("Result", Is.EqualTo(result.ActionName));
-			Assert.That(correct, Is.EqualTo(expectedCorrect));
-			Assert.NotNull(difficulty);
+			bool answeredCorrectly;
+			bool answeredCorrectlyParsable = bool.TryParse(result?.RouteValues?["answeredCorrectly"]?.ToString(), out answeredCorrectly);
+			if (answeredCorrectlyParsable == false)
+			{
+				Assert.Fail();
+			}
+			
+			string? selected = result?.RouteValues?["selected"]?.ToString();
+			string? correct = result?.RouteValues?["correct"]?.ToString();
+            Assert.Multiple(() =>
+            {
+                Assert.That(action, Is.EqualTo(result?.ActionName));
+                Assert.That(correct, Is.EqualTo(expectedCorrect));
+            });
 			profileServiceMock.Verify(a => a.UpdateAllUsersHasDoneQuestion(It.IsAny<bool>(), It.IsAny<Expression<Func<ApplicationUser, bool>>>()));
-			profileServiceMock.Verify(a => a.AddUserQuestion(It.IsAny<string>(), expectedQuestion, difficulty, selected, expectedCorrect));
+			profileServiceMock.Verify(a => a.AddUserQuestion(It.IsAny<string>(), expectedQuestion, difficulty, selected ?? string.Empty, expectedCorrect));
 			if (selected == expectedCorrect)
 			{
 				profileServiceMock.Verify(a => a.AwardPoints(difficulty, It.IsAny<string>()));
 			}
-			
-		}
-		[Test]
+        }
+
+        [Test]
 		public void QuizController_QuizPost_With_Null_Or_Empty_String_Redirects_To_All()
 		{
 			var tempData = new TempDataDictionary(mockHttpContext.Object, Mock.Of<ITempDataProvider>());
@@ -136,7 +150,7 @@ namespace Quizle.Web.UnitTests
 			int difficulty = 1;
 
 			var result = quizController.Quiz(expectedCorrect, expectedQuestion, difficulty).Result as RedirectToActionResult;
-			Assert.That(result.ActionName, Is.EqualTo("All"));			
+			Assert.That(result?.ActionName, Is.EqualTo("All"));			
 
 		}
 		[Test]
@@ -152,24 +166,29 @@ namespace Quizle.Web.UnitTests
 
 			var result = quizController.Result(answeredCorrectly, selected, correct) as ViewResult;
 
-			Assert.NotNull(result.Model);
+			Assert.That(result?.Model, Is.Not.Null);
 			Assert.IsAssignableFrom<ViewResult>(result);
 			Assert.IsAssignableFrom<ResultViewModel>(result.Model);
 		}
 		[Test]
 		public void QuizController_QuizPost_Result_With_No_TempData_Flag_Redirects_To_All()
-		{
-			var tempData = new TempDataDictionary(mockHttpContext.Object, Mock.Of<ITempDataProvider>());
+        {
+            var tempData = new TempDataDictionary(mockHttpContext.Object, Mock.Of<ITempDataProvider>());
 			quizController.TempData = tempData;
 
 
 			bool answeredCorrectly = true;
 			string selected = "selected";
 			string correct = "selected";
+			string action = "All";
 
-			var result = quizController.Result(answeredCorrectly, selected, correct) as RedirectToActionResult;
-			Assert.IsNotNull(result);
-			Assert.That("All", Is.EqualTo(result.ActionName));
-		}
-	}
+
+            var result = quizController.Result(answeredCorrectly, selected, correct) as RedirectToActionResult;
+            Assert.Multiple(() =>
+            {
+                Assert.That(result, Is.Not.Null);
+                Assert.That(action, Is.EqualTo(result?.ActionName));
+            });
+        }
+    }
 }

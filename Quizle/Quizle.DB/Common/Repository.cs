@@ -15,18 +15,18 @@ namespace Quizle.DB.Common
     /// </summary>
     /// <typeparam name="T">Type of the data table to which 
     /// current reposity is attached</typeparam>
-    public class Repository : IRepository
+    public sealed class Repository : IRepository
     {
         /// <summary>
         /// Entity framework DB context holding connection information and properties
         /// and tracking entity states 
         /// </summary>
-        protected DbContext Context { get; set; }
+        private DbContext Context { get; set; }
 
         /// <summary>
         /// Representation of table in database
         /// </summary>
-        protected DbSet<T> DbSet<T>() where T : class
+        private DbSet<T> DbSet<T>() where T : class
         {
             return this.Context.Set<T>();
         }
@@ -142,11 +142,7 @@ namespace Quizle.DB.Common
             return await DbSet<T>().FindAsync(id);
         }
 
-        public async Task<T> GetByIdsAsync<T>(object[] id) where T : class
-        {
-            return await DbSet<T>().FindAsync(id);
-        }
-
+       
         /// <summary>
         /// Saves all made changes in trasaction
         /// </summary>
