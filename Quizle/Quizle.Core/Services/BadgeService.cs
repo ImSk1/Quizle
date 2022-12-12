@@ -26,33 +26,9 @@ namespace Quizle.Core.Services
 			_repo = repo;
 			_userManager = userManager;
 		}
-		public bool ExistsById(int id) => _repo.GetByIdAsync<Badge>(id) != null;
+		public async Task<bool> ExistsByIdAsync(int id) => await _repo.GetByIdAsync<Badge>(id) != null;
 		public bool UserOwnsBadge(string userId, int badgeId) => _repo.AllReadonly<ApplicationUserBadge>().Any(a => a.BadgeId == badgeId && a.ApplicationUserId == userId);
-		public async Task<bool> UserOwnsBetterBadge(string userId, int badgeId)
-		{
-			if (_userManager.FindByIdAsync(userId) == null)
-			{
-				throw new NotFoundException("User doesn't exist.");
-			}
-			var userBadges = _repo.AllReadonly<ApplicationUserBadge>().Where(a => a.ApplicationUserId == userId).Include(a => a.Badge).ToList();
-			if (!ExistsById(badgeId))
-			{
-				throw new NotFoundException("Badge doesn't exist.");
-			}
-			var badge = await _repo.GetByIdAsync<Badge>(badgeId);
-			if (userBadges.Count == 0)
-			{
-				return false;
-			}
-			if (userBadges.Any(a => ((int?)a.Badge?.Rarity ?? 0) > (int)badge.Rarity))
-			{
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
+
 		public List<BadgeDto> GetAllBadges()
 		{
 			var badges = _repo
@@ -70,6 +46,30 @@ namespace Quizle.Core.Services
 					Price = a.Price
 				}).ToList();
 			return badges;
+		}
+		public List<UserBadgeDto> GetAllMine(string userId)
+		{
+			var userBadges = _repo
+				.All<ApplicationUserBadge>()
+				.Include(a => a.Badge)
+				.AsEnumerable()
+				.Where(a => a.ApplicationUserId == userId)
+				.Select(a => new UserBadgeDto()
+				{
+					Badge = new BadgeDto
+					{
+						Id = a.Badge.Id,
+						Name = a.Badge.Name,
+						Description = a.Badge.Description,
+						Rarity = a.Badge.Rarity.ToString(),
+						Image = a.Badge.Image,
+						Price = a.Badge.Price
+					},
+					DateAcquired = a.AcquisitionDate.ToString("dd/MM/yyyy"),
+
+				})
+				.ToList();
+			return userBadges;
 		}
 		public List<string> GetRarities()
 		{
@@ -95,16 +95,16 @@ namespace Quizle.Core.Services
 			await _repo.AddAsync(entity);
 			await _repo.SaveChangesAsync();
 		}
-        public async Task DeleteBadgeAsync(int badgeId)
-        {			
-            if (!ExistsById(badgeId))
-            {
-                throw new NotFoundException();
-            }            
-            await _repo.DeleteAsync<Badge>(badgeId);
-            await _repo.SaveChangesAsync();
-        }
-        public async Task BuyBadgeAsync(int badgeId, string userId)
+		public async Task DeleteBadgeAsync(int badgeId)
+		{
+			if (!await ExistsByIdAsync(badgeId))
+			{
+				throw new NotFoundException();
+			}
+			await _repo.DeleteAsync<Badge>(badgeId);
+			await _repo.SaveChangesAsync();
+		}
+		public async Task BuyBadgeAsync(int badgeId, string userId)
 		{
 			if (string.IsNullOrEmpty(userId))
 			{
@@ -133,11 +133,20 @@ namespace Quizle.Core.Services
 					Badge = badge,
 					ApplicationUserId = user.Id,
 					BadgeId = badge.Id,
-					ApplicationUser = user
+					ApplicationUser = user,
+					AcquisitionDate = DateTime.UtcNow,
+					IsOnProfile = false
 				});
 				await _repo.SaveChangesAsync();
 			}
 		}
-
+		public async Task SetOnProfileAsync(int badgeId, string userId)
+		{
+			var allUserBadges = _repo.All<ApplicationUserBadge>();
+			await allUserBadges.ForEachAsync(a => a.IsOnProfile = false);
+			var userBadge = await _repo.GetByCompositeKey<ApplicationUserBadge>(userId, badgeId);
+			userBadge.IsOnProfile = true;
+			await _repo.SaveChangesAsync();
+		}
 	}
 }

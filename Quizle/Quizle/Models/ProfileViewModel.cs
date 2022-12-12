@@ -11,7 +11,7 @@
         public string CurrentQuestionStatus { get; set; } = null!;
         public int AnsweredQuestionsCount { get; set; }
         public decimal WinratePercent { get; set; }
-        public BadgeViewModel? Badge { get; set; }
+        public UserBadgeViewModel? UserBadge { get; set; }
         public List<UserQuestionViewModel> AnsweredQuestions { get; set; }
     }
 }

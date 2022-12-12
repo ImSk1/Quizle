@@ -24,7 +24,7 @@ namespace Quizle.Web.Controllers
             _profileService = profileService;
         }
         
-        [HttpGet]
+   
 
         public IActionResult Profile(string? username)
         {
@@ -99,19 +99,23 @@ namespace Quizle.Web.Controllers
                     Difficulty = a.Difficulty,
                     Type = a.Type
                 }).ToList(),
-                Badge = user.Badge != null ? new BadgeViewModel()
+                UserBadge = user.UserBadge != null ? new UserBadgeViewModel()
                 {
-                    Id = user.Badge.Id,
-                    Name = user.Badge.Name,
-                    Description = user.Badge.Description,
-                    Rarity = user.Badge.Rarity,
+                    Badge = new BadgeViewModel()
+                    {
+                        Id = user.UserBadge.Badge.Id,
+                        Name = user.UserBadge.Badge.Name,
+                        Description = user.UserBadge.Badge.Description,
+                        Rarity = user.UserBadge.Badge.Rarity,
+                    },
+                    DateAcquired = user.UserBadge.DateAcquired                                        
                 } : null
             };
-            if (userViewModel.Badge != null)
+            if (user.UserBadge != null && userViewModel.UserBadge != null)
             {
-                var photoStr = Convert.ToBase64String(user.Badge.Image);
+                var photoStr = Convert.ToBase64String(user.UserBadge.Badge.Image);
                 var imageString = string.Format("data:image/jpg;base64,{0}", photoStr);
-                userViewModel.Badge.Image = imageString;
+                userViewModel.UserBadge.Badge.Image = imageString;
             }
             return userViewModel;
         }

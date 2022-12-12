@@ -43,7 +43,7 @@ namespace Quizle.DB.Common
         /// <returns>Single record</returns>
         Task<T> GetByIdAsync<T>(object id) where T : class;
 
-
+        Task<T> GetByCompositeKey<T>(params object[] ids) where T : class;
         /// <summary>
         /// Adds entity to the database
         /// </summary>

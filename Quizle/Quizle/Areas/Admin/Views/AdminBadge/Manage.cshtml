@@ -21,7 +21,7 @@
                         <h5 class="card-title">@badge.Name</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Description</h6>
                         <p class="card-text">@badge.Description</p>
-                        <form class="input-group-sm" asp-area="Admin" asp-controller="Badge" asp-route-badgeId="@badge.Id" asp-action="Remove" method="post">
+                        <form class="input-group-sm" asp-area="Admin" asp-controller="AdminBadge" asp-route-badgeId="@badge.Id" asp-action="Remove" method="post">
                                 <input type="submit" value="Delete Badge" class="btn mr-2">
                         </form>
                     </div>

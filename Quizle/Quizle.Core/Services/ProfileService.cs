@@ -9,6 +9,7 @@ using Quizle.DB.Common.Enums;
 using Quizle.DB.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Security.Claims;
@@ -64,16 +65,19 @@ namespace Quizle.Core.Services
                     Email = a.Email,
                     CurrentQuestionStatus = a.HasAnsweredCurrentQuestion,
                     QuizPoints = a.CurrentQuizPoints,
-                    Badge = a.ApplicationUsersBadges.Where(a => a.Badge != null).Select(a => new BadgeDto
+                    UserBadge = a.ApplicationUsersBadges.Where(a => a.IsOnProfile).Select(a => new UserBadgeDto
                     {
-                        Id = a.Badge.Id,
-                        Name = a.Badge.Name,
-                        Description = a.Badge.Description,
-                        Image = a.Badge.Image,
-                        Price = a.Badge.Price,
-                        Rarity = a.Badge.Rarity.ToString()
-                    })
-					.OrderByDescending(a => a.Rarity)
+                        Badge = new BadgeDto()
+                        {
+                            Id = a.Badge.Id,
+                            Name = a.Badge.Name,
+                            Description = a.Badge.Description,
+                            Image = a.Badge.Image,
+                            Price = a.Badge.Price,
+                            Rarity = a.Badge.Rarity.ToString()
+                        },
+                        DateAcquired = a.AcquisitionDate.ToString("dd/MM/yyyy", CultureInfo.CurrentCulture),                                                
+                    })					
                     .FirstOrDefault(),
 
                     AnsweredQuestions = a.UserQuestions.Select(a => new UserQuestionDto()

@@ -141,8 +141,16 @@ namespace Quizle.DB.Common
         {
             return await DbSet<T>().FindAsync(id);
         }
+        /// <summary>
+        /// Gets specific record from database by composite primary key
+        /// </summary>
+        /// <param name="ids">record identificator</param>
+        /// <returns>Single record</returns>
+        public async Task<T> GetByCompositeKey<T>(params object[] ids) where T : class
+        {
+            return await DbSet<T>().FindAsync(ids);
+        }
 
-       
         /// <summary>
         /// Saves all made changes in trasaction
         /// </summary>

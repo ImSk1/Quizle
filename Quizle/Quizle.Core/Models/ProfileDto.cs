@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace Quizle.Core.Models
         public int AnsweredQuestionsCount { get; set; }
         public int QuizPoints { get; set; }
         public decimal WinratePercent { get; set; }
-        public BadgeDto? Badge { get; set; }
+        public UserBadgeDto? UserBadge { get; set; }
         public List<UserQuestionDto> AnsweredQuestions { get; set; }
     }
 }

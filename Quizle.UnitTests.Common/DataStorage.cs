@@ -218,8 +218,10 @@ namespace Quizle.Core.UnitTests.Common
                 AnsweredQuestions = new List<UserQuestionDto>(),
                 CurrentQuestionStatus = false,
                 WinratePercent = 0,
-                Badge = BadgeDtoTable[0]
-
+                UserBadge = new UserBadgeDto()
+                {
+                    Badge = BadgeDtoTable[0]
+                }
             };
             UsersDtos.Add(userDto);
         }

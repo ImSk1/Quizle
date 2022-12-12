@@ -8,11 +8,11 @@ using Quizle.Web.Models;
 
 namespace Quizle.Web.Areas.Admin.Controllers
 {
-    public class BadgeController : BaseAdminController
+    public class AdminBadgeController : BaseAdminController
     {
         private readonly IBadgeService _badgeService;
 
-        public BadgeController(IBadgeService badgeService)
+        public AdminBadgeController(IBadgeService badgeService)
         {
             _badgeService = badgeService;            
         }
@@ -31,7 +31,7 @@ namespace Quizle.Web.Areas.Admin.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return RedirectToAction("Add", "Badge");
+                return RedirectToAction("Add", "AdminBadge");
             }
             if (model.Image.Length == 0)
             {
@@ -62,7 +62,7 @@ namespace Quizle.Web.Areas.Admin.Controllers
                 BadRequest();
             }
             TempData["message"] = "You have successfully added a badge";
-            return RedirectToAction("Add", "Badge");
+            return RedirectToAction("Add", "AdminBadge");
         }
         [HttpGet]
         public IActionResult Manage()
@@ -104,7 +104,7 @@ namespace Quizle.Web.Areas.Admin.Controllers
                 return NotFound();
             }
             TempData["message"] = "Successfully deleted badge";
-            return RedirectToAction("Manage", "Badge", "Admin");
+            return RedirectToAction("Manage", "AdminBadge", "Admin");
         }
     }
 }

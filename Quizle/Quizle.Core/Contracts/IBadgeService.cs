@@ -16,9 +16,9 @@ namespace Quizle.Core.Contracts
         Task AddBadgeAsync(BadgeDto badge);
         Task BuyBadgeAsync(int badgeId, string userId);
         Task DeleteBadgeAsync(int badgeId);
-        bool ExistsById(int id);
+        Task<bool> ExistsByIdAsync(int id);
         bool UserOwnsBadge(string userId, int badgeId);
-        Task<bool> UserOwnsBetterBadge(string userId, int badgeId);
-
+        List<UserBadgeDto> GetAllMine(string userId);
+        Task SetOnProfileAsync(int badgeId, string userId);
     } 
 }

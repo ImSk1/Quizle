@@ -28,8 +28,7 @@ namespace Quizle.DB.Models
         public byte[] Image { get; set; } = null!;
         [Required]
         public int Price { get; set; }
-        [Required]
-        public DateTime AcquisitionDate { get; set; }
+        
 
         public virtual ICollection<ApplicationUserBadge> ApplicationUsersBadges { get; set; }
 

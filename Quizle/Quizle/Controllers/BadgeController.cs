@@ -47,7 +47,40 @@ namespace Quizle.Web.Controllers
             return View(models);
 
         }
-        
+        public IActionResult Mine()
+        {
+            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            if (userId == null)
+            {
+                return BadRequest();
+            }
+            var userBadgeDtos = _badgeService.GetAllMine(userId);
+            var models = new List<UserBadgeViewModel>();
+            foreach (var userBadgeDto in userBadgeDtos)
+            {
+                var userBadge = new UserBadgeViewModel()
+                {
+                    Badge = new BadgeViewModel()
+                    {
+                        Id = userBadgeDto.Badge.Id,
+                        Name = userBadgeDto.Badge.Name,
+                        Description = userBadgeDto.Badge.Description,
+                        Rarity = userBadgeDto.Badge.Rarity,
+                        Price = userBadgeDto.Badge.Price,
+                        OwnerIds = userBadgeDto.Badge.OwnerIds
+                    },
+                    DateAcquired = userBadgeDto.DateAcquired
+                   
+                };
+                var photoStr = Convert.ToBase64String(userBadgeDto.Badge.Image);
+                var imageString = string.Format("data:image/jpg;base64,{0}", photoStr);
+                userBadge.Badge.Image = imageString;
+                models.Add(userBadge);
+            }
+            return View(models);
+
+        }
+
         public async Task<IActionResult> Buy(int badgeId, int badgePrice)
         {
 
@@ -56,11 +89,7 @@ namespace Quizle.Web.Controllers
             if (_badgeService.UserOwnsBadge(user.Id, badgeId))
             {
                 return RedirectToAction(nameof(All));
-            }
-            if (await _badgeService.UserOwnsBetterBadge(user.Id, badgeId))
-            {
-                return RedirectToAction(nameof(All));
-            }
+            }            
             if (userId == null)
             {
                 return NotFound();
@@ -83,6 +112,13 @@ namespace Quizle.Web.Controllers
                 }
             }
             return RedirectToAction(nameof(All));
+        }
+        public async Task<IActionResult> SetOnProfile(int badgeId)
+        {
+            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+
+            await _badgeService.SetOnProfileAsync(badgeId, userId);
+            return RedirectToAction(nameof(Mine));
         }
     }
 }

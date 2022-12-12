@@ -12,13 +12,12 @@
             <ol>
                 @foreach (var leaderboardProfile in Model)
                 {
-                    <form asp-action="Leaderboard" asp-controller="Profile" method="post">
+                    <form asp-action="Profile" asp-controller="Profile" asp-route-username="@leaderboardProfile.Username">
                     <li>
 
                         <mark>@leaderboardProfile.Username</mark>
-                        <input type="submit" value="View Profile"class="btn" style="background-color: black !important" asp-route-profileId="@leaderboardProfile.ProfileId">
+                        <input type="submit" value="View Profile" class="btn" style="background-color: black !important">
                         <small>QP: @leaderboardProfile.QuizPoints</small>
-
 
                     </li>
                     </form>
