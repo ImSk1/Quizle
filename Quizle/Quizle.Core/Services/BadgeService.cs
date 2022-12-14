@@ -52,7 +52,6 @@ namespace Quizle.Core.Services
 			var userBadges = _repo
 				.All<ApplicationUserBadge>()
 				.Include(a => a.Badge)
-				.AsEnumerable()
 				.Where(a => a.ApplicationUserId == userId)
 				.Select(a => new UserBadgeDto()
 				{
@@ -142,8 +141,25 @@ namespace Quizle.Core.Services
 		}
 		public async Task SetOnProfileAsync(int badgeId, string userId)
 		{
+			if (string.IsNullOrEmpty(userId))
+			{
+				throw new ArgumentException();
+			}
+			if (!await ExistsByIdAsync(badgeId))
+			{
+				throw new NotFoundException();
+			}
 			var allUserBadges = _repo.All<ApplicationUserBadge>();
-			await allUserBadges.ForEachAsync(a => a.IsOnProfile = false);
+			try
+			{
+                await allUserBadges.ForEachAsync(a => a.IsOnProfile = false);
+
+            }
+            catch (Exception)
+			{
+
+				throw;
+			}
 			var userBadge = await _repo.GetByCompositeKey<ApplicationUserBadge>(userId, badgeId);
 			userBadge.IsOnProfile = true;
 			await _repo.SaveChangesAsync();
