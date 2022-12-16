@@ -6,44 +6,36 @@
         <div class="col-md-10 col-lg-10">
             <div class="question bg-white p-3 border-bottom">
                 <div class="d-flex flex-row justify-content-between align-items-center mcq">
-                    <h4>MCQ Quiz</h4><span>(5 of 20)</span>
+                    <h4>Select your answer.</h4><span>You have 15 seconds to answer.</span>
                 </div>
             </div>
-
-            <form id="quiz" method="post" asp-action="Quiz" asp-controller="Quiz">
-                <div class="questionBox p-3 border-bottom">
-                    <div class="d-flex flex-row align-items-center question-title">
-                        <h3 class="text-danger">@Model.Question</h3>
-                    </div>
-                    @foreach (var answer in Model.Answers)
-                    {
-
-                        <div class="ans ml-2">
-                            <label class="radio">
-                                <input name="selectedAnswer" type="radio" value="@answer.Answer" class="disableButton" onchange="enableButton()"> <span class="mx-2">@answer.Answer</span>
-                            </label>
-                        </div>
-                    }
-                    <div class="outerDiv">
-                        <input type="submit"  asp-route-question="@Model.Question" asp-route-difficulty="@Model.Difficulty" disabled class="save btn btn-primary border-success align-items-center btn-success mt-2" value="Submit">
-                    </div>
-                </div>
-            </form>
+            <partial name="_QuizPartial"/>            
         </div>
     </div>
 </div>
 <script>
     $(document).ready(function () {
+        console.log('in');
 
-        const myTimeout = setTimeout(myGreeting, 15000);
+        const myTimeout = setTimeout(timeOut, 15000);
 
-        function myGreeting() {
-            selectedAnswer = "Not Selected";
+        function timeOut() {
+            console.log("in");
+            var selectedAnswer = 'Not Selected';
+            var question = '@Model.Question';
+            console.log(question);
+            var difficulty = @Model.Difficulty;
+            var t = $("input[name='__RequestVerificationToken']").val();
+            console.log(difficulty);
             $.ajax({
                 type: "POST",
                 url: "@Url.Action("Quiz", "Quiz")",
-                data: { selectedAnswer: selectedAnswer },               
+                data: { selectedAnswer: selectedAnswer, question: question, difficulty: difficulty },
                 dataType: "html",
+                headers:
+                {
+                    "RequestVerificationToken": t
+                },
                 success: function (response) {
                     
                     console.log(response);
@@ -53,9 +45,10 @@
                 },
                 error: function (req, status, error) {
                     
-                    console.log(msg);
+                    console.log(response);
                 }
             });
+
         }
     });
 </script>

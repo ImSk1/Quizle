@@ -1,0 +1,22 @@
+﻿@using Quizle.Web.Models;
+@model QuizViewModel
+
+<form id="quiz" method="post" asp-action="Quiz" asp-controller="Quiz">
+    <div class="questionBox p-3 border-bottom">
+        <div class="d-flex flex-row align-items-center question-title">
+            <h3 class="text-danger">@Model.Question</h3>
+        </div>
+        @foreach (var answer in Model.Answers)
+        {
+
+            <div class="ans ml-2">
+                <label class="radio">
+                    <input name="selectedAnswer" type="radio" value="@answer.Answer" class="disableButton" onchange="enableButton()"> <span class="mx-2">@answer.Answer</span>
+                </label>
+            </div>
+        }
+        <div class="outerDiv">
+            <input type="submit" asp-route-question="@Model.Question" asp-route-difficulty="@Model.Difficulty" disabled class="save btn btn-primary border-success align-items-center btn-success mt-2" value="Submit">
+        </div>
+    </div>
+</form>

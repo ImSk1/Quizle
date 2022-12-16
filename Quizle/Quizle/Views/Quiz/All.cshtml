@@ -6,7 +6,7 @@
 @inject UserManager<ApplicationUser> UserManager;
 @model List<QuizViewModel>
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Choose A Question...";
     var user = UserManager.FindByNameAsync(User?.Identity?.Name).Result;
 
 }

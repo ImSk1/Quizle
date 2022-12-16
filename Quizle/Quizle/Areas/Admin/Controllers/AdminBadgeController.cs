@@ -29,6 +29,10 @@ namespace Quizle.Web.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Add(BadgeAddViewModel model)
         {
+            if (!User.IsInRole("Administrator"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             if (!ModelState.IsValid)
             {
                 return RedirectToAction("Add", "AdminBadge");
@@ -63,6 +67,10 @@ namespace Quizle.Web.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult Manage()
         {
+            if (!User.IsInRole("Administrator"))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             var badgeDtos = _badgeService.GetAllBadges();
             var models = new List<BadgeViewModel>();
             foreach (var badgeDto in badgeDtos)

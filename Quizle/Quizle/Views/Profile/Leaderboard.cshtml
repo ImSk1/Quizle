@@ -6,7 +6,7 @@
 <div class="leaderboardcontainer">
     <div class="leaderboard">
         <div class="head">
-            <h1 class="mt-3">Most active Players</h1>
+            <h1 class="mt-3">Top 5 Players</h1>
         </div>
         <div class="leaderboardbody">
             <ol>
@@ -15,10 +15,9 @@
                     <form asp-action="Profile" asp-controller="Profile" asp-route-username="@leaderboardProfile.Username">
                     <li>
 
-                        <mark>@leaderboardProfile.Username</mark>
+                        <mark>@leaderboardProfile.Username</mark>                        
+                        <a class="text-center mt-2 mx-3">QP: @leaderboardProfile.QuizPoints</a>
                         <input type="submit" value="View Profile" class="btn" style="background-color: black !important">
-                        <small>QP: @leaderboardProfile.QuizPoints</small>
-
                     </li>
                     </form>
                 }
@@ -26,7 +25,7 @@
         </div>
         <div class="mb-1">
 
-            <h7>Most active Players</h7>
+            <h7>Click on View Profile to display a User's profile</h7>
         </div>
     </div>
 </div>

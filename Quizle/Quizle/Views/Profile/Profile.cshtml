@@ -18,41 +18,8 @@
             }
 
         </div>
-        <div class="col">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">@Model.Username's Profile</h4>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-md-6">
-                        <label class="labels">Username</label>
-                        <input type="text" disabled value="@Model.Username" class="form-control" />
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12">
-                        <label class="labels">E-mail</label>
-                        <input type="text" disabled class="form-control" value="@Model.Email">
-                    </div>
-                    <div class="col-md-12">
-                        <label class="labels">Current Question Status</label>
-                        <input type="text" disabled class="form-control" value="@Model.CurrentQuestionStatus">
-                    </div>
-                    <div class="col-md-12">
-                        <label class="labels">Answered Questions</label>
-                        <input type="text" class="form-control" disabled value="@Model.AnsweredQuestionsCount">
-                    </div>
-                    <div class="col-md-12">
-                        <label class="labels">Winrate</label>
-                        <input type="text" class="form-control" disabled value="@Model.WinratePercent%">
-                    </div>
-                    <div class="mt-5 text-center">
-                        <button class="btn btn-primary profile-button" type="button">Back to Quiz Selection</button>
-                    </div>
-                </div>
-            </div>
-           
-        </div>
+        <partial name="_ProfilePartial" />
+
         <div class="col">
             <div class="p-3 py-5">
                 <div class="d-flex justify-content-between align-items-center experience">

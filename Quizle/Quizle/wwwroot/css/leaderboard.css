@@ -92,9 +92,9 @@ leaderboardbody {
     }
 
         .leaderboard li mark {
-            flex-grow: 1;
-            color: snow;
+            flex-grow: 1;            
             font-size: 20px;
+            margin-top: 2px;
             background-color: transparent;
             align-content: center;
         }
@@ -103,6 +103,7 @@ leaderboardbody {
             counter-increment: number;
             content: counter(number) ".";
             margin-right: 4px;
+            margin-top: 6px;
             font-size: 20px;
             align-content: center;
         }

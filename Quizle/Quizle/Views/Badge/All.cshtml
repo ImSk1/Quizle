@@ -8,20 +8,21 @@
 
 @inject UserManager<ApplicationUser> _userManager;
 @{
-    ViewBag.Title = "All Badges";
- 
+    ViewBag.Title = "Badge Store";
+
     var user = _userManager.Users.Include(a => a.ApplicationUsersBadges).ThenInclude(a => a.Badge).ToList().FirstOrDefault(a => a.Id == User?.Claims?.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value);
 }
 
 
-<h2 class="text-center">@ViewBag.Title</h2>
-<hr />
+
 <div class="container mx-auto mt-4">
     <div class="row">
+        <h2 class="text-center">@ViewBag.Title</h2>
+<hr />
         @foreach (var badge in Model)
-        {            
-        <div class="col-md-4">
-            
+        {
+            <div class="col-md-4">
+
                 <div class="card" style="width: 18rem;">
                     <img src="@badge.Image" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -33,26 +34,27 @@
                             {
                                 <input id="buyInactive" type="submit" value="Not Logged in" disabled class="btn mr-2">
 
-                            }                            
+                            }
                             else if (badge.OwnerIds.Any(a => a == user.Id))
                             {
                                 <input id="buyInactive" type="submit" value="Already Owned" disabled class="btn mr-2">
 
                             }
                             else if (user.CurrentQuizPoints < badge.Price)
-                            {                               
-                                <input id="buyInactive"type="submit" value="Not Enough Money" disabled class="btn mr-2">
+                            {
+                                <input id="buyInactive" type="submit" value="Not Enough Money" disabled class="btn mr-2">
                             }
                             else
                             {
                                 <input id="buyActive" type="submit" value="Purchase" class="btn mr-2">
 
                             }
-                        </form>                        
+                        </form>
                     </div>
                 </div>
-            
-            
-        </div>
+
+
+            </div>
         }
+    </div>
 </div>
