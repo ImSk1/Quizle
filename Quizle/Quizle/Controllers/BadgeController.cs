@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Quizle.Core.Contracts;
@@ -17,11 +18,13 @@ namespace Quizle.Web.Controllers
     {
         private readonly IBadgeService _badgeService;
         private readonly IProfileService _profileService;
+        private readonly IMapper _mapper;
 
-        public BadgeController(IBadgeService badgeService, IProfileService profileService)
+        public BadgeController(IBadgeService badgeService, IProfileService profileService, IMapper mapper)
         {
             _badgeService = badgeService;
             _profileService = profileService;
+            _mapper = mapper;
         }
 
         public IActionResult All()
@@ -30,51 +33,20 @@ namespace Quizle.Web.Controllers
             var models = new List<BadgeViewModel>();
             foreach (var badgeDto in badgeDtos)
             {
-                var model = new BadgeViewModel()
-                {
-                    Id = badgeDto.Id,
-                    Name = badgeDto.Name,
-                    Description = badgeDto.Description,
-                    Rarity = badgeDto.Rarity,
-                    Price = badgeDto.Price,
-                    OwnerIds = badgeDto.OwnerIds
-                };
-                var photoStr = Convert.ToBase64String(badgeDto.Image);
-                var imageString = string.Format("data:image/jpg;base64,{0}", photoStr);
-                model.Image = imageString;
-                models.Add(model);
+                var badge = _mapper.Map<BadgeViewModel>(badgeDto);
+                models.Add(badge);
             }
             return View(models);
 
         }
         public IActionResult Mine()
         {
-            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            if (userId == null)
-            {
-                return BadRequest();
-            }
+            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value!;            
             var userBadgeDtos = _badgeService.GetAllMine(userId);
             var models = new List<UserBadgeViewModel>();
             foreach (var userBadgeDto in userBadgeDtos)
             {
-                var userBadge = new UserBadgeViewModel()
-                {
-                    Badge = new BadgeViewModel()
-                    {
-                        Id = userBadgeDto.Badge.Id,
-                        Name = userBadgeDto.Badge.Name,
-                        Description = userBadgeDto.Badge.Description,
-                        Rarity = userBadgeDto.Badge.Rarity,
-                        Price = userBadgeDto.Badge.Price,
-                        OwnerIds = userBadgeDto.Badge.OwnerIds
-                    },
-                    DateAcquired = userBadgeDto.DateAcquired
-                   
-                };
-                var photoStr = Convert.ToBase64String(userBadgeDto.Badge.Image);
-                var imageString = string.Format("data:image/jpg;base64,{0}", photoStr);
-                userBadge.Badge.Image = imageString;
+                var userBadge = _mapper.Map<UserBadgeViewModel>(userBadgeDto);
                 models.Add(userBadge);
             }
             return View(models);
@@ -84,38 +56,14 @@ namespace Quizle.Web.Controllers
         public async Task<IActionResult> Buy(int badgeId, int badgePrice)
         {
 
-            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-            var user =  _profileService.GetUser(a => a.Id == userId);
-            if (_badgeService.UserOwnsBadge(user.Id, badgeId))
-            {
-                return RedirectToAction(nameof(All));
-            }            
-            if (userId == null)
-            {
-                return NotFound();
-            }
-            if (user.QuizPoints >= badgePrice)
-            {
-
-                try
-                {
-					await _badgeService.BuyBadgeAsync(badgeId, userId);
-				}
-				catch (ArgumentException)
-                {
-
-                    return BadRequest();
-                }
-                catch(NotFoundException) 
-                {
-                    return NotFound();
-                }
-            }
+            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value!;
+                                 
+            await _badgeService.BuyBadgeAsync(badgeId, userId);            
             return RedirectToAction(nameof(All));
         }
         public async Task<IActionResult> SetOnProfile(int badgeId)
         {
-            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+            var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value!;
 
             await _badgeService.SetOnProfileAsync(badgeId, userId);
             return RedirectToAction(nameof(Mine));

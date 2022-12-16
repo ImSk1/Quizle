@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -18,106 +19,50 @@ namespace Quizle.Web.Controllers
     public class ProfileController : Controller
     {
         private readonly IProfileService _profileService;
+        private readonly IMapper _mapper;
 
-        public ProfileController(IProfileService profileService)
+        public ProfileController(IProfileService profileService, IMapper mapper)
         {
             _profileService = profileService;
+            _mapper = mapper;
         }
-        
-   
+
+
 
         public IActionResult Profile(string? username)
         {
             string name = "";
             if (username == null)
             {
-                string? loggedInName = User?.Identity?.Name;
-                if (loggedInName == null)
-                {
-                    return NotFound();
-
-                }
+                string? loggedInName = User?.Identity?.Name!;
                 name = loggedInName;
-
             }
             else
             {
                 name = username;
             }
-            ProfileViewModel user;
-            try
-            {
-				user = GetUser(name);
-				return View(user);
-			}
-			catch (NotFoundException)
-            {
-                return NotFound();
-            }             
+           
+            var user = _profileService.GetUser(a => a.UserName == name);
+            var userViewModel = _mapper.Map<ProfileViewModel>(user);
+            return View(userViewModel);
+
         }
+        
         public IActionResult Leaderboard()
         {
             var model = new List<LeaderboardProfileViewModel>();
             var dtos =  _profileService.GetTopFive();
             foreach (var dto in dtos)
             {
-                model.Add(new LeaderboardProfileViewModel()
-                {
-                    ProfileId = dto.Id,
-                    Username = dto.Username,
-                    QuizPoints = dto.QuizPoints
-                });
+                var viewModel = _mapper.Map<LeaderboardProfileViewModel>(dto);
+                model.Add(viewModel);               
             }
             return View(model);
         }
         [HttpPost]
         public IActionResult Leaderboard(string profileId)
-        {
-           
+        {           
             return RedirectToAction("Profile", "Profile", new {profileId = profileId});
-        }
-        [NonAction]
-        public ProfileViewModel GetUser(string username)
-        {
-            ProfileDto user;
-            
-		    user = _profileService.GetUser(a => a.UserName == username);
-          
-            var userViewModel = new ProfileViewModel()
-            {
-                Username = user.Username,
-                Email = user.Email,
-                AnsweredQuestionsCount = user.AnsweredQuestionsCount,
-                CurrentQuestionStatus = user.CurrentQuestionStatus ? "Has Answered" : "Not Answered",
-                WinratePercent = user.WinratePercent,
-                AnsweredQuestions = user.AnsweredQuestions.Select(a => new UserQuestionViewModel()
-                {
-                    Id = a.Id,
-                    CorrectAnswer = a.CorrectAnswer,
-                    SelectedAnswer = a.SelectedAnswer,
-                    Question = a.Question,
-                    Difficulty = a.Difficulty,
-                    Type = a.Type
-                }).ToList(),
-                UserBadge = user.UserBadge != null ? new UserBadgeViewModel()
-                {
-                    Badge = new BadgeViewModel()
-                    {
-                        Id = user.UserBadge.Badge.Id,
-                        Name = user.UserBadge.Badge.Name,
-                        Description = user.UserBadge.Badge.Description,
-                        Rarity = user.UserBadge.Badge.Rarity,
-                    },
-                    DateAcquired = user.UserBadge.DateAcquired                                        
-                } : null
-            };
-            if (user.UserBadge != null && userViewModel.UserBadge != null)
-            {
-                var photoStr = Convert.ToBase64String(user.UserBadge.Badge.Image);
-                var imageString = string.Format("data:image/jpg;base64,{0}", photoStr);
-                userViewModel.UserBadge.Badge.Image = imageString;
-            }
-            return userViewModel;
-        }
+        }        
     }
 }

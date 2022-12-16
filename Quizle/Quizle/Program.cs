@@ -11,6 +11,7 @@ using System.Configuration;
 using Quizle.DB.Common;
 using Microsoft.AspNetCore.Mvc;
 using Quizle.Web.Extensions;
+using Quizle.Web.MapperProfiles;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,7 +40,10 @@ builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Identity/Login";
 });
-
+builder.Services.AddAutoMapper(config =>
+{
+    config.AddProfile<ViewModelMapperProfile>();
+});
 builder.Services.Configure<QuartzOptions>(builder.Configuration.GetSection("Quartz"));
 
 builder.Services.AddScoped<IQuizService, QuizService>();
@@ -83,6 +87,7 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Home/Error");
+    app.UseStatusCodePagesWithRedirects("/Home/Error/{0}");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
@@ -95,7 +100,7 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.SeedAdmin();
+//app.SeedAdmin();
 
 app.UseSession();
 app.UseEndpoints(endpoints =>

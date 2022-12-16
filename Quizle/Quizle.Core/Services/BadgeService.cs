@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Quizle.Core.Common;
 using Quizle.Core.Contracts;
 using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
@@ -82,7 +83,10 @@ namespace Quizle.Core.Services
 
 		public async Task AddBadgeAsync(BadgeDto badge)
 		{
-			//ADD VALIDATION
+			if (!badge.IsValid())
+			{
+				throw new ArgumentException();
+			}
 			var entity = new Badge()
 			{
 				Name = badge.Name,
@@ -125,20 +129,25 @@ namespace Quizle.Core.Services
 			{
 				throw new NotFoundException("Badge not found.");
 			}
-			if (!user.ApplicationUsersBadges.Any(b => b.BadgeId == badgeId))
+			if (user.CurrentQuizPoints < badge.Price)
 			{
-				user.ApplicationUsersBadges.Add(new ApplicationUserBadge()
-				{
-					Badge = badge,
-					ApplicationUserId = user.Id,
-					BadgeId = badge.Id,
-					ApplicationUser = user,
-					AcquisitionDate = DateTime.UtcNow,
-					IsOnProfile = false
-				});
-				await _repo.SaveChangesAsync();
+                throw new CannotBuyBadgeException();
+            }
+			if (user.ApplicationUsersBadges.Any(b => b.BadgeId == badgeId))
+			{
+				throw new CannotBuyBadgeException();
 			}
-		}
+            user.ApplicationUsersBadges.Add(new ApplicationUserBadge()
+            {
+                Badge = badge,
+                ApplicationUserId = user.Id,
+                BadgeId = badge.Id,
+                ApplicationUser = user,
+                AcquisitionDate = DateTime.UtcNow,
+                IsOnProfile = false
+            });
+            await _repo.SaveChangesAsync();
+        }
 		public async Task SetOnProfileAsync(int badgeId, string userId)
 		{
 			if (string.IsNullOrEmpty(userId))

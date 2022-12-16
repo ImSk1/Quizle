@@ -11,9 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizle.Core", "Quizle\Quizl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizle.Core.UnitTests", "Quizle\Quizle.Core.UnitTests\Quizle.Core.UnitTests.csproj", "{192F4C2F-B352-48EE-B9CF-AC9FE11CCACB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizle.Web.UnitTests", "Quizle.Web.Tests\Quizle.Web.UnitTests.csproj", "{2214BEF5-3177-4680-A894-E4E05FA5C05D}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Quizle.UnitTests.Common", "Quizle.UnitTests.Common\Quizle.UnitTests.Common.csproj", "{6B0EE517-462D-4D68-83F8-7FAB430B881D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quizle.UnitTests.Common", "Quizle.UnitTests.Common\Quizle.UnitTests.Common.csproj", "{6B0EE517-462D-4D68-83F8-7FAB430B881D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E37A5893-D640-4C58-B088-E39ADA03CDD1}"
 	ProjectSection(SolutionItems) = preProject
@@ -42,10 +40,6 @@ Global
 		{192F4C2F-B352-48EE-B9CF-AC9FE11CCACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{192F4C2F-B352-48EE-B9CF-AC9FE11CCACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{192F4C2F-B352-48EE-B9CF-AC9FE11CCACB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2214BEF5-3177-4680-A894-E4E05FA5C05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2214BEF5-3177-4680-A894-E4E05FA5C05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2214BEF5-3177-4680-A894-E4E05FA5C05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2214BEF5-3177-4680-A894-E4E05FA5C05D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B0EE517-462D-4D68-83F8-7FAB430B881D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6B0EE517-462D-4D68-83F8-7FAB430B881D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B0EE517-462D-4D68-83F8-7FAB430B881D}.Release|Any CPU.ActiveCfg = Release|Any CPU

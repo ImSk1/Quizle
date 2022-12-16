@@ -102,13 +102,17 @@ namespace Quizle.Core.UnitTests
             repositoryMock.Verify(v => v.AddAsync<Badge>(It.IsAny<Badge>()), Times.Once);
             repositoryMock.Verify(v => v.SaveChangesAsync(), Times.Once);
         }
-        //      [Test]
-        //      public void BadgeService_AddBadgeAsync_With_Null_Argument_Should_Throw_ArgumentNullException()
-        //      {
-        //          //Act
-        //          //Assert
-        //          Assert.ThrowsAsync<ArgumentNullException>(() => badgeService.AddBadgeAsync(null));
-        //}
+        [Test]
+        public void BadgeService_AddBadgeAsync_With_Invalid_Argument_Should_Throw_ArgumentNullException()
+        {
+            //Act
+            var invalidBadge = new BadgeDto
+            {
+                Id = 1
+            };
+            //Assert
+            Assert.ThrowsAsync<ArgumentException>(() => badgeService.AddBadgeAsync(invalidBadge));
+        }
         [Test]
         public void BadgeService_BuyBadgeAsync_Gives_Badge_To_User()
         {

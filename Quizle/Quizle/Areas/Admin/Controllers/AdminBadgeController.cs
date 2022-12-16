@@ -33,14 +33,10 @@ namespace Quizle.Web.Areas.Admin.Controllers
             {
                 return RedirectToAction("Add", "AdminBadge");
             }
-            if (model.Image.Length == 0)
+            if (model.Image.Length == 0 || model.Image.Length > 5242880)
             {
-                return BadRequest();
-            }
-            if (model.Image.Length > 5242880)
-            {
-                return BadRequest();
-            }
+                return RedirectToAction("Add", "AdminBadge");
+            }            
             var dto = new BadgeDto()
             {
                 Name = model.Name,
@@ -89,11 +85,7 @@ namespace Quizle.Web.Areas.Admin.Controllers
         }
         [HttpPost]
         public async Task<IActionResult> Remove(int badgeId)
-        {
-            if (!User.IsInRole("Administrator"))
-            {
-                return RedirectToAction("Index", "Home");
-            }            
+        {                       
             try
             {
                 await _badgeService.DeleteBadgeAsync(badgeId);

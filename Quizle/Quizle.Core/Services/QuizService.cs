@@ -63,10 +63,14 @@ namespace Quizle.Core.Services
 
         public async Task AddQuizRange(IEnumerable<QuizDto> quizzes)
         {
-            //ADD VALIDATION
-            var quizzesDbos = new List<Quiz>();
-
-           
+            foreach (var quiz in quizzes)
+            {
+                if (!quiz.IsValid())
+                {
+                    throw new ArgumentException();
+                }
+            }
+            var quizzesDbos = new List<Quiz>();                       
             foreach (var quiz in quizzes)
             {
                 Difficulty difficulty;

@@ -93,15 +93,21 @@ namespace Quizle.Core.UnitTests
 			repositoryMock.Verify(a => a.AddRangeAsync<Quiz>(It.IsAny<List<Quiz>>()));
 			repositoryMock.Verify(a => a.SaveChangesAsync());
 		}
-		//[Test]
-		//public void QuizService_AddQuizRange_With_Null_Arg_Throws_ArgNullEx()
-		//{
-		//	//Arrange
-		//	IEnumerable<QuizDto>? list = null;
-		//	//Act
-		//	Assert.ThrowsAsync<ArgumentNullException>(() => quizService.AddQuizRange(list));
+		[Test]
+		public void QuizService_AddQuizRange_With_Invalid_Arg_Throws_ArgNullEx()
+		{
+			//Arrange
+			IEnumerable<QuizDto>? list = new List<QuizDto>() 
+			{
+				new QuizDto()
+				{
+					Type = "Boolean",
+				}
+			};
+			//Act
+			Assert.ThrowsAsync<ArgumentException>(() => quizService.AddQuizRange(list));
 
-		//}
+		}
 		[Test]
 		public void GetCurrentQuestion_Returns_Latest_Question_From_Difficulty()
 		{

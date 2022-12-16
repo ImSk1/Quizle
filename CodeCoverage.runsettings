@@ -13,8 +13,6 @@
 								<ModulePath>.Quizle.Core.UnitTests.dll</ModulePath>
 								<ModulePath>.Quizle.Core.Db.dll</ModulePath>
 								<ModulePath>.Quizle.UnitTests.Common.dll</ModulePath>
-								<ModulePath>.Quizle.Web.UnitTests.dll</ModulePath>
-								<ModulePath>.Quizle.Web.dll</ModulePath>
 								
 							</Include>
 						</ModulePaths>

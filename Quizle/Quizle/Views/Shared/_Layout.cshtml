@@ -92,6 +92,15 @@
                     </button>
                 </div>
             }
+            @if (TempData["errorMessage"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show">
+                    @TempData["errorMessage"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert">
+                    <span aria-hidden="true">&times;</span>                        
+                    </button>
+                </div>
+            }
             @RenderBody()
         </main>
     </div>
