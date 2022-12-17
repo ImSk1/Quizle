@@ -29,13 +29,6 @@ builder.Services.AddControllersWithViews(options =>
     options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
 });
 
-builder.Services.AddDistributedMemoryCache();
-
-builder.Services.AddSession(options =>
-{    
-    options.Cookie.HttpOnly = true;
-    options.Cookie.IsEssential = true;
-});
 builder.Services.ConfigureApplicationCookie(options =>
 {
     options.LoginPath = "/Identity/Login";
@@ -45,6 +38,7 @@ builder.Services.AddAutoMapper(config =>
 {
     config.AddProfile<ViewModelMapperProfile>();
 });
+
 builder.Services.Configure<QuartzOptions>(builder.Configuration.GetSection("Quartz"));
 
 builder.Services.AddScoped<IQuizService, QuizService>();
@@ -88,8 +82,6 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Home/Error");
-    app.UseStatusCodePagesWithRedirects("/Home/Error/{0}");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
