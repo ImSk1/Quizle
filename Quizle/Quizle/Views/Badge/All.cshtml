@@ -30,6 +30,7 @@
                         <h5 class="card-title">@badge.Name</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Description</h6>
                         <p class="card-text">@badge.Description</p>
+                        <p class="card-text">Price: @badge.Price</p>
                         <form class="input-group-sm" asp-controller="Badge" asp-action="Buy" asp-route-badgeId="@badge.Id" asp-route-badgePrice="@badge.Price">
                             @if (user == null)
                             {

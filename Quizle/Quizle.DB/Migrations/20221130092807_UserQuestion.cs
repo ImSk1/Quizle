@@ -11,8 +11,8 @@ namespace Quizle.DB.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable(
-                name: "ApplicationUserQuizzes");
+            //migrationBuilder.DropTable(
+            //    name: "ApplicationUserQuizzes");
 
             migrationBuilder.CreateTable(
                 name: "UserQuestion",

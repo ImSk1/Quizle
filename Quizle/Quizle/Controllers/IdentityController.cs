@@ -110,7 +110,7 @@ namespace Quizle.Web.Controllers
         {
             await _signInManager.SignOutAsync();
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Home", new {area = ""});
         }
     }
 }
