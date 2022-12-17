@@ -27,11 +27,32 @@ To run the application you will have to replace the appsettings.json file with o
   }
 }
 ```
+## 🔐Admin Area
+To access the admin area register an user with the email orionvt3@gmail.com, stop the application and uncomment the app.SeedAdmin(); statement in Program.cs
 
 ## 🚀Functionality
 
-First the guest user is prompted with a home page and the ability to create an account. After registering and logging in the user will have access to more pages. Firstly the quiz selection page. Every hour the application receives three new questions, one from each difficulty(easy, medium, hard) provided by [OpenTDB](https://opentdb.com/) from which the user can choose. After selecting a question the user will have 15 seconds to read the question and give an answer. If the 15 seconds pass without an answer being selected the question will count as answered falsely. Upon answering correctly the user will receive QP. The higher the difficulty, the higher the reward. QP is displayed in the top right. The next page is the badge store. There users can purchase badges that they do not own and that are not higher rarity then the currently owned if they have enough money. The highest rarity will be displayed on the profile page, alongside all of the user data and the questions history. The leaderboard tab will display the top 5 people with the most QP. 
- 
+First the guest user is prompted with a home page and the ability to create an account. After registering and logging in the user will have access to more pages. Firstly the quiz selection page. Every hour the application receives three new questions, one from each difficulty(easy, medium, hard) provided by [OpenTDB](https://opentdb.com/) from which the user can choose. After selecting a question the user will have 15 seconds to read the question and give an answer. If the 15 seconds pass without an answer being selected the question will count as answered falsely. Upon answering correctly the user will receive QP. The higher the difficulty, the higher the reward. QP is displayed in the top right. The next page is the badge store. There users can purchase badges that they do not own and that are not higher rarity then the currently owned if they have enough money. The highest rarity will be displayed on the profile page, alongside all of the user data and the questions history. The leaderboard tab will display the top 5 people with the most QP.
+
+## 🪐Screenshots
+  ### Home Page
+ ![alt text](https://media.discordapp.net/attachments/766732110463107105/1053716916335812739/image.png?width=1413&height=671)
+  ### Badge Store
+ ![alt text](https://cdn.discordapp.com/attachments/766732110463107105/1053716965706973295/image.png)
+  ### Personal Collection
+ ![alt text](https://media.discordapp.net/attachments/766732110463107105/1053717006286852216/image.png?width=1404&height=671)
+  ### Profile
+ ![alt text](https://media.discordapp.net/attachments/766732110463107105/1053717111442264064/image.png?width=1417&height=671)
+  ### Leaderboard
+ ![alt text](https://media.discordapp.net/attachments/766732110463107105/1053717139086921768/image.png?width=1413&height=671)
+  ### Quiz
+ ![alt text](https://media.discordapp.net/attachments/766732110463107105/1053717188390957206/image.png?width=1404&height=671)
+  ### Result
+  ![alt text](https://media.discordapp.net/attachments/766732110463107105/1053717258419064893/image.png?width=1402&height=670)
+  ### Admin Area
+  ![alt text](https://media.discordapp.net/attachments/766732110463107105/1053717037911904317/image.png?width=1411&height=671)
+  ![alt text](https://media.discordapp.net/attachments/766732110463107105/1053717073190207528/image.png?width=1406&height=671)
+
 
 ## 💻 Technologies
 
