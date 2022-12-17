@@ -97,7 +97,7 @@ namespace Quizle.Core.Services
                 throw new NotFoundException("User not found.");
             }                        
             
-            if (user.AnsweredQuestionsCount != 0)
+            if (user.AnsweredQuestions.Count != 0)
             {
                 var correctAnswers = user.AnsweredQuestions.Where(a => a.SelectedAnswer == a.CorrectAnswer).ToList();
                 var questionCount = user.AnsweredQuestions.Count;
