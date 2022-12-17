@@ -22,8 +22,11 @@ namespace Quizle.Web.Extensions
                     await roleManager.CreateAsync(role);
                 }
 
-                ApplicationUser admin = await userManager.FindByEmailAsync("orionvt3@gmail.com");
-                await userManager.AddToRoleAsync(admin, "Administrator");
+                ApplicationUser? admin = await userManager.FindByEmailAsync("administrator@gmail.com");
+                if (admin != null)
+                {
+                    await userManager.AddToRoleAsync(admin, "Administrator");
+                }
             })
             .GetAwaiter()
             .GetResult();
