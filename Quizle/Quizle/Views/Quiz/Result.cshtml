@@ -18,8 +18,8 @@
         <p>Selelected answer: @Model.SelectedAnswer</p>
         <p>Correct answer: @Model.CorrectAnswer</p>
     }
-
+    <form asp-action="Result" asp-controller="Quiz">
+        <input type="submit" class="btn" value="Go Back">
+    </form>
 </div>
-<form asp-action="Result" asp-controller="Quiz">
-    <input type="submit" class="btn-info" value="Go Back">
-</form>
+

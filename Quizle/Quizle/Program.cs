@@ -95,7 +95,6 @@ app.UseAuthorization();
 
 //app.SeedAdmin();
 
-app.UseSession();
 app.UseEndpoints(endpoints =>
 {
     app.MapControllerRoute(
