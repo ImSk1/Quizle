@@ -1,27 +1,0 @@
-
-,Quizle.DB.Common.Repository.AllReadonly<T>()E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csK K(("0*ã
-0E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csM N(Ç
-Ä
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csM M("2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>"&Quizle.DB.Common.Repository.DbSet<T>()*
-Quizle.DB.Common.Repositoryà
-Ý
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csM N(
-%1System.Linq.IQueryable<T>"wMicrosoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.AsNoTracking<TEntity>(System.Linq.IQueryable<TEntity>)*D"B
-@Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions*4
-2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>"j
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csM N( !
-
-%1System.Linq.IQueryable<T>*¨
-1E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csO	 O(	"\
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csO O(	
-implicit returnB
-Quizle.DB.Common.Repository

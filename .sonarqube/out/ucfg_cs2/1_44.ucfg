@@ -1,111 +1,0 @@
-
-=Quizle.Core.Services.QuizDataService.GetAllCurrentQuestions()X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csu) u(?"0*‰!
-0Y
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csw é(‡
-›
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csw w(#"
-%0Quizle.DB.Common.IRepository"__id*W*U&
-$Quizle.Core.Services.QuizDataService"+
-_repositoryQuizle.DB.Common.IRepository√¿
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csw w(1	
-%1int"'Quizle.DB.Common.IRepository.Count<T>()*$
-"
-%0Quizle.DB.Common.IRepository2
-Count<T>()}
-{
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csw w(1
-countint"__id*
-	
-%1int‡
-›
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx x(%"
-%2Quizle.DB.Common.IRepository"__id*W*U&
-$Quizle.Core.Services.QuizDataService"+
-_repositoryQuizle.DB.Common.IRepository’“
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx y(
-%3System.Linq.IQueryable<T>"%Quizle.DB.Common.IRepository.All<T>()*$
-"
-%2Quizle.DB.Common.IRepository2All<T>()Á
-‰
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx z((R
-%4LMicrosoft.EntityFrameworkCore.Query.IIncludableQueryable<TEntity, TProperty>"¬Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.Include<TEntity, TProperty>(System.Linq.IQueryable<TEntity>, System.Linq.Expressions.Expression<System.Func<TEntity, TProperty>>)*D"B
-@Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions*!
-
-%3System.Linq.IQueryable<T>*
-""“
-œ
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx {((
-%5"System.Collections.Generic.List<T>"WSystem.Linq.Enumerable.ToList<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
-System.Linq.Enumerable*T
-R
-%4LMicrosoft.EntityFrameworkCore.Query.IIncludableQueryable<TEntity, TProperty>‰
-·
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx |(-.
-%6(System.Linq.IOrderedEnumerable<TElement>"ÑSystem.Linq.Enumerable.OrderByDescending<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, TKey>)*"
-System.Linq.Enumerable**
-(
-%5"System.Collections.Generic.List<T>*
-""„
-‡
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx }(./
-%7)System.Collections.Generic.IEnumerable<T>"}System.Linq.Enumerable.DistinctBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, TKey>)*"
-System.Linq.Enumerable*0
-.
-%6(System.Linq.IOrderedEnumerable<TElement>*
-""ø
-º
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx ~(/
-%8)System.Collections.Generic.IEnumerable<T>"ZSystem.Linq.Enumerable.Take<TSource>(System.Collections.Generic.IEnumerable<TSource>, int)*"
-System.Linq.Enumerable*1
-/
-%7)System.Collections.Generic.IEnumerable<T>*2‡
-›
-X
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx (#.
-%9(System.Linq.IOrderedEnumerable<TElement>"zSystem.Linq.Enumerable.OrderBy<TSource, TKey>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, TKey>)*"
-System.Linq.Enumerable*1
-/
-%8)System.Collections.Generic.IEnumerable<T>*
-""Á
-‰
-Y
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx ã(0
-%10)System.Collections.Generic.IEnumerable<T>"System.Linq.Enumerable.Select<TSource, TResult>(System.Collections.Generic.IEnumerable<TSource>, System.Func<TSource, TResult>)*"
-System.Linq.Enumerable*0
-.
-%9(System.Linq.IOrderedEnumerable<TElement>*
-""≤
-Ø
-Y
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx å()
-%11"System.Collections.Generic.List<T>"WSystem.Linq.Enumerable.ToList<TSource>(System.Collections.Generic.IEnumerable<TSource>)*"
-System.Linq.Enumerable*2
-0
-%10)System.Collections.Generic.IEnumerable<T>¿
-Ω
-Y
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csx å(-
-quizDto"System.Collections.Generic.List<T>"__id*+
-)
-%11"System.Collections.Generic.List<T>"ç
-Z
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csé é(/
--
-quizDto"System.Collections.Generic.List<T>*“
-1Z
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csè	 è(	"q
-Z
-NC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.csè è(	
-implicit returnB(&
-$Quizle.Core.Services.QuizDataService

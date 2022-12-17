@@ -1,7 +1,0 @@
-Ù
-$Quizle.Core.Services.QuizDataServiceobject&Quizle.Core.Contracts.IQuizDataService«
-AQuizDataService(Quizle.DB.Common.IRepository, AutoMapper.IMapper)fQuizle.Core.Services.QuizDataService.QuizDataService(Quizle.DB.Common.IRepository, AutoMapper.IMapper)Q
-GetDataAsync(string)9Quizle.Core.Services.QuizDataService.GetDataAsync(string)É
-PAddQuizRange(System.Collections.Generic.IEnumerable<Quizle.Core.Models.QuizDto>)uQuizle.Core.Services.QuizDataService.AddQuizRange(System.Collections.Generic.IEnumerable<Quizle.Core.Models.QuizDto>)Y
-GetCurrentQuestion(int?)=Quizle.Core.Services.QuizDataService.GetCurrentQuestion(int?)Y
-GetAllCurrentQuestions()=Quizle.Core.Services.QuizDataService.GetAllCurrentQuestions()

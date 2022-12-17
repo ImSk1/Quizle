@@ -1,8 +1,0 @@
-﻿C:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Contracts\IQuizDataService.cs
-C:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Contracts\IUserService.cs
-C:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Models\AnswerDto.cs
-C:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Models\QuizDto.cs
-C:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Models\QuizResponseModel.cs
-C:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs
-C:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\QuizDataService.cs
-C:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\Services\UserService.cs

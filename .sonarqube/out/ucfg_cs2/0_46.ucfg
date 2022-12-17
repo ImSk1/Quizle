@@ -1,37 +1,0 @@
-
-dQuizle.DB.Common.Repository.AllReadonly<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csP P(("0*Ò
-0E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csR S(Ç
-Ä
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csR R("2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>"&Quizle.DB.Common.Repository.DbSet<T>()*
-Quizle.DB.Common.Repositoryÿ
-ü
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csR S(
-%1System.Linq.IQueryable<T>"…System.Linq.Queryable.Where<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource, bool>>)*"
-System.Linq.Queryable*4
-2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>*9
-7
-search-System.Linq.Expressions.Expression<TDelegate>Í
-Ê
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csR T(
-%2System.Linq.IQueryable<T>"wMicrosoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.AsNoTracking<TEntity>(System.Linq.IQueryable<TEntity>)*D"B
-@Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions*!
-
-%1System.Linq.IQueryable<T>"j
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csR T( !
-
-%2System.Linq.IQueryable<T>*¨
-1E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csU	 U(	"\
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csU U(	
-implicit return:7
-search-System.Linq.Expressions.Expression<TDelegate>B
-Quizle.DB.Common.Repository

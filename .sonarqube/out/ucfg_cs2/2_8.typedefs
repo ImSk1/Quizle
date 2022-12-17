@@ -1,9 +1,0 @@
-·
-%Quizle.Web.Controllers.UserController#Microsoft.AspNetCore.Mvc.Controller'Microsoft.AspNetCore.Mvc.ControllerBaseobject€
-ªUserController(Microsoft.AspNetCore.Identity.UserManager<Quizle.DB.Models.ApplicationUser>, Microsoft.AspNetCore.Identity.SignInManager<Quizle.DB.Models.ApplicationUser>)ÐQuizle.Web.Controllers.UserController.UserController(Microsoft.AspNetCore.Identity.UserManager<Quizle.DB.Models.ApplicationUser>, Microsoft.AspNetCore.Identity.SignInManager<Quizle.DB.Models.ApplicationUser>)8
-Login()-Quizle.Web.Controllers.UserController.Login()x
-'Login(Quizle.Web.Models.LoginViewModel)MQuizle.Web.Controllers.UserController.Login(Quizle.Web.Models.LoginViewModel)>
-
-Register()0Quizle.Web.Controllers.UserController.Register()„
--Register(Quizle.Web.Models.RegisterViewModel)SQuizle.Web.Controllers.UserController.Register(Quizle.Web.Models.RegisterViewModel):
-Logout().Quizle.Web.Controllers.UserController.Logout()

@@ -1,144 +1,0 @@
-
-CQuizle.Core.QuartzJobs.QuizJob.Execute(Quartz.IJobExecutionContext)R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (!"0*Ö+
-0R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (BÔ
-Ï
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs! (3,
-%0&Quizle.Core.Contracts.IQuizDataService"__id*b*` 
-Quizle.Core.QuartzJobs.QuizJob"<
-_triviaDataService&Quizle.Core.Contracts.IQuizDataService˙
-˜
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.csA (H7
-%11Microsoft.Extensions.Configuration.IConfiguration"__id*b*` 
-Quizle.Core.QuartzJobs.QuizJob"<
-_config1Microsoft.Extensions.Configuration.IConfigurationÓ
-Î
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.csA (j
-%2string"}Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue<T>(Microsoft.Extensions.Configuration.IConfiguration, string)*:"8
-6Microsoft.Extensions.Configuration.ConfigurationBinder*9
-7
-%11Microsoft.Extensions.Configuration.IConfiguration*
-TriviaUrlEasyñì
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs! (k*
-%3$System.Threading.Tasks.Task<TResult>";Quizle.Core.Contracts.IQuizDataService.GetDataAsync(string)*.
-,
-%0&Quizle.Core.Contracts.IQuizDataService*
-
-%2string2GetDataAsync(string)ç
-ä
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (k&
-quizEasyQuizle.Core.Models.QuizDto"__id*
-""Ô
-Ï
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs# (5,
-%4&Quizle.Core.Contracts.IQuizDataService"__id*b*` 
-Quizle.Core.QuartzJobs.QuizJob"<
-_triviaDataService&Quizle.Core.Contracts.IQuizDataService˙
-˜
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.csC (J7
-%51Microsoft.Extensions.Configuration.IConfiguration"__id*b*` 
-Quizle.Core.QuartzJobs.QuizJob"<
-_config1Microsoft.Extensions.Configuration.IConfiguration
-Ì
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.csC (n
-%6string"}Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue<T>(Microsoft.Extensions.Configuration.IConfiguration, string)*:"8
-6Microsoft.Extensions.Configuration.ConfigurationBinder*9
-7
-%51Microsoft.Extensions.Configuration.IConfiguration*
-TriviaUrlMediumñì
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs# (o*
-%7$System.Threading.Tasks.Task<TResult>";Quizle.Core.Contracts.IQuizDataService.GetDataAsync(string)*.
-,
-%4&Quizle.Core.Contracts.IQuizDataService*
-
-%6string2GetDataAsync(string)è
-å
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (o(
-
-quizMediumQuizle.Core.Models.QuizDto"__id*
-""Ô
-Ï
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs! (3,
-%8&Quizle.Core.Contracts.IQuizDataService"__id*b*` 
-Quizle.Core.QuartzJobs.QuizJob"<
-_triviaDataService&Quizle.Core.Contracts.IQuizDataService˙
-˜
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.csA (H7
-%91Microsoft.Extensions.Configuration.IConfiguration"__id*b*` 
-Quizle.Core.QuartzJobs.QuizJob"<
-_config1Microsoft.Extensions.Configuration.IConfigurationÔ
-Ï
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.csA (j
-%10string"}Microsoft.Extensions.Configuration.ConfigurationBinder.GetValue<T>(Microsoft.Extensions.Configuration.IConfiguration, string)*:"8
-6Microsoft.Extensions.Configuration.ConfigurationBinder*9
-7
-%91Microsoft.Extensions.Configuration.IConfiguration*
-TriviaUrlHardòï
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs! (k+
-%11$System.Threading.Tasks.Task<TResult>";Quizle.Core.Contracts.IQuizDataService.GetDataAsync(string)*.
-,
-%8&Quizle.Core.Contracts.IQuizDataService*
-
-%10string2GetDataAsync(string)ç
-ä
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (k&
-quizHardQuizle.Core.Models.QuizDto"__id*
-""
-Ì
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs ($-
-%12&Quizle.Core.Contracts.IQuizDataService"__id*b*` 
-Quizle.Core.QuartzJobs.QuizJob"<
-_triviaDataService&Quizle.Core.Contracts.IQuizDataService¶£
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs2 (e)
-%13"System.Collections.Generic.List<T>""System.Collections.Generic.List<T>º
-π
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs6 (C
-%14void")System.Collections.Generic.List<T>.List()*+
-)
-%13"System.Collections.Generic.List<T>§°
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (f"
-%15System.Threading.Tasks.Task"wQuizle.Core.Contracts.IQuizDataService.AddQuizRange(System.Collections.Generic.IEnumerable<Quizle.Core.Models.QuizDto>)*/
--
-%12&Quizle.Core.Contracts.IQuizDataService*+
-)
-%13"System.Collections.Generic.List<T>2PAddQuizRange(System.Collections.Generic.IEnumerable<Quizle.Core.Models.QuizDto>)‚
-ﬂ
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs ()
-%16"Quizle.Core.Contracts.IUserService"__id*X*V 
-Quizle.Core.QuartzJobs.QuizJob"2
-_userService"Quizle.Core.Contracts.IUserServiceùö
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (C"
-%17System.Threading.Tasks.Task"FQuizle.Core.Contracts.IUserService.UpdateAllUsersHasDoneQuestion(bool)*+
-)
-%16"Quizle.Core.Contracts.IUserService*
-""2#UpdateAllUsersHasDoneQuestion(bool)*
-1*¬
-1R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs	 (	"i
-R
-HC:\DAVID\REPOS\Quizle\Quizle\Quizle.Core.Questions\QuartzJobs\QuizJob.cs (	
-implicit return:&
-contextQuartz.IJobExecutionContextB" 
-Quizle.Core.QuartzJobs.QuizJob

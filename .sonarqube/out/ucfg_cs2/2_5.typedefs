@@ -1,19 +1,0 @@
-í
-Quizle.Web.Models.QuizViewModelobjectB
-QuizViewModel()/Quizle.Web.Models.QuizViewModel.QuizViewModel()<
-Question.get,Quizle.Web.Models.QuizViewModel.Question.get<
-Question.set,Quizle.Web.Models.QuizViewModel.Question.set<
-Category.get,Quizle.Web.Models.QuizViewModel.Category.get<
-Category.set,Quizle.Web.Models.QuizViewModel.Category.set4
-Type.get(Quizle.Web.Models.QuizViewModel.Type.get4
-Type.set(Quizle.Web.Models.QuizViewModel.Type.set@
-Difficulty.get.Quizle.Web.Models.QuizViewModel.Difficulty.get@
-Difficulty.set.Quizle.Web.Models.QuizViewModel.Difficulty.setF
-CorrectAnswer.get1Quizle.Web.Models.QuizViewModel.CorrectAnswer.getF
-CorrectAnswer.set1Quizle.Web.Models.QuizViewModel.CorrectAnswer.set<
-ImageUrl.get,Quizle.Web.Models.QuizViewModel.ImageUrl.get<
-ImageUrl.set,Quizle.Web.Models.QuizViewModel.ImageUrl.set:
-Answers.get+Quizle.Web.Models.QuizViewModel.Answers.get:
-Answers.set+Quizle.Web.Models.QuizViewModel.Answers.setH
-SelectedAnswer.get2Quizle.Web.Models.QuizViewModel.SelectedAnswer.getH
-SelectedAnswer.set2Quizle.Web.Models.QuizViewModel.SelectedAnswer.set

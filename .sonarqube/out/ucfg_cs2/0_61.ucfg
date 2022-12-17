@@ -1,50 +1,0 @@
-
-aQuizle.DB.Migrations.DifficultyEnum.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)\
-RC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221117130121_DifficultyEnum.cs	  	(""0*å	
-0\
-RC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221117130121_DifficultyEnum.cs ( üù
-\
-RC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221117130121_DifficultyEnum.cs (!d
-%0^Microsoft.EntityFrameworkCore.Migrations.Operations.Builders.AlterOperationBuilder<TOperation>"ÁMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.AlterColumn<T>(string, string, string?, bool?, int?, bool, string?, bool, object?, string?, string?, System.Type?, string?, bool?, int?, bool, bool, object?, string?, string?, bool?, bool?, string?, string?, string?, string?, int?, int?, int?, int?, bool?, bool?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
-
-Difficulty*	
-Quizzes*
-int*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-nvarchar(50)*
-""*22*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""*
-""2‡AlterColumn<T>(string, string, string?, bool?, int?, bool, string?, bool, object?, string?, string?, System.Type?, string?, bool?, int?, bool, bool, object?, string?, string?, bool?, bool?, string?, string?, string?, string?, int?, int?, int?, int?, bool?, bool?)*
-1*Ö
-1\
-RC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221117130121_DifficultyEnum.cs	 (	"s
-\
-RC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221117130121_DifficultyEnum.cs (	
-implicit return:M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilderB'%
-#Quizle.DB.Migrations.DifficultyEnum

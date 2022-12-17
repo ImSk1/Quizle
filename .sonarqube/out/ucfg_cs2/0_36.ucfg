@@ -1,24 +1,0 @@
-
-tQuizle.DB.QuizleDbContext.QuizleDbContext(Microsoft.EntityFrameworkCore.DbContextOptions<Quizle.DB.QuizleDbContext>)C
-9C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\QuizleDbContext.cs ("1*M
-1C
-9C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\QuizleDbContext.cs	 (	*
-0*Ê
-0C
-9C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\QuizleDbContext.cs (ú
-÷
-C
-9C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\QuizleDbContext.cs (
-
-%0void"ŒMicrosoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext<TUser>.IdentityDbContext(Microsoft.EntityFrameworkCore.DbContextOptions)*NL
-JMicrosoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext<TUser>*E
-C
-options8Microsoft.EntityFrameworkCore.DbContextOptions<TContext>*
-2*¤
-2C
-9C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\QuizleDbContext.cs	 (	"Z
-C
-9C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\QuizleDbContext.cs (	
-implicit return:C
-options8Microsoft.EntityFrameworkCore.DbContextOptions<TContext>B
-Quizle.DB.QuizleDbContext

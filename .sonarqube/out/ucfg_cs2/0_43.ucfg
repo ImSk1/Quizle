@@ -1,30 +1,0 @@
-
-\Quizle.DB.Common.Repository.All<T>(System.Linq.Expressions.Expression<System.Func<T, bool>>)E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csB B( "0*‚
-0E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csD D(/Ç
-Ä
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csD D("2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>"&Quizle.DB.Common.Repository.DbSet<T>()*
-Quizle.DB.Common.Repositoryÿ
-ü
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csD D(0
-%1System.Linq.IQueryable<T>"…System.Linq.Queryable.Where<TSource>(System.Linq.IQueryable<TSource>, System.Linq.Expressions.Expression<System.Func<TSource, bool>>)*"
-System.Linq.Queryable*4
-2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>*9
-7
-search-System.Linq.Expressions.Expression<TDelegate>"j
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csD D(1!
-
-%1System.Linq.IQueryable<T>*¨
-1E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csE	 E(	"\
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csE E(	
-implicit return:7
-search-System.Linq.Expressions.Expression<TDelegate>B
-Quizle.DB.Common.Repository

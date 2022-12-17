@@ -1,72 +1,0 @@
-
-(Quizle.DB.Common.Repository.Delete<T>(T)E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csf f("0*ö	
-0E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csh j(3√
-¿
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csh  h(,-
-%0'Microsoft.EntityFrameworkCore.DbContext"'Quizle.DB.Common.Repository.Context.get*
-Quizle.DB.Common.Repository≠™
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csh  h(:G
-%1AMicrosoft.EntityFrameworkCore.ChangeTracking.EntityEntry<TEntity>"?Microsoft.EntityFrameworkCore.DbContext.Entry<TEntity>(TEntity)*/
--
-%0'Microsoft.EntityFrameworkCore.DbContext*
-
-entityT2Entry<TEntity>(TEntity)ﬁ
-€
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csh h(:A
-entry8Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry"__id*I
-G
-%1AMicrosoft.EntityFrameworkCore.ChangeTracking.EntityEntry<TEntity>èå
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csj j(/
-%2)Microsoft.EntityFrameworkCore.EntityState"BMicrosoft.EntityFrameworkCore.ChangeTracking.EntityEntry.State.get*C
-A
-entry8Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry2	State.get]
-[
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csj j(3
-%3"__id*
-""*
-1
-2*√
-1E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csl l(-«
-ƒ
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csl l(2
-%4,Microsoft.EntityFrameworkCore.DbSet<TEntity>"&Quizle.DB.Common.Repository.DbSet<T>()*
-Quizle.DB.Common.Repositoryß§
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csl l(.G
-%5AMicrosoft.EntityFrameworkCore.ChangeTracking.EntityEntry<TEntity>"<Microsoft.EntityFrameworkCore.DbSet<TEntity>.Attach(TEntity)*4
-2
-%4,Microsoft.EntityFrameworkCore.DbSet<TEntity>*
-
-entityT2Attach(TEntity)*
-2*»
-2E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cso o(-]
-[
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cso o(-
-%6"__id*
-""óî
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cso o(-/
-%7)Microsoft.EntityFrameworkCore.EntityState"BMicrosoft.EntityFrameworkCore.ChangeTracking.EntityEntry.State.set*C
-A
-entry8Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry*
-
-%62	State.set*
-3*®
-3E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csp	 p(	"\
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csp p(	
-implicit return:
-entityTB
-Quizle.DB.Common.Repository

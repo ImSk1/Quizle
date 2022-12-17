@@ -1,8 +1,0 @@
-Ì
-%Quizle.Web.Controllers.QuizController#Microsoft.AspNetCore.Mvc.Controller'Microsoft.AspNetCore.Mvc.ControllerBaseobjectˆ
-îQuizController(Microsoft.Extensions.Logging.ILogger<Quizle.Web.Controllers.QuizController>, Microsoft.Extensions.Configuration.IConfiguration, Quizle.Core.Contracts.IQuizDataService, AutoMapper.IMapper, Quizle.Core.Contracts.IUserService)”Quizle.Web.Controllers.QuizController.QuizController(Microsoft.Extensions.Logging.ILogger<Quizle.Web.Controllers.QuizController>, Microsoft.Extensions.Configuration.IConfiguration, Quizle.Core.Contracts.IQuizDataService, AutoMapper.IMapper, Quizle.Core.Contracts.IUserService)4
-All()+Quizle.Web.Controllers.QuizController.All()V
-SelectDifficulty(int?)<Quizle.Web.Controllers.QuizController.SelectDifficulty(int?)>
-
-Quiz(int?)0Quizle.Web.Controllers.QuizController.Quiz(int?)t
-%Quiz(Quizle.Web.Models.QuizViewModel)KQuizle.Web.Controllers.QuizController.Quiz(Quizle.Web.Models.QuizViewModel)

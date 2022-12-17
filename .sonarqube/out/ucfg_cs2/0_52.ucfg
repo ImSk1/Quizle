@@ -1,27 +1,0 @@
-
-6Quizle.DB.Common.Repository.GetByIdsAsync<T>(object[])G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs‘ ‘(*"0*œ
-0G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs“ “(0É
-Æ
-G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs“ “(#2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>"&Quizle.DB.Common.Repository.DbSet<T>()*
-Quizle.DB.Common.Repository®«
-G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs“ “(1/
-%1)System.Threading.Tasks.ValueTask<TResult>"IMicrosoft.EntityFrameworkCore.DbSet<TEntity>.FindAsync(params object?[]?)*4
-2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>*
-
-idobject[]2FindAsync(params object?[]?)"Q
-G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs“ “(2
-""*¬
-1G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs”	 ”(	"^
-G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs” ”(	
-implicit return:
-idobject[]B
-Quizle.DB.Common.Repository

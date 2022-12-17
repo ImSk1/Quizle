@@ -1,6 +1,0 @@
-œ
-#Quizle.DB.Migrations.DifficultyEnum2Microsoft.EntityFrameworkCore.Migrations.Migrationobject¢
-=Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)aQuizle.DB.Migrations.DifficultyEnum.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)¦
-?Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)cQuizle.DB.Migrations.DifficultyEnum.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder) 
-<BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)`Quizle.DB.Migrations.DifficultyEnum.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)H
-DifficultyEnum()4Quizle.DB.Migrations.DifficultyEnum.DifficultyEnum()

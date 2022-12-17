@@ -1,33 +1,0 @@
-
-2Quizle.DB.Common.Repository.DeleteAsync<T>(object)E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs[ [(%"0*Ç
-0E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs] _(Ü
-Ù
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs] ](0*
-%0$System.Threading.Tasks.Task<TResult>"3Quizle.DB.Common.Repository.GetByIdAsync<T>(object)*
-Quizle.DB.Common.Repository*
-
-idobjectd
-b
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs] ](0
-entityT"__id*
-""°
-­
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs_ _(
-
-%1void"(Quizle.DB.Common.Repository.Delete<T>(T)*
-Quizle.DB.Common.Repository*
-
-entityT*
-1*¨
-1E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs`	 `(	"\
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs` `(	
-implicit return:
-idobjectB
-Quizle.DB.Common.Repository

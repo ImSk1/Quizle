@@ -1,21 +1,0 @@
-
-eQuizle.DB.Migrations.ChangedUserModel.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)^
-TC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs  ($"0*½
-0^
-TC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs ($ÒÏ
-^
-TC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs (%_
-%0YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"]Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder.DropColumn(string, string, string?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
-HasAnsweredCurrentQuestion*
-AspNetUsers*
-""2#DropColumn(string, string, string?)*
-1*Ú
-1^
-TC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs	 (	"u
-^
-TC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221116161621_ChangedUserModel.cs (	
-implicit return:M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilderB)'
-%Quizle.DB.Migrations.ChangedUserModel

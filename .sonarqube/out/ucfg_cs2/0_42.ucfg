@@ -1,25 +1,0 @@
-
-$Quizle.DB.Common.Repository.All<T>()E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs= =( "0*ï
-0E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs? ?(+Ç
-Ä
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs? ?(2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>"&Quizle.DB.Common.Repository.DbSet<T>()*
-Quizle.DB.Common.Repositoryìé
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs? ?(+
-%1System.Linq.IQueryable<T>":Microsoft.EntityFrameworkCore.DbSet<TEntity>.AsQueryable()*4
-2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>2AsQueryable()"j
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs? ?(,!
-
-%1System.Linq.IQueryable<T>*¨
-1E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs@	 @(	"\
-E
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs@ @(	
-implicit returnB
-Quizle.DB.Common.Repository

@@ -1,76 +1,0 @@
-
-\Quizle.DB.Migrations.Initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÔ  Ô($"0*Ì
-0W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÒ ä(#ïí
-W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÒ Ú( _
-%0YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"TMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.DropTable(string, string?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*	
-Answers*
-""2DropTable(string, string?)ûõ
-W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÙ ı()_
-%1YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"TMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.DropTable(string, string?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
-AspNetRoleClaims*
-""2DropTable(string, string?)ûõ
-W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs˜ ¯()_
-%2YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"TMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.DropTable(string, string?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
-AspNetUserClaims*
-""2DropTable(string, string?)ûõ
-W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs˙ ˚()_
-%3YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"TMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.DropTable(string, string?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
-AspNetUserLogins*
-""2DropTable(string, string?)ùö
-W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.cs˝ ˛((_
-%4YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"TMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.DropTable(string, string?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
-AspNetUserRoles*
-""2DropTable(string, string?)ûõ
-W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÄ Å()_
-%5YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"TMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.DropTable(string, string?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
-AspNetUserTokens*
-""2DropTable(string, string?)ïí
-W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÉ Ñ( _
-%6YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"TMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.DropTable(string, string?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*	
-Quizzes*
-""2DropTable(string, string?)ôñ
-W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csÜ á($_
-%7YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"TMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.DropTable(string, string?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
-AspNetRoles*
-""2DropTable(string, string?)ôñ
-W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csâ ä($_
-%8YMicrosoft.EntityFrameworkCore.Migrations.Operations.Builders.OperationBuilder<TOperation>"TMicrosoft.EntityFrameworkCore.Migrations.MigrationBuilder.DropTable(string, string?)*O
-M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder*
-AspNetUsers*
-""2DropTable(string, string?)*
-1*Ã
-1W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csã	 ã(	"n
-W
-KC:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Migrations\20221115180108_Initial.csã ã(	
-implicit return:M
-migrationBuilder9Microsoft.EntityFrameworkCore.Migrations.MigrationBuilderB 
-Quizle.DB.Migrations.Initial

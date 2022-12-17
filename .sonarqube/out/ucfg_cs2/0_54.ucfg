@@ -1,26 +1,0 @@
-
-UQuizle.DB.Common.Repository.UpdateRange<T>(System.Collections.Generic.IEnumerable<T>)G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.cs¨ ¨("0*ê
-0G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csÆ Æ(0…
-∆
-G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csÆ Æ(2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>"&Quizle.DB.Common.Repository.DbSet<T>()*
-Quizle.DB.Common.RepositoryÌ
-G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csÆ Æ(1
-
-%1void"iMicrosoft.EntityFrameworkCore.DbSet<TEntity>.UpdateRange(System.Collections.Generic.IEnumerable<TEntity>)*4
-2
-%0,Microsoft.EntityFrameworkCore.DbSet<TEntity>*7
-5
-entities)System.Collections.Generic.IEnumerable<T>2<UpdateRange(System.Collections.Generic.IEnumerable<TEntity>)*
-1*¨
-1G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csØ	 Ø(	"^
-G
-;C:\DAVID\REPOS\Quizle\Quizle\Quizle.DB\Common\Repository.csØ Ø(	
-implicit return:5
-entities)System.Collections.Generic.IEnumerable<T>B
-Quizle.DB.Common.Repository

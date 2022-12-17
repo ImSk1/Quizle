@@ -1,224 +1,0 @@
-
-KQuizle.Web.Controllers.QuizController.Quiz(Quizle.Web.Models.QuizViewModel)K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-"6*∂
-0K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csT V(#„
-‡
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csT  T(++
-%0%Microsoft.AspNetCore.Http.HttpContext"7Microsoft.AspNetCore.Mvc.ControllerBase.HttpContext.get*+)
-'Microsoft.AspNetCore.Mvc.ControllerBase‹
-Ÿ
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csT  T(3(
-%1"Microsoft.AspNetCore.Http.ISession"1Microsoft.AspNetCore.Http.HttpContext.Session.get*-
-+
-%0%Microsoft.AspNetCore.Http.HttpContext±
-Æ
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csT  T(N
-%2string"aMicrosoft.AspNetCore.Http.SessionExtensions.GetString(Microsoft.AspNetCore.Http.ISession, string)*/"-
-+Microsoft.AspNetCore.Http.SessionExtensions**
-(
-%1"Microsoft.AspNetCore.Http.ISession*
-CorrectAnswer~
-|
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csT T(N
-correctAnswerstring"__id*
-
-%2string˜
-Ù
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csV V(@
-%3:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary"6Microsoft.AspNetCore.Mvc.ControllerBase.ModelState.get*+)
-'Microsoft.AspNetCore.Mvc.ControllerBaseË
-Â
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csV V(#
-
-%4bool"FMicrosoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary.IsValid.get*B
-@
-%3:Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary*
-1
-2*¯
-1K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csX X(.úô
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csX X(/5
-%5/Microsoft.AspNetCore.Mvc.RedirectToActionResult"AMicrosoft.AspNetCore.Mvc.ControllerBase.RedirectToAction(string?)*+)
-'Microsoft.AspNetCore.Mvc.ControllerBase*
-Quiz2RedirectToAction(string?)"Ü
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csX X(07
-5
-%5/Microsoft.AspNetCore.Mvc.RedirectToActionResult*ô
-2K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csZ Z(<‘
-—
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csZ Z($"
-%6Quizle.Core.Models.AnswerDto"2Quizle.Web.Models.QuizViewModel.SelectedAnswer.get**
-(
-modelQuizle.Web.Models.QuizViewModel≠
-™
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csZ Z(+
-%7string"'Quizle.Core.Models.AnswerDto.Answer.get*$
-"
-%6Quizle.Core.Models.AnswerDto∑
-¥
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csZ Z(<
-
-%8bool""string.operator ==(string, string)*
-"
-string*
-
-%7string*
-
-correctAnswerstring*
-3
-4*Ó
-
-3K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs\ ](l˛
-˚
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs\ \(9
-%93Microsoft.Extensions.Logging.ILogger<TCategoryName>"__id*k*i'
-%Quizle.Web.Controllers.QuizController">
-_logger3Microsoft.Extensions.Logging.ILogger<TCategoryName>‹
-Ÿ
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs\ \(,
-%10void"wMicrosoft.Extensions.Logging.LoggerExtensions.LogDebug(Microsoft.Extensions.Logging.ILogger, string?, params object?[])*1"/
--Microsoft.Extensions.Logging.LoggerExtensions*;
-9
-%93Microsoft.Extensions.Logging.ILogger<TCategoryName>*
-
-Correct!*
-""‚
-ﬂ
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs] ](")
-%11"Quizle.Core.Contracts.IUserService"__id*_*]'
-%Quizle.Web.Controllers.QuizController"2
-_userService"Quizle.Core.Contracts.IUserService—Œ
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.cs] ](m"
-%12System.Threading.Tasks.Task"üQuizle.Core.Contracts.IUserService.UpdateAllUsersHasDoneQuestion(bool, System.Linq.Expressions.Expression<System.Func<Quizle.DB.Models.ApplicationUser, bool>>)*+
-)
-%11"Quizle.Core.Contracts.IUserService*
-""*
-""2|UpdateAllUsersHasDoneQuestion(bool, System.Linq.Expressions.Expression<System.Func<Quizle.DB.Models.ApplicationUser, bool>>)*
-4*˙
-4K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csa a(*ùö
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csa a(+6
-%13/Microsoft.AspNetCore.Mvc.RedirectToActionResult"AMicrosoft.AspNetCore.Mvc.ControllerBase.RedirectToAction(string?)*+)
-'Microsoft.AspNetCore.Mvc.ControllerBase*
-Quiz2RedirectToAction(string?)"á
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csa a(,8
-6
-%13/Microsoft.AspNetCore.Mvc.RedirectToActionResult*¥
-5K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csb	 b(	"b
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csb b(	
-implicit return*
-6K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csRB R(BØ
-¨
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-O
-(
-modelQuizle.Web.Models.QuizViewModel"#
-<Question>k__BackingFieldstring"__entrypointû
-õ
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(->
-(
-modelQuizle.Web.Models.QuizViewModel"
-Questionstring"__entrypointØ
-¨
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-O
-(
-modelQuizle.Web.Models.QuizViewModel"#
-<Category>k__BackingFieldstring"__entrypointû
-õ
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(->
-(
-modelQuizle.Web.Models.QuizViewModel"
-Categorystring"__entrypoint´
-®
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-K
-(
-modelQuizle.Web.Models.QuizViewModel"
-<Type>k__BackingFieldstring"__entrypointö
-ó
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-:
-(
-modelQuizle.Web.Models.QuizViewModel"
-Typestring"__entrypoint¥
-±
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-T
-(
-modelQuizle.Web.Models.QuizViewModel"(
-<CorrectAnswer>k__BackingFieldstring"__entrypoint£
-†
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-C
-(
-modelQuizle.Web.Models.QuizViewModel"
-CorrectAnswerstring"__entrypointØ
-¨
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-O
-(
-modelQuizle.Web.Models.QuizViewModel"#
-<ImageUrl>k__BackingFieldstring"__entrypointû
-õ
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(->
-(
-modelQuizle.Web.Models.QuizViewModel"
-ImageUrlstring"__entrypoint 
-«
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-j
-(
-modelQuizle.Web.Models.QuizViewModel">
-<Answers>k__BackingField"System.Collections.Generic.List<T>"__entrypointπ
-∂
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-Y
-(
-modelQuizle.Web.Models.QuizViewModel"-
-Answers"System.Collections.Generic.List<T>"__entrypointÀ
-»
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-k
-(
-modelQuizle.Web.Models.QuizViewModel"?
-<SelectedAnswer>k__BackingFieldQuizle.Core.Models.AnswerDto"__entrypoint∫
-∑
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-Z
-(
-modelQuizle.Web.Models.QuizViewModel".
-SelectedAnswerQuizle.Core.Models.AnswerDto"__entrypointd
-b
-K
-AC:\DAVID\REPOS\Quizle\Quizle\Quizle\Controllers\QuizController.csR) R(-
-%14"__entrypoint*
-0:(
-modelQuizle.Web.Models.QuizViewModelB)'
-%Quizle.Web.Controllers.QuizController
