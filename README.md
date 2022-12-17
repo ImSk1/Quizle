@@ -5,7 +5,7 @@ A simple quiz game based around answering hourly questions divided in three diff
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/summary/new_code?id=uwuSk1_Quizle)
 
 ## 🅰️ Azure Url
-https://quizleweb20221217191533.azurewebsites.net
+https://quizleweb20221217200413.azurewebsites.net
 
 ## 🛠️ Installation
 
