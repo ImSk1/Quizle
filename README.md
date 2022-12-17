@@ -2,9 +2,11 @@
 
 A simple quiz game based around answering hourly questions divided in three difficulties. Answering questions will reward the player Quiz Points AKA QP. When the player collects enough points he will be able to purchase a badge. The badges have different rarities. The higher the rarity, the higher the price. The rarest one will be displayed on the players profile. The top five players will be displayed on a leaderboard. Other users will be able to look at their profiles and see their most rare badge, their profile credentials and some of their latest answers to questions. Questions provided by [Open TDB](https://opentdb.com/).
 
+[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/summary/new_code?id=uwuSk1_Quizle)
+
 ## 🅰️ Azure Url
 https://quizleweb20221217191533.azurewebsites.net
-[![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/summary/new_code?id=uwuSk1_Quizle)
+
 ## 🛠️ Installation
 
 To run the application you will have to replace the appsettings.json file with one containing a correct Connection string to a MSSql Database. Appsettings.json is also the place, where the APIs urls are stored so if they are missing they should be added. Finally Quartz.NET has a part of it's config there too. Here is the json file that you need to use.
