@@ -28,7 +28,7 @@ To run the application you will have to replace the appsettings.json file with o
 }
 ```
 ## 🔐Admin Area
-To access the admin area register an user with the email orionvt3@gmail.com, stop the application and uncomment the app.SeedAdmin(); statement in Program.cs
+To access the admin area register an user with the email administrator@gmail.com, restart the application and relog if the cookie saved your login. Now you will be able to add badges and delete them.
 
 ## 🚀Functionality
 
