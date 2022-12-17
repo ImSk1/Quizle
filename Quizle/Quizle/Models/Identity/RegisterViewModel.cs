@@ -1,7 +1,7 @@
 ﻿using Quizle.Web.Common;
 using System.ComponentModel.DataAnnotations;
 
-namespace Quizle.Web.Models
+namespace Quizle.Web.Models.Identity
 {
     public class RegisterViewModel
     {

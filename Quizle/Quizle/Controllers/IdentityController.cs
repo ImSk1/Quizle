@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Quizle.DB.Models;
-using Quizle.Web.Models;
+using Quizle.Web.Models.Identity;
 
 namespace Quizle.Web.Controllers
 {

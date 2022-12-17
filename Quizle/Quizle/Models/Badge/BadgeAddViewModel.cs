@@ -2,7 +2,7 @@
 using Quizle.DB.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace Quizle.Web.Models
+namespace Quizle.Web.Models.Badge
 {
     public class BadgeAddViewModel
     {
@@ -12,14 +12,14 @@ namespace Quizle.Web.Models
         [Required]
         [StringLength(300, MinimumLength = 20)]
         public string Description { get; set; } = null!;
-        
+
         [Required]
         public IFormFile Image { get; set; } = null!;
         [Required]
         public string Rarity { get; set; } = null!;
         [Required]
         public int Price { get; set; }
-        
+
         public List<string> Rarities { get; set; } = new List<string>();
     }
 }

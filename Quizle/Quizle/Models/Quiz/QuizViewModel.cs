@@ -1,7 +1,7 @@
 ﻿using Quizle.Core.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace Quizle.Web.Models
+namespace Quizle.Web.Models.Quiz
 {
     public class QuizViewModel
     {

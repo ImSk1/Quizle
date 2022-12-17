@@ -8,7 +8,7 @@ using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 using Quizle.DB.Common;
 using Quizle.DB.Models;
-using Quizle.Web.Models;
+using Quizle.Web.Models.Profile;
 using System.Reflection.Metadata.Ecma335;
 using System.Security.AccessControl;
 using System.Security.Claims;

@@ -4,7 +4,7 @@ using Quizle.Core.Contracts;
 using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 using Quizle.DB.Models;
-using Quizle.Web.Models;
+using Quizle.Web.Models.Badge;
 
 namespace Quizle.Web.Areas.Admin.Controllers
 {

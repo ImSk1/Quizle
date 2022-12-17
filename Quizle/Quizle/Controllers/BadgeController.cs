@@ -7,7 +7,8 @@ using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 using Quizle.Core.Services;
 using Quizle.DB.Models;
-using Quizle.Web.Models;
+using Quizle.Web.Models.Badge;
+using Quizle.Web.Models.Profile;
 using System.Net;
 using System.Security.Claims;
 

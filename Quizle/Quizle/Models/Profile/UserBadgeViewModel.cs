@@ -1,4 +1,6 @@
-﻿namespace Quizle.Web.Models
+﻿using Quizle.Web.Models.Badge;
+
+namespace Quizle.Web.Models.Profile
 {
     public class UserBadgeViewModel
     {

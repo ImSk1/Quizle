@@ -6,7 +6,7 @@ using Quizle.Core.Exceptions;
 using Quizle.Core.Models;
 using Quizle.DB.Common.Enums;
 using Quizle.DB.Models;
-using Quizle.Web.Models;
+using Quizle.Web.Models.Quiz;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Security.Claims;

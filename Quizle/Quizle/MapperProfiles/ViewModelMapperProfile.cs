@@ -2,7 +2,9 @@
 using Quizle.Core.Models;
 using Quizle.DB.Common.Enums;
 using Quizle.DB.Models;
-using Quizle.Web.Models;
+using Quizle.Web.Models.Badge;
+using Quizle.Web.Models.Profile;
+using Quizle.Web.Models.Quiz;
 
 namespace Quizle.Web.MapperProfiles
 {

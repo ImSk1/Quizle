@@ -1,4 +1,4 @@
-﻿namespace Quizle.Web.Models
+﻿namespace Quizle.Web.Models.Profile
 {
     public class LeaderboardProfileViewModel
     {

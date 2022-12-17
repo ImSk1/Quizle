@@ -1,5 +1,4 @@
-﻿
-namespace Quizle.Web.Models
+﻿namespace Quizle.Web.Models.Quiz
 {
     public class ResultViewModel
     {
